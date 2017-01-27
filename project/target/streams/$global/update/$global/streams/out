@@ -6712,7 +6712,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1524ms :: artifacts dl 31ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1583ms :: artifacts dl 37ms[0m
 [0m[[0mdebug[0m] [0m	report for default#lsh-build;0.1-SNAPSHOT compile produced in /home/skorpionx/Escritorio/LSH/project/target/resolution-cache/reports/default-lsh-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#lsh-build;0.1-SNAPSHOT runtime produced in /home/skorpionx/Escritorio/LSH/project/target/resolution-cache/reports/default-lsh-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#lsh-build;0.1-SNAPSHOT test produced in /home/skorpionx/Escritorio/LSH/project/target/resolution-cache/reports/default-lsh-build-test.xml[0m
@@ -6726,5 +6726,5 @@
 [0m[[0mdebug[0m] [0m	report for default#lsh-build;0.1-SNAPSHOT docs produced in /home/skorpionx/Escritorio/LSH/project/target/resolution-cache/reports/default-lsh-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#lsh-build;0.1-SNAPSHOT pom produced in /home/skorpionx/Escritorio/LSH/project/target/resolution-cache/reports/default-lsh-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#lsh-build;0.1-SNAPSHOT scala-tool produced in /home/skorpionx/Escritorio/LSH/project/target/resolution-cache/reports/default-lsh-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1524ms resolve - 31ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1583ms resolve - 37ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

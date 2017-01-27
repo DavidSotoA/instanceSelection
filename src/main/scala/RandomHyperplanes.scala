@@ -2,11 +2,14 @@ package com.lsh
 
 import scala.util.Random
 
-import org.apache.spark.mllib.linalg.{Vector, Vectors}
+import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions.udf
 
-case class RandomHyperplanes(dataset: Dataset[_], numHashTables: Int ) extends LSH{
+case class RandomHyperplanes(
+    dataset: Dataset[_],
+    numHashTables: Int,
+    spark: SparkSession) extends LSH{
   require(numHashTables > 0, "numHashTables debe ser mayor a cero")
 
   def createHiperplanes(inputDim: Int): Array[Vector] = {
@@ -16,11 +19,14 @@ case class RandomHyperplanes(dataset: Dataset[_], numHashTables: Int ) extends L
   }
 
   override def lsh(): DataFrame = {
-    val inputDim = dataset.select("instance").head.get(0).asInstanceOf[Vector].size
+    val inputDim = dataset.select(Constants.SET_OUPUT_COL_ASSEMBLER).head.get(0)
+      .asInstanceOf[Vector].size
     val hyperplanes = createHiperplanes(inputDim)
     val partiallyHashFunction = hashFunction( _ : Vector, hyperplanes)
     val transformUDF = udf(partiallyHashFunction)
-    dataset.withColumn("signature", transformUDF(dataset("instance")))
+    val signatureDF = dataset.withColumn(Constants.SET_OUPUT_COL_LSH,
+      transformUDF(dataset(Constants.SET_OUPUT_COL_ASSEMBLER)))
+    groupForBuckets(signatureDF)
   }
 
   override def hashFunction(instance: Vector,
@@ -36,8 +42,10 @@ case class RandomHyperplanes(dataset: Dataset[_], numHashTables: Int ) extends L
      Utilities.binaryToDec(binSignature)
   }
 
-  override def groupForBuckets(hashedDataSet: Array[Vector]): Array[Array[Vector]] = {
-    throw new IllegalArgumentException ("unimplement method")
+  override def groupForBuckets(hashedDataSet: DataFrame): DataFrame = {
+    hashedDataSet.createGlobalTempView("hashedDataSet")
+    spark.sql("SELECT * FROM global_temp.hashedDataSet ORDER BY "
+      + Constants.SET_OUPUT_COL_LSH)
   }
 
   override def keyDistance(x: Vector, y: Vector): Array[Array[Vector]] = {

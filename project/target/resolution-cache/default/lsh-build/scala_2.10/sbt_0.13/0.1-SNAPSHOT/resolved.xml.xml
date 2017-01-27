@@ -4,7 +4,7 @@
 		module="lsh-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20170121203143"
+		publication="20170127012030"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
