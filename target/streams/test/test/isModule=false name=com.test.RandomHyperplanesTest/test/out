@@ -6,4 +6,5 @@
 [0m[[0minfo[0m] [0m[32m- Se convierte de binario a decimal[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza la hashfunction[0m[0m
 [0m[[0minfo[0m] [0m[32m- El metodo lsh retorna un dataframe con la estructura correcta[0m[0m
+[0m[[0minfo[0m] [0m[32m- el metodo lsh calcula las firmas correctas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se hace la conversion con VectorAssembler[0m[0m

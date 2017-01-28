@@ -3,6 +3,7 @@ package com.test
 import com.lsh.Constants
 import com.lsh.RandomHyperplanes
 import com.lsh.Utilities
+import com.lsh.LSH
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -89,6 +90,35 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
       assert(columnNames(0) == Constants.SET_OUPUT_COL_ASSEMBLER)
       assert(columnNames(1) == Constants.SET_OUPUT_COL_LSH)
     }
+
+  test("el metodo lsh calcula las firmas correctas"){
+    val selectFeatures = Array("c1", "c2")
+    val instances = spark.createDataFrame(Seq(
+      (3.0, 0.5),
+      (4.0, 0.4),
+      (-0.5, 3.0),
+      (-0.4, 4.0),
+      (-0.5, -3.0),
+      (-0.4, -4.0))
+    ).toDF("c1", "c2")
+    val hyperplanes = Array(
+      Vectors.dense(-1,1),
+      Vectors.dense(0,1),
+      Vectors.dense(1,1),
+      Vectors.dense(1,0)
+    )
+    val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
+    val hyp = new RandomHyperplanes(vectorizedDF, 4, spark)
+    hyp.setHyperplanes(hyperplanes)
+    val instancesWithSignature = hyp.lsh()
+    val keysDF = LSH.getKeys(instancesWithSignature)
+    val size = keysDF.count
+    val keys = keysDF.select(Constants.SET_OUPUT_COL_LSH).take(3)
+    assert(size == 3)
+    assert(keys(0)(0).asInstanceOf[Int] == 0)
+    assert(keys(1)(0).asInstanceOf[Int] == 7)
+    assert(keys(2)(0).asInstanceOf[Int] == 14)
+  }
 
   test("Se hace la conversion con VectorAssembler") {
     val selectFeatures = Array("c1", "c2", "c5", "c6")

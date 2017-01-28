@@ -162,3 +162,15 @@ compile
 scalastyle
 test:scalastyle
 scalastyle
+compile
+test
+compile
++
+compile
+test
+reset
+test
+compile
+test
+compile
+test

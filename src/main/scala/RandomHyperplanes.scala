@@ -14,6 +14,15 @@ case class RandomHyperplanes(
   numHashTables = numHashTables_RH
   spark = spark_RH
   require(numHashTables > 0, "numHashTables debe ser mayor a cero")
+  var hyperplanes = createHiperplanes()
+
+  def getHyperplanes(): Array[Vector] = {
+    hyperplanes
+  }
+
+  def setHyperplanes(set_hyperplanes: Array[Vector]){
+      hyperplanes = set_hyperplanes
+  }
 
   def createHiperplanes(): Array[Vector] = {
     val inputDim = dataset.select(Constants.SET_OUPUT_COL_ASSEMBLER).head.get(0)
@@ -24,7 +33,6 @@ case class RandomHyperplanes(
   }
 
   override def lsh(): DataFrame = {
-    val hyperplanes = createHiperplanes()
     val partiallyHashFunction = hashFunction( _ : Vector, hyperplanes)
     val transformUDF = udf(partiallyHashFunction)
     val signatureDF = dataset.withColumn(Constants.SET_OUPUT_COL_LSH,

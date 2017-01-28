@@ -21,6 +21,8 @@ object Main {
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
     val randomHyperplanes = new RandomHyperplanes(vectorizedDF, numHashTables, spark)
     val instancesWithSignature = randomHyperplanes.lsh()
+    val instancesKeys = LSH.getKeys(instancesWithSignature)
     instancesWithSignature.write.format("parquet").save("/home/skorpionx/Escritorio/lsh.parquet")
+    instancesKeys.write.format("parquet").save("/home/skorpionx/Escritorio/lshorder.parquet")
   }
 }
