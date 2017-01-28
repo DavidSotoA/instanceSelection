@@ -12,15 +12,21 @@ trait LSH {
   def lsh(): DataFrame
   def keyDistance(x: Vector, y: Vector): Array[Array[Vector]]
 
-  def groupForBuckets(hashedDataSet: DataFrame): DataFrame = {
+  def groupForBuckets(hashedDataSet: DataFrame): DataFrame = { // probar
     hashedDataSet.createGlobalTempView("hashedDataSet")
     spark.sql("SELECT * FROM global_temp.hashedDataSet ORDER BY "
       + Constants.SET_OUPUT_COL_LSH)
   }
 
+  def getKeys(hashedDataSet: DataFrame): DataFrame = { // probar
+    hashedDataSet.select(Constants.SET_OUPUT_COL_LSH).distinct()
+  }
+
+  def findBucket(bucketsDataSet: DataFrame, key: Int): DataFrame = { // probar
+    bucketsDataSet.select(Constants.SET_OUPUT_COL_ASSEMBLER)
+      .where(Constants.SET_OUPUT_COL_LSH + " == key")
+  }
   // those methods need are implements here
   // protected def LshKnn(instance: Vector, bucketDataset: Array[Vector],
   // numOfNeighbors: Int): Array[Vector]
-  // protected def findBucket(bucketsDataSet: Array[Array[Vector]]): Array[Vector]
-
 }
