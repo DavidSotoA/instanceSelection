@@ -44,14 +44,13 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
   }
 
   test("Se crean el numero de hiperplanos correctos") {
-    val numFeatures = 3
-    val hyperplanes = randomHyperplanes.createHiperplanes(numFeatures)
+    val hyperplanes = randomHyperplanes.createHiperplanes()
     assert(numHashTables == hyperplanes.length)
   }
 
   test("Los hiperplanos tienen el numero correcto de caracteristicas") {
-    val numFeatures = 3
-    val hyperplanes = randomHyperplanes.createHiperplanes(numFeatures)
+    val numFeatures = 6
+    val hyperplanes = randomHyperplanes.createHiperplanes()
     assert(numFeatures == hyperplanes(0).size)
   }
 

@@ -146,3 +146,15 @@ test
 scalastyle
 compile
 scalastyle
+compile
+test
+compile
+test
+compile
+test
+compile
+test
+compile
+test
+compile
+test

@@ -7,21 +7,24 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions.udf
 
 case class RandomHyperplanes(
-    dataset: Dataset[_],
-    numHashTables: Int,
-    spark: SparkSession) extends LSH{
+    dataset_RH: Dataset[_],
+    numHashTables_RH: Int,
+    spark_RH: SparkSession) extends LSH{
+  dataset = dataset_RH
+  numHashTables = numHashTables_RH
+  spark = spark_RH
   require(numHashTables > 0, "numHashTables debe ser mayor a cero")
 
-  def createHiperplanes(inputDim: Int): Array[Vector] = {
+  def createHiperplanes(): Array[Vector] = {
+    val inputDim = dataset.select(Constants.SET_OUPUT_COL_ASSEMBLER).head.get(0)
+      .asInstanceOf[Vector].size
     Array.fill(numHashTables) {
       Vectors.dense(Array.fill(inputDim)(Random.nextGaussian()))
     }
   }
 
   override def lsh(): DataFrame = {
-    val inputDim = dataset.select(Constants.SET_OUPUT_COL_ASSEMBLER).head.get(0)
-      .asInstanceOf[Vector].size
-    val hyperplanes = createHiperplanes(inputDim)
+    val hyperplanes = createHiperplanes()
     val partiallyHashFunction = hashFunction( _ : Vector, hyperplanes)
     val transformUDF = udf(partiallyHashFunction)
     val signatureDF = dataset.withColumn(Constants.SET_OUPUT_COL_LSH,
@@ -40,12 +43,6 @@ case class RandomHyperplanes(
      }
      val binSignature = hashFunctions.map(hash => signature(Utilities.dot(hash, instance)))
      Utilities.binaryToDec(binSignature)
-  }
-
-  override def groupForBuckets(hashedDataSet: DataFrame): DataFrame = {
-    hashedDataSet.createGlobalTempView("hashedDataSet")
-    spark.sql("SELECT * FROM global_temp.hashedDataSet ORDER BY "
-      + Constants.SET_OUPUT_COL_LSH)
   }
 
   override def keyDistance(x: Vector, y: Vector): Array[Array[Vector]] = {
