@@ -9,7 +9,7 @@ import org.apache.spark.sql.functions.udf
 case class RandomHyperplanes(
     dataset_RH: Dataset[_],
     numHashTables_RH: Int,
-    spark_RH: SparkSession) extends LSH{
+    spark_RH: SparkSession) extends LSH {
   dataset = dataset_RH
   numHashTables = numHashTables_RH
   spark = spark_RH
@@ -20,7 +20,7 @@ case class RandomHyperplanes(
     hyperplanes
   }
 
-  def setHyperplanes(set_hyperplanes: Array[Vector]){
+  def setHyperplanes(set_hyperplanes: Array[Vector]) {
       hyperplanes = set_hyperplanes
   }
 

@@ -174,3 +174,31 @@ compile
 test
 compile
 test
+test:scalastyle
+scalastyle
+test:scalastyle
+test
+compile
+test:scalastyle
+scalastyle
+compile
+test
+test com.test.EntropiaTest
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+compile
+test
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+scalastyle
+test:scalastyle

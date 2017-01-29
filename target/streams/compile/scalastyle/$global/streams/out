@@ -1,18 +1,22 @@
 [0m[[0minfo[0m] [0mscalastyle using config /home/skorpionx/Escritorio/LSH/scalastyle-config.xml[0m
 [0m[[0mdebug[0m] [0mStarting scalastyle[0m
+[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala[0m
-[0m[[0minfo[0m] [0mProcessed 5 file(s)[0m
+[0m[[0minfo[0m] [0mProcessed 7 file(s)[0m
 [0m[[0minfo[0m] [0mFound 0 errors[0m
 [0m[[0minfo[0m] [0mFound 0 warnings[0m
 [0m[[0minfo[0m] [0mFound 0 infos[0m
-[0m[[0minfo[0m] [0mFinished in 0 ms[0m
+[0m[[0minfo[0m] [0mFinished in 1 ms[0m
 [0m[[32msuccess[0m] [0mcreated output: /home/skorpionx/Escritorio/LSH/target[0m

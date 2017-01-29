@@ -1,9 +1,9 @@
 package com.test
 
 import com.lsh.Constants
+import com.lsh.LSH
 import com.lsh.RandomHyperplanes
 import com.lsh.Utilities
-import com.lsh.LSH
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -91,7 +91,7 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
       assert(columnNames(1) == Constants.SET_OUPUT_COL_LSH)
     }
 
-  test("el metodo lsh calcula las firmas correctas"){
+  test("El metodo lsh calcula las firmas correctas") {
     val selectFeatures = Array("c1", "c2")
     val instances = spark.createDataFrame(Seq(
       (3.0, 0.5),
@@ -102,10 +102,10 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
       (-0.4, -4.0))
     ).toDF("c1", "c2")
     val hyperplanes = Array(
-      Vectors.dense(-1,1),
-      Vectors.dense(0,1),
-      Vectors.dense(1,1),
-      Vectors.dense(1,0)
+      Vectors.dense(-1, 1),
+      Vectors.dense(0, 1),
+      Vectors.dense(1, 1),
+      Vectors.dense(1, 0)
     )
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
     val hyp = new RandomHyperplanes(vectorizedDF, 4, spark)
