@@ -202,3 +202,34 @@ compile
 test-only com.test.EntropiaTest
 scalastyle
 test:scalastyle
+test-only com.test.EntropiaTest
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.RandomHyperplanesTest
+test-only com.test.Drop3Test
+test-only com.test.EntropiaTest
+compile
+test-only com.test.Drop3Test
+scalastyle
+test:scalastyle
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+test:scalastyle
+scalastyle
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+scalastyle
+test-only com.test.Drop3Test

@@ -19,15 +19,23 @@ name hashing:
 1 items
 0 -> true
 products:
-23 items
+30 items
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Constants$.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Constants.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$$anonfun$1.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$$anonfun$knn$1.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$$typecreator1$1.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Entropia$.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Entropia.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/InstanceSelection.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH$.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH$class.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Mathematics$$anonfun$binaryToDec$1.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Mathematics$.class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Mathematics.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$1.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$2.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$3.class
@@ -37,15 +45,20 @@ products:
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$typecreator1$1.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes.class
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities$$anonfun$binaryToDec$1.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities$.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main$$typecreator1$1.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main$.class
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main.class
 binary dependencies:
-33 items
+42 items
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/jars/spark-catalyst_2.11-2.1.0.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/jars/spark-mllib-local_2.11-2.1.0.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/jars/spark-catalyst_2.11-2.1.0.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib_2.11/jars/spark-mllib_2.11-2.1.0.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar
@@ -58,6 +71,9 @@ binary dependencies:
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> /home/skorpionx/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/jars/spark-mllib-local_2.11-2.1.0.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> /home/skorpionx/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/jars/spark-catalyst_2.11-2.1.0.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/jars/spark-mllib-local_2.11-2.1.0.jar
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar
@@ -87,34 +103,45 @@ public inherited source dependencies:
 public inherited external dependencies:
 0 items
 member reference internal dependencies:
-9 items
+11 items
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala
-/home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala
+/home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala
 member reference external dependencies:
 0 items
 inheritance internal dependencies:
-2 items
+3 items
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala
 inheritance external dependencies:
 0 items
 class names:
-23 items
+30 items
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> com.lsh.Constants
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> com.lsh.Constants$
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> com.lsh.Drop3
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> com.lsh.Drop3$
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> com.lsh.Drop3$$anonfun$1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> com.lsh.Drop3$$anonfun$knn$1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> com.lsh.Drop3$$typecreator1$1
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> com.lsh.Entropia
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> com.lsh.Entropia$
 /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala -> com.lsh.InstanceSelection
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> com.lsh.LSH
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> com.lsh.LSH$
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> com.lsh.LSH$class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> com.lsh.Mathematics
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> com.lsh.Mathematics$
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> com.lsh.Mathematics$$anonfun$binaryToDec$1
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> com.lsh.RandomHyperplanes
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> com.lsh.RandomHyperplanes$
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> com.lsh.RandomHyperplanes$$anonfun$1
@@ -126,12 +153,11 @@ class names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> com.lsh.RandomHyperplanes$$typecreator1$1
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> com.lsh.Utilities
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> com.lsh.Utilities$
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> com.lsh.Utilities$$anonfun$binaryToDec$1
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> com.lsh.Main
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> com.lsh.Main$
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> com.lsh.Main$$typecreator1$1
 used names:
-458 items
+589 items
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> <init>
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> APP_NAME
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> AnyRef
@@ -145,6 +171,111 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> com
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> lsh
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> scala
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> $m
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> $m$untyped
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> $typecreator1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> $u
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> &&
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> +
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> <byname>
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> <init>
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> <repeated>
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> ==
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> >
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> ?0
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> A
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> A1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Any
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> AnyRef
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Boolean
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Class
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> ClassLoader
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> ClassSymbol
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Column
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> DataFrame
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Dataset
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Double
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Drop3
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Function1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> IllegalArgumentException
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> IndexOutOfBoundsException
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> InstanceSelection
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Int
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Iterator
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> JavaUniverse
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Mathematics
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Mirror
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> None
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Nothing
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Object
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Predef
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Product
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> RT
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Row
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> ScalaRunTime
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Serializable
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Singleton
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Some
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> String
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> T
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> T0
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Type
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> TypeCreator
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> TypeSymbol
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> TypeTag
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> U
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Unit
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Universe
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> UserDefinedFunction
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Vector
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> Vectors
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> _$1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> _hashCode
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> _toString
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> allInstances
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> allNeighbors
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> apache
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> apply
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> asInstanceOf
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> asType
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> com
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> distance
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> eq
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> functions
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> getClass
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> getClassLoader
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> instance
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> instances
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> isInstanceOf
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> keyDistUDF
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> labelInstance
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> limit
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> linalg
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> lsh
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> materializeTypeTag
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> ml
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> numNeighbors
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> org
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> package
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> partiallyDistanceFunction
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> reflect
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> require
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> runtime
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> runtimeMirror
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> scala
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> select
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> sort
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> spark
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> sql
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> staticClass
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> toString
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> toTypeConstructor
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> typedProductIterator
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> udf
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> universe
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> where
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> withColumn
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> ||
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> +
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> <init>
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> <repeated>
@@ -249,6 +380,65 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> spark
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> sql
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> where
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> *
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> +
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> -
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> <
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> <init>
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Any
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> AnyRef
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Array
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Boolean
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Double
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Function1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Inclusive
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Int
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Math
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Mathematics
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Nothing
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Object
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Predef
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Range
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> RichInt
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> U
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Unit
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Vector
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> Vectors
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> a
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> apache
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> apply
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> b
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> by
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> com
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> exp
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> foreach
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> i
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> intWrapper
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> java
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> k
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> lang
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> length
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> linalg
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> lsh
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> math
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> ml
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> numBin
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> numDec
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> org
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> package
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> pow
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> scala
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> size
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> spark
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> sqdist
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> sqrt
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> sum
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> to
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> toDouble
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> toInt
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> while$1
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> x
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> y
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> $m
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> $m$untyped
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> $typecreator1
@@ -286,6 +476,7 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Iterator
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> JavaUniverse
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> LSH
+/home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Mathematics
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Mirror
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> None
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Nothing
@@ -320,7 +511,6 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Unit
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Universe
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> UserDefinedFunction
-/home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Utilities
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Vector
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> Vectors
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> _$1
@@ -398,38 +588,25 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> util
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> withColumn
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> ||
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> *
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> +
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> -
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> <
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> <init>
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> <repeated>
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> APP_NAME
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Any
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> AnyRef
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Array
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Boolean
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Builder
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Constants
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> DataFrame
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Dataset
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Double
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Function1
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Inclusive
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Int
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> MASTER
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Nothing
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Object
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Predef
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Range
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> RichInt
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> SET_OUPUT_COL_ASSEMBLER
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> SparkConf
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> SparkContext
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> SparkSession
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> String
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> U
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Unit
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Utilities
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> Vector
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> VectorAssembler
@@ -437,32 +614,20 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> _$1
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> apache
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> appName
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> apply
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> assembler
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> builder
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> by
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> com
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> conf
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> config
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> df
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> exp
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> feature
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> foreach
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> getOrCreate
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> i
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> intWrapper
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> k
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> length
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> linalg
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> lsh
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> master
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> math
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> ml
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> numBin
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> numDec
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> org
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> package
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> pow
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> scala
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> select
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> selectFeatures
@@ -470,18 +635,10 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> setInputCols
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> setMaster
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> setOutputCol
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> size
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> spark
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> sql
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> sum
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> to
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> toDouble
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> toInt
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> transform
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> vectorDF
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> while$1
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> x
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> y
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> $m
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> $m$untyped
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> $typecreator1
@@ -591,11 +748,16 @@ used names:
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> vectorizedDF
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> write
 product stamps:
-23 items
+30 items
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Constants$.class -> lastModified(1485663941000)
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Constants.class -> lastModified(1485663941000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Entropia$.class -> lastModified(1485677147000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Entropia.class -> lastModified(1485677147000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$$anonfun$1.class -> lastModified(1485766755000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$$anonfun$knn$1.class -> lastModified(1485766755000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$$typecreator1$1.class -> lastModified(1485766755000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$.class -> lastModified(1485766755000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3.class -> lastModified(1485766755000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Entropia$.class -> lastModified(1485734270000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Entropia.class -> lastModified(1485734270000)
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/InstanceSelection.class -> lastModified(1485675491000)
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH$.class -> lastModified(1485643207000)
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH$class.class -> lastModified(1485643207000)
@@ -603,26 +765,30 @@ product stamps:
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main$$typecreator1$1.class -> lastModified(1485643209000)
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main$.class -> lastModified(1485643209000)
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main.class -> lastModified(1485643208000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$1.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$2.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$3.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$4.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$createHiperplanes$1$$anonfun$apply$1.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$createHiperplanes$1.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$typecreator1$1.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes.class -> lastModified(1485662521000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities$$anonfun$binaryToDec$1.class -> lastModified(1485506356000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities$.class -> lastModified(1485506356000)
-/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities.class -> lastModified(1485506356000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Mathematics$$anonfun$binaryToDec$1.class -> lastModified(1485742131000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Mathematics$.class -> lastModified(1485742131000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Mathematics.class -> lastModified(1485742131000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$1.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$2.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$3.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$4.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$createHiperplanes$1$$anonfun$apply$1.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$createHiperplanes$1.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$typecreator1$1.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities$.class -> lastModified(1485741204000)
+/home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities.class -> lastModified(1485741204000)
 source stamps:
-7 items
+9 items
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> hash(b7af0267e39fd4b55efd709c350f8bb593c59999)
-/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> hash(53a5e7aed8187dcbf6762b2b4a11463a08622b47)
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> hash(be3f624736f75a1f504e79b4b00148be20c31ff4)
+/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> hash(f162863de4539580695c128cc76c3d517a70f0ea)
 /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala -> hash(55b18870e9f04844c7b00ea64bdbe7422460b8cc)
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> hash(1349f3714c31bf745d6d73b4695443aa5e934efb)
-/home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> hash(dbd9a7af449b3fdc68768f267228a424782606ba)
-/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> hash(c813d059c2d327bfb4fa9a25b81e2a84d7745d9d)
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> hash(282af4ab59c3007d71402a2996868afdb992428c)
+/home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> hash(2d2e1fafb10ec7e2ffe6332c589c025e7a31767a)
+/home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> hash(7358fc442a185b9fe08752a0c10484587fd8ef51)
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> hash(11e41f7545ccff0e8241b2fbb92e237401457333)
 binary stamps:
 9 items
@@ -638,41 +804,49 @@ binary stamps:
 class names:
 9 items
 /home/skorpionx/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/jars/spark-catalyst_2.11-2.1.0.jar -> org.apache.spark.sql.Row
-/home/skorpionx/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.1.0.jar -> org.apache.spark.SparkConf$
-/home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/jars/spark-mllib-local_2.11-2.1.0.jar -> org.apache.spark.ml.linalg.Vectors$
-/home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib_2.11/jars/spark-mllib_2.11-2.1.0.jar -> org.apache.spark.mllib.tree.impurity.Entropy$
-/home/skorpionx/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar -> org.apache.spark.sql.package$
-/home/skorpionx/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> scala.util.Random
+/home/skorpionx/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.1.0.jar -> org.apache.spark.SparkContext$
+/home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/jars/spark-mllib-local_2.11-2.1.0.jar -> org.apache.spark.ml.linalg.Vector
+/home/skorpionx/.ivy2/cache/org.apache.spark/spark-mllib_2.11/jars/spark-mllib_2.11-2.1.0.jar -> org.apache.spark.ml.feature.VectorAssembler
+/home/skorpionx/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar -> org.apache.spark.sql.Dataset
+/home/skorpionx/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> scala.Product
 /home/skorpionx/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.8.jar -> scala.reflect.api.TypeCreator
 /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH$.class -> com.lsh.LSH$
 /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> java.lang.Object
 internal apis:
-7 items
+9 items
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> 
 rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhw6qk79gAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAZc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwlJ1gJHQABm5vdGlmeXNxAH4ADD3J4bx0AAR3YWl0c3EAfgAMBsMKJ3QADSRhc0luc3RhbmNlT2ZzcQB+AAxEc2WLdAAGZXF1YWxzc3EAfgAMIRpAsnQADGFzSW5zdGFuY2VPZnNxAH4ADCY9yip0AAhBUFBfTkFNRXNxAH4ADCDpExJ0AAlDb25zdGFudHNzcQB+AAzwRccydAAMc3luY2hyb25pemVkc3EAfgAMR4S2ZnQADSRpc0luc3RhbmNlT2ZzcQB+AAysbQavdAARU0VUX09VUFVUX0NPTF9MU0hzcQB+AAzVL+uYdAAFTEFCRUxzcQB+AAy9+2uLdAAJbm90aWZ5QWxsc3EAfgAMYZqv2HQADGlzSW5zdGFuY2VPZnNxAH4ADG9K5Kl0AAI9PXNxAH4ADGfqjDV0AAZNQVNURVJzcQB+AAwadv7BdAAFY2xvbmVzcQB+AAwifuSCdAAIdG9TdHJpbmdzcQB+AAxACeyldAACIT1zcQB+AAyay0UNdAAIZ2V0Q2xhc3NzcQB+AAzmzC2CdAAXU0VUX09VUFVUX0NPTF9BU1NFTUJMRVJzcQB+AAzvMsyEdAACbmVzcQB+AAyEDOi6dAACZXFzcQB+AAx7V1gRdAACIyNzcQB+AAxVuU+adAAIZmluYWxpemVzcQB+AAx0cdNZdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBJeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnOX52HcEyZ7swIAAUIABWZsYWdzeHAAdAARY29tLmxzaC5Db25zdGFudHN1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AGFzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4ASUwACWluaGVyaXRlZHEAfgBJTAAHcGFyZW50c3EAfgBJeHEAfgBmc3EAfgBhdXEAfgBEAAAAAHNxAH4AYXVxAH4ARAAAAABzcQB+AGF1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AGV0AAZPYmplY3RzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AGVzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAANzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABGphdmFzcQB+AH50AARsYW5nc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AH9zcQB+AHJ0AANBbnlzcQB+AHZzcQB+AHl1cQB+AHwAAAACc3EAfgB+dAAFc2NhbGFxAH4AhXVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAACc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQAB2NvbS5sc2hzcQB+AI90AANjb21zcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVnoeLCzdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUt68CZ+Of1LVe/XCcNQ+LtZPFmZk=
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwrw35xAAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAjc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwEZzsdnQAC2tpbGxGcmllbmRzc3EAfgAMbTSkjnQABm5vdGlmeXNxAH4ADI87VfB0AAd1bmFwcGx5c3EAfgAM5kBwPnQABHdhaXRzcQB+AAzomGxtdAANJGFzSW5zdGFuY2VPZnNxAH4ADONpeRF0AAxwcm9kdWN0QXJpdHlzcQB+AAzQ+/E3dAAGZXF1YWxzc3EAfgAM+DVPdHQAEWluc3RhbmNlU2VsZWN0aW9uc3EAfgAMiakQB3QADGFzSW5zdGFuY2VPZnNxAH4ADHC67/R0AAVEcm9wM3NxAH4ADO5JDQR0AANrbm5zcQB+AAzxwbisdAAMc3luY2hyb25pemVkc3EAfgAMRfSADHQADSRpc0luc3RhbmNlT2ZzcQB+AAyRMZgTdAAJaW5zdGFuY2Vzc3EAfgAMII7pg3QACGNhbkVxdWFsc3EAfgAMKhntZHQADXByb2R1Y3RQcmVmaXhzcQB+AAzCVOFldAAJbm90aWZ5QWxsc3EAfgAMp+TLB3QADGlzSW5zdGFuY2VPZnNxAH4ADOYcwH90AAY8aW5pdD5zcQB+AAxzFLDddAAFYXBwbHlzcQB+AAwUN/GKdAACPT1zcQB+AAwFBOoMdAAFY2xvbmVzcQB+AAwsaWxJdAAGJGluaXQkc3EAfgAM5awtOnQABGNvcHlzcQB+AAw0yZO5dAAIdG9TdHJpbmdzcQB+AAw31DMcdAACIT1zcQB+AAyO2pGEdAAIZ2V0Q2xhc3NzcQB+AAz7e4TedAAOY29weSRkZWZhdWx0JDFzcQB+AAxqkaa5dAACbmVzcQB+AAz4OATXdAACZXFzcQB+AAzjKUmjdAAPcHJvZHVjdEl0ZXJhdG9yc3EAfgAMNZz473QAAiMjc3EAfgAMRahn3XQACGZpbmFsaXplc3EAfgAMyQgIMHQADnByb2R1Y3RFbGVtZW50c3EAfgAMkGkWxnQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAnNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AXXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzl+dh3BMme7MCAAFCAAVmbGFnc3hwAHQADWNvbS5sc2guRHJvcDN1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAhDbGFzc0RlZnVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgAheHNidGkuYXBpLkFic3RyYWN0TGF6eSRTdHJpY3RMYXp5DWYcaykWKrgCAAFMAAV2YWx1ZXQAEkxqYXZhL2xhbmcvT2JqZWN0O3hwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AdXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgBdTAAJaW5oZXJpdGVkcQB+AF1MAAdwYXJlbnRzcQB+AF14cQB+AHpzcQB+AHV1cQB+AFgAAAAAc3EAfgB1dXEAfgBYAAAAAHNxAH4AdXVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAAHc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AeXQADFNlcmlhbGl6YWJsZXNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AeXNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAAnNyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AA14cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAFc2NhbGFzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4Ak3NxAH4AhnEAfgCJc3EAfgCKc3EAfgCNdXEAfgCQAAAAA3NxAH4AknQABGphdmFzcQB+AJJ0AAJpb3EAfgCXc3EAfgCGdAAHUHJvZHVjdHEAfgCMc3EAfgCGdAAGRXF1YWxzcQB+AIxzcQB+AIZ0ABFJbnN0YW5jZVNlbGVjdGlvbnNxAH4AinNxAH4AjXVxAH4AkAAAAANzcQB+AJJ0AANjb21zcQB+AJJ0AANsc2hxAH4Al3NxAH4AhnQABk9iamVjdHNxAH4AinNxAH4AjXVxAH4AkAAAAANzcQB+AJJxAH4AnXNxAH4AknQABGxhbmdxAH4Al3NxAH4AhnQAA0FueXEAfgCMc3EAfgBacQB+AGd1cQB+AGgAAAAAc3EAfgBqAHQADWNvbS5sc2guRHJvcDN1cQB+AG0AAAAAfnEAfgBvdAAGTW9kdWxldXEAfgBzAAAAAHNxAH4AdXEAfgB7c3EAfgB1c3EAfgB9c3EAfgB1dXEAfgBYAAAAAHNxAH4AdXVxAH4AWAAAAABzcQB+AHV1cQB+AIQAAAAEc3EAfgCGcQB+AIlzcQB+AIpzcQB+AI11cQB+AJAAAAACc3EAfgCScQB+AJVxAH4Al3NxAH4AhnEAfgCJc3EAfgCKc3EAfgCNdXEAfgCQAAAAA3NxAH4AknEAfgCdc3EAfgCSdAACaW9xAH4Al3NxAH4AhnEAfgCuc3EAfgCKc3EAfgCNdXEAfgCQAAAAA3NxAH4AknEAfgCdc3EAfgCScQB+ALRxAH4Al3NxAH4AhnEAfgC2cQB+AMl1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAdjb20ubHNoc3EAfgDddAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFZ7pmCxXVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADgvaG9tZS9za29ycGlvbngvRXNjcml0b3Jpby9MU0gvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFL4/Ykc291ofUE55tLABSL4gwx/0
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> 
-rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhw8Y4ZXgAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAXc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwT/psxnQABm5vdGlmeXNxAH4ADILQxsZ0AAR3YWl0c3EAfgAMAzaUinQADSRhc0luc3RhbmNlT2ZzcQB+AAzuvqq7dAAGZXF1YWxzc3EAfgAM1kDAuXQAEWluc3RhbmNlU2VsZWN0aW9uc3EAfgAMV864k3QADGFzSW5zdGFuY2VPZnNxAH4ADHfuQYV0AAhFbnRyb3BpYXNxAH4ADEXhED10AAxzeW5jaHJvbml6ZWRzcQB+AAzNI/7pdAANJGlzSW5zdGFuY2VPZnNxAH4ADBGK2zp0AAlub3RpZnlBbGxzcQB+AAzUjttYdAAMaXNJbnN0YW5jZU9mc3EAfgAMXv68PHQADnRvdGFsSW5zdGFuY2Vzc3EAfgAMNTLTenQAAj09c3EAfgAM4WOuvHQABWNsb25lc3EAfgAM9/YqNXQACHRvU3RyaW5nc3EAfgAM98UNIXQAAiE9c3EAfgAMIZppiXQAEGNhbGN1bGFyRW50cm9waWFzcQB+AAyODMzSdAAIZ2V0Q2xhc3NzcQB+AAzQ5umodAACbmVzcQB+AAzNs7//dAACZXFzcQB+AAyZmChYdAACIyNzcQB+AAzHlW/jdAAIZmluYWxpemVzcQB+AAz6m8TKdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBFeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnOX52HcEyZ7swIAAUIABWZsYWdzeHAAdAAQY29tLmxzaC5FbnRyb3BpYXVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABk1vZHVsZXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgAheHNidGkuYXBpLkFic3RyYWN0TGF6eSRTdHJpY3RMYXp5DWYcaykWKrgCAAFMAAV2YWx1ZXQAEkxqYXZhL2xhbmcvT2JqZWN0O3hwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AXXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgBFTAAJaW5oZXJpdGVkcQB+AEVMAAdwYXJlbnRzcQB+AEV4cQB+AGJzcQB+AF11cQB+AEAAAAAAc3EAfgBddXEAfgBAAAAAAHNxAH4AXXVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAADc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AYXQAEUluc3RhbmNlU2VsZWN0aW9uc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBhc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AANjb21zcQB+AHp0AANsc2hzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4Ae3NxAH4AbnQABk9iamVjdHNxAH4AcnNxAH4AdXVxAH4AeAAAAANzcQB+AHp0AARqYXZhc3EAfgB6dAAEbGFuZ3EAfgCBc3EAfgBudAADQW55c3EAfgByc3EAfgB1dXEAfgB4AAAAAnNxAH4AenQABXNjYWxhcQB+AIF1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAdjb20ubHNoc3EAfgCUdAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFZ6UIxFHVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADgvaG9tZS9za29ycGlvbngvRXNjcml0b3Jpby9MU0gvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFFOl567YGH3L9nYrK0oRRjoIYitH
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhw8Y4ZXgAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAXc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwT/psxnQABm5vdGlmeXNxAH4ADILQxsZ0AAR3YWl0c3EAfgAMAzaUinQADSRhc0luc3RhbmNlT2ZzcQB+AAzuvqq7dAAGZXF1YWxzc3EAfgAM1kDAuXQAEWluc3RhbmNlU2VsZWN0aW9uc3EAfgAMV864k3QADGFzSW5zdGFuY2VPZnNxAH4ADHfuQYV0AAhFbnRyb3BpYXNxAH4ADEXhED10AAxzeW5jaHJvbml6ZWRzcQB+AAzNI/7pdAANJGlzSW5zdGFuY2VPZnNxAH4ADBGK2zp0AAlub3RpZnlBbGxzcQB+AAzUjttYdAAMaXNJbnN0YW5jZU9mc3EAfgAMXv68PHQADnRvdGFsSW5zdGFuY2Vzc3EAfgAMNTLTenQAAj09c3EAfgAM4WOuvHQABWNsb25lc3EAfgAM9/YqNXQACHRvU3RyaW5nc3EAfgAM98UNIXQAAiE9c3EAfgAMIZppiXQAEGNhbGN1bGFyRW50cm9waWFzcQB+AAyODMzSdAAIZ2V0Q2xhc3NzcQB+AAzQ5umodAACbmVzcQB+AAzNs7//dAACZXFzcQB+AAyZmChYdAACIyNzcQB+AAzHlW/jdAAIZmluYWxpemVzcQB+AAz6m8TKdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBFeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnOX52HcEyZ7swIAAUIABWZsYWdzeHAAdAAQY29tLmxzaC5FbnRyb3BpYXVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABk1vZHVsZXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgAheHNidGkuYXBpLkFic3RyYWN0TGF6eSRTdHJpY3RMYXp5DWYcaykWKrgCAAFMAAV2YWx1ZXQAEkxqYXZhL2xhbmcvT2JqZWN0O3hwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AXXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgBFTAAJaW5oZXJpdGVkcQB+AEVMAAdwYXJlbnRzcQB+AEV4cQB+AGJzcQB+AF11cQB+AEAAAAAAc3EAfgBddXEAfgBAAAAAAHNxAH4AXXVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAADc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AYXQAEUluc3RhbmNlU2VsZWN0aW9uc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBhc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AANjb21zcQB+AHp0AANsc2hzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4Ae3NxAH4AbnQABk9iamVjdHNxAH4AcnNxAH4AdXVxAH4AeAAAAANzcQB+AHp0AARqYXZhc3EAfgB6dAAEbGFuZ3EAfgCBc3EAfgBudAADQW55c3EAfgByc3EAfgB1dXEAfgB4AAAAAnNxAH4AenQABXNjYWxhcQB+AIF1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAdjb20ubHNoc3EAfgCUdAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFZ7KnCpXVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADgvaG9tZS9za29ycGlvbngvRXNjcml0b3Jpby9MU0gvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFPFihj3kU5WAaVwSjMdsPVF6cPDq
 /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala -> 
 rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwLekDoAAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAVc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwJ6p25nQAEUluc3RhbmNlU2VsZWN0aW9uc3EAfgAMvaWwIXQABm5vdGlmeXNxAH4ADAk8O0N0AAR3YWl0c3EAfgAMTPgf4HQADSRhc0luc3RhbmNlT2ZzcQB+AAx8vI8gdAAGZXF1YWxzc3EAfgAMRFaXrXQAEWluc3RhbmNlU2VsZWN0aW9uc3EAfgAMORzrKXQADGFzSW5zdGFuY2VPZnNxAH4ADEmTwVR0AAxzeW5jaHJvbml6ZWRzcQB+AAwGnavfdAANJGlzSW5zdGFuY2VPZnNxAH4ADCCCbjV0AAlub3RpZnlBbGxzcQB+AAwHEUecdAAMaXNJbnN0YW5jZU9mc3EAfgAMFvJfBHQAAj09c3EAfgAMDsBQHXQABWNsb25lc3EAfgAMT0q73HQACHRvU3RyaW5nc3EAfgAMXEa4JXQAAiE9c3EAfgAMm9IXNnQACGdldENsYXNzc3EAfgAMRM1it3QAAm5lc3EAfgAMdwHx6nQAAmVxc3EAfgAMAhU+dHQAAiMjc3EAfgAMU7VUxXQACGZpbmFsaXplc3EAfgAMuxs5PHQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AQXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzl+dh3BMme7MCAAFCAAVmbGFnc3hwAXQAGWNvbS5sc2guSW5zdGFuY2VTZWxlY3Rpb251cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAVUcmFpdHVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgAheHNidGkuYXBpLkFic3RyYWN0TGF6eSRTdHJpY3RMYXp5DWYcaykWKrgCAAFMAAV2YWx1ZXQAEkxqYXZhL2xhbmcvT2JqZWN0O3hwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AWXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgBBTAAJaW5oZXJpdGVkcQB+AEFMAAdwYXJlbnRzcQB+AEF4cQB+AF5zcQB+AFl1cQB+ADwAAAAAc3EAfgBZdXEAfgA8AAAAAHNxAH4AWXVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAACc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AXXQABk9iamVjdHNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AXXNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAA3NyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AA14cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAEamF2YXNxAH4AdnQABGxhbmdzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4Ad3NxAH4AanQAA0FueXNxAH4AbnNxAH4AcXVxAH4AdAAAAAJzcQB+AHZ0AAVzY2FsYXEAfgB9dXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAJzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADXhwdAAHY29tLmxzaHNxAH4Ah3QAA2NvbXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWeko6iR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA4L2hvbWUvc2tvcnBpb254L0VzY3JpdG9yaW8vTFNIL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABRVsYhw6fBIRMewDqZL2+dCJGC4zA==
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> 
 rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhw1trdaAAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAec3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwIIRVrHQAC2tleURpc3RhbmNlc3EAfgAMgHYnZXQABm5vdGlmeXNxAH4ADCasL+B0AAR3YWl0c3EAfgAM+vcb2nQADSRhc0luc3RhbmNlT2ZzcQB+AAzk98NydAADTFNIc3EAfgAMlu3R43QABmVxdWFsc3NxAH4ADAzapld0AA1udW1IYXNoVGFibGVzc3EAfgAMEDxYp3QADGFzSW5zdGFuY2VPZnNxAH4ADBy/ilR0AANsc2hzcQB+AAwjXkN3dAAMc3luY2hyb25pemVkc3EAfgAMKufx4nQADSRpc0luc3RhbmNlT2ZzcQB+AAw2PI3ydAAJbm90aWZ5QWxsc3EAfgAMxV9CnXQAB2dldEtleXNzcQB+AAznPEbTdAAMaXNJbnN0YW5jZU9mc3EAfgAM9HdaRHQABXNwYXJrc3EAfgAM1H6/X3QAD2dyb3VwRm9yQnVja2V0c3NxAH4ADLpvCiR0AAI9PXNxAH4ADF1EZeN0AAVjbG9uZXNxAH4ADI6964N0AAYkaW5pdCRzcQB+AAxlXUa5dAAHZGF0YXNldHNxAH4ADHu7JQ10AApmaW5kQnVja2V0c3EAfgAMfPtLBHQACHRvU3RyaW5nc3EAfgAMWdw01XQAAiE9c3EAfgAMDvOxHXQACGdldENsYXNzc3EAfgAMVwQj+nQADGhhc2hGdW5jdGlvbnNxAH4ADMQ/FYl0AAJuZXNxAH4ADLIV2iN0AAJlcXNxAH4ADOoxMA50AAIjI3NxAH4ADEm3RfF0AAhmaW5hbGl6ZXNxAH4ADIBLKbt0AAhoYXNoQ29kZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAJzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AFN4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc5fnYdwTJnuzAgABQgAFZmxhZ3N4cAF0AAtjb20ubHNoLkxTSHVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABVRyYWl0dXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyACF4c2J0aS5hcGkuQWJzdHJhY3RMYXp5JFN0cmljdExhenkNZhxrKRYquAIAAUwABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBrc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AFNMAAlpbmhlcml0ZWRxAH4AU0wAB3BhcmVudHNxAH4AU3hxAH4AcHNxAH4Aa3VxAH4ATgAAAABzcQB+AGt1cQB+AE4AAAAAc3EAfgBrdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgBvdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBvc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgCIdAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCJc3EAfgB8dAADQW55c3EAfgCAc3EAfgCDdXEAfgCGAAAAAnNxAH4AiHQABXNjYWxhcQB+AI9zcQB+AFBxAH4AXXVxAH4AXgAAAABzcQB+AGAAdAALY29tLmxzaC5MU0h1cQB+AGMAAAAAfnEAfgBldAAGTW9kdWxldXEAfgBpAAAAAHNxAH4Aa3EAfgBxc3EAfgBrc3EAfgBzc3EAfgBrdXEAfgBOAAAAAHNxAH4Aa3VxAH4ATgAAAABzcQB+AGt1cQB+AHoAAAACc3EAfgB8cQB+AH9zcQB+AIBzcQB+AIN1cQB+AIYAAAADc3EAfgCIcQB+AItzcQB+AIhxAH4AjXEAfgCPc3EAfgB8cQB+AJFzcQB+AIBzcQB+AIN1cQB+AIYAAAACc3EAfgCIcQB+AJZxAH4Aj3VyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAACc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQAB2NvbS5sc2hzcQB+ALV0AANjb21zcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAVnnPE/OdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUE0nzcUwxv3RdbXO0aVRDql6TTvs=
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwI3m5/gAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAXc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwj/Dp6HQABm5vdGlmeXNxAH4ADHG2ubx0AANkb3RzcQB+AAyK+jAGdAAEd2FpdHNxAH4ADKc0/al0AA0kYXNJbnN0YW5jZU9mc3EAfgAMZcjgu3QABmVxdWFsc3NxAH4ADLK5lgB0AAxhc0luc3RhbmNlT2ZzcQB+AAwRyFd5dAAMc3luY2hyb25pemVkc3EAfgAMORPWEnQADSRpc0luc3RhbmNlT2ZzcQB+AAydgEm0dAAJbm90aWZ5QWxsc3EAfgAM2fqyinQADGlzSW5zdGFuY2VPZnNxAH4ADGdA9Ol0AAtiaW5hcnlUb0RlY3NxAH4ADDOox9d0AAI9PXNxAH4ADO8crUR0AAVjbG9uZXNxAH4ADILvhpB0AAh0b1N0cmluZ3NxAH4ADEnbtxt0AAIhPXNxAH4ADIKqpTx0AAtNYXRoZW1hdGljc3NxAH4ADHvh0uZ0AAhnZXRDbGFzc3NxAH4ADFwO3PN0AAJuZXNxAH4ADDtY3wp0AAJlcXNxAH4ADHY+bfh0AAhkaXN0YW5jZXNxAH4ADExTPgx0AAIjI3NxAH4ADA6bHWB0AAhmaW5hbGl6ZXNxAH4ADIN8MoR0AAhoYXNoQ29kZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AEV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc5fnYdwTJnuzAgABQgAFZmxhZ3N4cAB0ABNjb20ubHNoLk1hdGhlbWF0aWNzdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyACF4c2J0aS5hcGkuQWJzdHJhY3RMYXp5JFN0cmljdExhenkNZhxrKRYquAIAAUwABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBdc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AEVMAAlpbmhlcml0ZWRxAH4ARUwAB3BhcmVudHNxAH4ARXhxAH4AYnNxAH4AXXVxAH4AQAAAAABzcQB+AF11cQB+AEAAAAAAc3EAfgBddXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgBhdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBhc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgB6dAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgB7c3EAfgBudAADQW55c3EAfgByc3EAfgB1dXEAfgB4AAAAAnNxAH4AenQABXNjYWxhcQB+AIF1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAdjb20ubHNoc3EAfgCLdAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFZ7SHFp3VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADgvaG9tZS9za29ycGlvbngvRXNjcml0b3Jpby9MU0gvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFCgq9KtZwwB9cUAqKZaGiv25kkKM
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> 
-rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwdKPVMwAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAtc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwN7xDuHQAC2tleURpc3RhbmNlc3EAfgAMRzvUzXQABm5vdGlmeXNxAH4ADOBoo0J0AAR3YWl0c3EAfgAMOcOEFnQAEVJhbmRvbUh5cGVycGxhbmVzc3EAfgAMfvtER3QADmNvcHkkZGVmYXVsdCQyc3EAfgAMeNLsJXQADSRhc0luc3RhbmNlT2ZzcQB+AAz1s26OdAAKZGF0YXNldF9SSHNxAH4ADJJOAlF0AAxwcm9kdWN0QXJpdHlzcQB+AAxLfcjsdAAGZXF1YWxzc3EAfgAMCe15eHQADW51bUhhc2hUYWJsZXNzcQB+AAyG5TDvdAAMYXNJbnN0YW5jZU9mc3EAfgAM6VgAwXQAA2xzaHNxAH4ADPs5fdR0AAxzeW5jaHJvbml6ZWRzcQB+AAytugcndAANJGlzSW5zdGFuY2VPZnNxAH4ADG1D6Mx0AAhjYW5FcXVhbHNxAH4ADHVWNSt0AA1wcm9kdWN0UHJlZml4c3EAfgAMqjrl83QAEWNyZWF0ZUhpcGVycGxhbmVzc3EAfgAMRcqNnXQACW5vdGlmeUFsbHNxAH4ADEbo4Md0AAxpc0luc3RhbmNlT2ZzcQB+AAwEihY1dAAQbnVtSGFzaFRhYmxlc19SSHNxAH4ADMofTxF0AAY8aW5pdD5zcQB+AAyWDYrldAAFc3BhcmtzcQB+AAxbXTZbdAAPZ3JvdXBGb3JCdWNrZXRzc3EAfgAMxB0SXXQAAj09c3EAfgAMJeZemnQABWNsb25lc3EAfgAM1hJ/rHQABiRpbml0JHNxAH4ADPT+ORF0AA5nZXRIeXBlcnBsYW5lc3NxAH4ADF8OCjp0AAdkYXRhc2V0c3EAfgAMWeG/GHQADmNvcHkkZGVmYXVsdCQzc3EAfgAM2mofF3QABGNvcHlzcQB+AAxc0zjVdAAIc3BhcmtfUkhzcQB+AAzbtvMwdAAIdG9TdHJpbmdzcQB+AAz/MpAIdAACIT1zcQB+AAxGzo65dAAIZ2V0Q2xhc3NzcQB+AAxfMU8ndAAOY29weSRkZWZhdWx0JDFzcQB+AAzp4sJydAAMaGFzaEZ1bmN0aW9uc3EAfgAMNuurcHQAAm5lc3EAfgAMozttxXQAAmVxc3EAfgAMK+kMUnQAD3Byb2R1Y3RJdGVyYXRvcnNxAH4ADBJnSfJ0AAIjI3NxAH4ADLqbzXh0AAhmaW5hbGl6ZXNxAH4ADJs7U5l0AA5wcm9kdWN0RWxlbWVudHNxAH4ADFg5s1l0AAhoYXNoQ29kZXNxAH4ADPtzLGh0AA5zZXRIeXBlcnBsYW5lc3NxAH4ADDjXyTN0AAtoeXBlcnBsYW5lc3NyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AHF4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc5fnYdwTJnuzAgABQgAFZmxhZ3N4cAB0ABljb20ubHNoLlJhbmRvbUh5cGVycGxhbmVzdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAIQ2xhc3NEZWZ1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AIlzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AcUwACWluaGVyaXRlZHEAfgBxTAAHcGFyZW50c3EAfgBxeHEAfgCOc3EAfgCJdXEAfgBsAAAAAHNxAH4AiXVxAH4AbAAAAABzcQB+AIl1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAB3NyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AI10AAxTZXJpYWxpemFibGVzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AI1zcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AKdzcQB+AJpxAH4AnXNxAH4AnnNxAH4AoXVxAH4ApAAAAANzcQB+AKZ0AARqYXZhc3EAfgCmdAACaW9xAH4Aq3NxAH4AmnQAB1Byb2R1Y3RxAH4AoHNxAH4AmnQABkVxdWFsc3EAfgCgc3EAfgCadAADTFNIc3EAfgCec3EAfgChdXEAfgCkAAAAA3NxAH4ApnQAA2NvbXNxAH4ApnQAA2xzaHEAfgCrc3EAfgCadAAGT2JqZWN0c3EAfgCec3EAfgChdXEAfgCkAAAAA3NxAH4ApnEAfgCxc3EAfgCmdAAEbGFuZ3EAfgCrc3EAfgCadAADQW55cQB+AKB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAdjb20ubHNoc3EAfgDNdAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFZ6GL/x3VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADgvaG9tZS9za29ycGlvbngvRXNjcml0b3Jpby9MU0gvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFNvZp69Emz/caHaPJnIopCR4Jga6
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwdKPVMwAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAtc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwN7xDuHQAC2tleURpc3RhbmNlc3EAfgAMRzvUzXQABm5vdGlmeXNxAH4ADOBoo0J0AAR3YWl0c3EAfgAMOcOEFnQAEVJhbmRvbUh5cGVycGxhbmVzc3EAfgAMfvtER3QADmNvcHkkZGVmYXVsdCQyc3EAfgAMeNLsJXQADSRhc0luc3RhbmNlT2ZzcQB+AAz1s26OdAAKZGF0YXNldF9SSHNxAH4ADJJOAlF0AAxwcm9kdWN0QXJpdHlzcQB+AAxLfcjsdAAGZXF1YWxzc3EAfgAMCe15eHQADW51bUhhc2hUYWJsZXNzcQB+AAyG5TDvdAAMYXNJbnN0YW5jZU9mc3EAfgAM6VgAwXQAA2xzaHNxAH4ADPs5fdR0AAxzeW5jaHJvbml6ZWRzcQB+AAytugcndAANJGlzSW5zdGFuY2VPZnNxAH4ADG1D6Mx0AAhjYW5FcXVhbHNxAH4ADHVWNSt0AA1wcm9kdWN0UHJlZml4c3EAfgAMqjrl83QAEWNyZWF0ZUhpcGVycGxhbmVzc3EAfgAMRcqNnXQACW5vdGlmeUFsbHNxAH4ADEbo4Md0AAxpc0luc3RhbmNlT2ZzcQB+AAwEihY1dAAQbnVtSGFzaFRhYmxlc19SSHNxAH4ADMofTxF0AAY8aW5pdD5zcQB+AAyWDYrldAAFc3BhcmtzcQB+AAxbXTZbdAAPZ3JvdXBGb3JCdWNrZXRzc3EAfgAMxB0SXXQAAj09c3EAfgAMJeZemnQABWNsb25lc3EAfgAM1hJ/rHQABiRpbml0JHNxAH4ADPT+ORF0AA5nZXRIeXBlcnBsYW5lc3NxAH4ADF8OCjp0AAdkYXRhc2V0c3EAfgAMWeG/GHQADmNvcHkkZGVmYXVsdCQzc3EAfgAM2mofF3QABGNvcHlzcQB+AAxc0zjVdAAIc3BhcmtfUkhzcQB+AAzbtvMwdAAIdG9TdHJpbmdzcQB+AAz/MpAIdAACIT1zcQB+AAxGzo65dAAIZ2V0Q2xhc3NzcQB+AAxfMU8ndAAOY29weSRkZWZhdWx0JDFzcQB+AAzp4sJydAAMaGFzaEZ1bmN0aW9uc3EAfgAMNuurcHQAAm5lc3EAfgAMozttxXQAAmVxc3EAfgAMK+kMUnQAD3Byb2R1Y3RJdGVyYXRvcnNxAH4ADBJnSfJ0AAIjI3NxAH4ADLqbzXh0AAhmaW5hbGl6ZXNxAH4ADJs7U5l0AA5wcm9kdWN0RWxlbWVudHNxAH4ADFg5s1l0AAhoYXNoQ29kZXNxAH4ADPtzLGh0AA5zZXRIeXBlcnBsYW5lc3NxAH4ADDjXyTN0AAtoeXBlcnBsYW5lc3NyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AHF4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc5fnYdwTJnuzAgABQgAFZmxhZ3N4cAB0ABljb20ubHNoLlJhbmRvbUh5cGVycGxhbmVzdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAIQ2xhc3NEZWZ1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AIlzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AcUwACWluaGVyaXRlZHEAfgBxTAAHcGFyZW50c3EAfgBxeHEAfgCOc3EAfgCJdXEAfgBsAAAAAHNxAH4AiXVxAH4AbAAAAABzcQB+AIl1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAB3NyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AI10AAxTZXJpYWxpemFibGVzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AI1zcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AKdzcQB+AJpxAH4AnXNxAH4AnnNxAH4AoXVxAH4ApAAAAANzcQB+AKZ0AARqYXZhc3EAfgCmdAACaW9xAH4Aq3NxAH4AmnQAB1Byb2R1Y3RxAH4AoHNxAH4AmnQABkVxdWFsc3EAfgCgc3EAfgCadAADTFNIc3EAfgCec3EAfgChdXEAfgCkAAAAA3NxAH4ApnQAA2NvbXNxAH4ApnQAA2xzaHEAfgCrc3EAfgCadAAGT2JqZWN0c3EAfgCec3EAfgChdXEAfgCkAAAAA3NxAH4ApnEAfgCxc3EAfgCmdAAEbGFuZ3EAfgCrc3EAfgCadAADQW55cQB+AKB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAdjb20ubHNoc3EAfgDNdAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFZ7ROhpHVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADgvaG9tZS9za29ycGlvbngvRXNjcml0b3Jpby9MU0gvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFC0uH6+xDsfi/+YzLFicAl56MXZ6
 /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala -> 
-rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwIsn9IAAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAZc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwGggnGnQABm5vdGlmeXNxAH4ADGZAGih0AANkb3RzcQB+AAzHvc9edAAEd2FpdHNxAH4ADNY6i310AA0kYXNJbnN0YW5jZU9mc3EAfgAMD+vyf3QABmVxdWFsc3NxAH4ADPdPhGp0AAxhc0luc3RhbmNlT2ZzcQB+AAyXpgQydAAMc3luY2hyb25pemVkc3EAfgAMyx5BDXQADSRpc0luc3RhbmNlT2ZzcQB+AAyuENOudAAQaW5pdFNwYXJrQ29udGV4dHNxAH4ADL+wq/h0AAlub3RpZnlBbGxzcQB+AAyOWyEBdAAMaXNJbnN0YW5jZU9mc3EAfgAMBPdPsHQAC2JpbmFyeVRvRGVjc3EAfgAMbDB3onQAAj09c3EAfgAMj3/HLHQAEGluaXRTcGFya1Nlc3Npb25zcQB+AAzMpA5ydAAFY2xvbmVzcQB+AAzJa+uFdAAJVXRpbGl0aWVzc3EAfgAMle2Fw3QACHRvU3RyaW5nc3EAfgAMh7QTbHQAFWNyZWF0ZVZlY3RvckRhdGFmcmFtZXNxAH4ADBEJVDp0AAIhPXNxAH4ADDh1fpF0AAhnZXRDbGFzc3NxAH4ADCq7nKB0AAJuZXNxAH4ADIWS4yF0AAJlcXNxAH4ADG/xYlB0AAIjI3NxAH4ADN4WSMF0AAhmaW5hbGl6ZXNxAH4ADBHZDwN0AAhoYXNoQ29kZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AEl4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc5fnYdwTJnuzAgABQgAFZmxhZ3N4cAB0ABFjb20ubHNoLlV0aWxpdGllc3VyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABk1vZHVsZXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgAheHNidGkuYXBpLkFic3RyYWN0TGF6eSRTdHJpY3RMYXp5DWYcaykWKrgCAAFMAAV2YWx1ZXQAEkxqYXZhL2xhbmcvT2JqZWN0O3hwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AYXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgBJTAAJaW5oZXJpdGVkcQB+AElMAAdwYXJlbnRzcQB+AEl4cQB+AGZzcQB+AGF1cQB+AEQAAAAAc3EAfgBhdXEAfgBEAAAAAHNxAH4AYXVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAACc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AZXQABk9iamVjdHNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AZXNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAA3NyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AA14cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAEamF2YXNxAH4AfnQABGxhbmdzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4Af3NxAH4AcnQAA0FueXNxAH4AdnNxAH4AeXVxAH4AfAAAAAJzcQB+AH50AAVzY2FsYXEAfgCFdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAJzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADXhwdAAHY29tLmxzaHNxAH4Aj3QAA2NvbXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWd8UHoZ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA4L2hvbWUvc2tvcnBpb254L0VzY3JpdG9yaW8vTFNIL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABTIE9BZwtMnv7T6miW4HiqE13RdnQ==
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwqqmUhwAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAXc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwGggnGnQABm5vdGlmeXNxAH4ADMe9z150AAR3YWl0c3EAfgAM1jqLfXQADSRhc0luc3RhbmNlT2ZzcQB+AAwP6/J/dAAGZXF1YWxzc3EAfgAM90+EanQADGFzSW5zdGFuY2VPZnNxAH4ADJemBDJ0AAxzeW5jaHJvbml6ZWRzcQB+AAzLHkENdAANJGlzSW5zdGFuY2VPZnNxAH4ADK4Q0650ABBpbml0U3BhcmtDb250ZXh0c3EAfgAMv7Cr+HQACW5vdGlmeUFsbHNxAH4ADI5bIQF0AAxpc0luc3RhbmNlT2ZzcQB+AAxsMHeidAACPT1zcQB+AAyPf8csdAAQaW5pdFNwYXJrU2Vzc2lvbnNxAH4ADMykDnJ0AAVjbG9uZXNxAH4ADMlr64V0AAlVdGlsaXRpZXNzcQB+AAyV7YXDdAAIdG9TdHJpbmdzcQB+AAyHtBNsdAAVY3JlYXRlVmVjdG9yRGF0YWZyYW1lc3EAfgAMEQlUOnQAAiE9c3EAfgAMOHV+kXQACGdldENsYXNzc3EAfgAMKrucoHQAAm5lc3EAfgAMhZLjIXQAAmVxc3EAfgAMb/FiUHQAAiMjc3EAfgAM3hZIwXQACGZpbmFsaXplc3EAfgAMEdkPA3QACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4ARXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzl+dh3BMme7MCAAFCAAVmbGFnc3hwAHQAEWNvbS5sc2guVXRpbGl0aWVzdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyACF4c2J0aS5hcGkuQWJzdHJhY3RMYXp5JFN0cmljdExhenkNZhxrKRYquAIAAUwABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBdc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AEVMAAlpbmhlcml0ZWRxAH4ARUwAB3BhcmVudHNxAH4ARXhxAH4AYnNxAH4AXXVxAH4AQAAAAABzcQB+AF11cQB+AEAAAAAAc3EAfgBddXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgBhdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBhc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgB6dAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgB7c3EAfgBudAADQW55c3EAfgByc3EAfgB1dXEAfgB4AAAAAnNxAH4AenQABXNjYWxhcQB+AIF1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAnNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAdjb20ubHNoc3EAfgCLdAADY29tc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFZ7ROhpHVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADgvaG9tZS9za29ycGlvbngvRXNjcml0b3Jpby9MU0gvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFHNY/EQqGFuf4IdSoMEEhFh/2O9R
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> 
 rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwwL3+vAAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAVc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hw0NcKW3QABm5vdGlmeXNxAH4ADJSB5wB0AAR3YWl0c3EAfgAMEpizpHQADSRhc0luc3RhbmNlT2ZzcQB+AAxj6AcNdAAGZXF1YWxzc3EAfgAMTV+6aXQADGFzSW5zdGFuY2VPZnNxAH4ADA7aA+50AAxzeW5jaHJvbml6ZWRzcQB+AAzq6HffdAANJGlzSW5zdGFuY2VPZnNxAH4ADHkDUYp0AARtYWluc3EAfgAMHrWFknQACW5vdGlmeUFsbHNxAH4ADKnbLmB0AAxpc0luc3RhbmNlT2ZzcQB+AAz5u2LydAACPT1zcQB+AAwQ1feSdAAFY2xvbmVzcQB+AAxOOEfzdAAETWFpbnNxAH4ADFAIlUF0AAh0b1N0cmluZ3NxAH4ADAgpy150AAIhPXNxAH4ADE+CP0B0AAhnZXRDbGFzc3NxAH4ADJyD54d0AAJuZXNxAH4ADHMCtyR0AAJlcXNxAH4ADNjEuAN0AAIjI3NxAH4ADItAeGF0AAhmaW5hbGl6ZXNxAH4ADOJIhq10AAhoYXNoQ29kZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AEF4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc5fnYdwTJnuzAgABQgAFZmxhZ3N4cAB0AAxjb20ubHNoLk1haW51cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AFlzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AQUwACWluaGVyaXRlZHEAfgBBTAAHcGFyZW50c3EAfgBBeHEAfgBec3EAfgBZdXEAfgA8AAAAAXNyAA14c2J0aS5hcGkuRGVmUr6f4ny0NmkCAAJMAApyZXR1cm5UeXBldAAQTHhzYnRpL2FwaS9UeXBlO1sAD3ZhbHVlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1BhcmFtZXRlckxpc3Q7eHEAfgBCcQB+AEt1cQB+AEwAAAAAc3EAfgBOAHEAfgAddXEAfgBRAAAAAHNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AF10AARVbml0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBdc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgB5dXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AA1MAAN0cGVxAH4AZnhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AVHQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4AbVsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4AXXNxAH4AbHQABUFycmF5cQB+AHJ1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAXNxAH4AbHQABlN0cmluZ3NxAH4AcHNxAH4Ac3VxAH4AdgAAAANzcQB+AHh0AARqYXZhc3EAfgB4dAAEbGFuZ3EAfgB9c3EAfgBZdXEAfgA8AAAAAHNxAH4AWXVxAH4AkQAAAAJzcQB+AGx0AAZPYmplY3RxAH4AlXNxAH4AbHQAA0FueXEAfgBydXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAJzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADXhwdAAHY29tLmxzaHNxAH4ApnQAA2NvbXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWec8VDt1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA4L2hvbWUvc2tvcnBpb254L0VzY3JpdG9yaW8vTFNIL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABQR5B91Rcz/DoJBsvu5LiN0AUVzMw==
 external apis:
 0 items
 source infos:
-7 items
+9 items
 /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala -> 
+AAAAAAAAAAA=
+/home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala -> 
 AAAAAAAAAAA=
 /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala -> 
 AAAAAAAAAAA=
 /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala -> 
 AAAAAAAAAAA=
 /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala -> 
+AAAAAAAAAAA=
+/home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala -> 
 AAAAAAAAAAA=
 /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala -> 
 AAAAAAAAAAA=
@@ -681,7 +855,7 @@ AAAAAAAAAAA=
 /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala -> 
 AAAAAAAAAAA=
 compilations:
-52 items
+72 items
 00 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWd8UHoZ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
 01 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWd8WKdB1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
 02 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWd8aLbV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
@@ -734,3 +908,23 @@ compilations:
 49 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWek2aup1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
 50 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWek3c3R1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
 51 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWelCMRR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+52 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWeypwqV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+53 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWeysbpV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+54 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWeyuQed1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+55 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWezBY7N1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+56 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWez+RI51cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+57 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe0KFe51cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+58 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe0OEyN1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+59 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe0ToaR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+60 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe0dgOB1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+61 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe0hxad1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+62 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe03tPp1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+63 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe04Wkp1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+64 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe1Cpcx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+65 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe19/4R1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+66 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe1+XDN1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+67 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe5MNJl1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+68 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe51T/p1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+69 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe510rl1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+70 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe6S9CJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==
+71 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABWe6ZgsV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAOC9ob21lL3Nrb3JwaW9ueC9Fc2NyaXRvcmlvL0xTSC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==

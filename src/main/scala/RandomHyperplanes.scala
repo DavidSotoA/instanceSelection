@@ -49,8 +49,8 @@ case class RandomHyperplanes(
          0
        }
      }
-     val binSignature = hashFunctions.map(hash => signature(Utilities.dot(hash, instance)))
-     Utilities.binaryToDec(binSignature)
+     val binSignature = hashFunctions.map(hash => signature(Mathematics.dot(hash, instance)))
+     Mathematics.binaryToDec(binSignature)
   }
 
   override def keyDistance(x: Vector, y: Vector): Array[Array[Vector]] = {

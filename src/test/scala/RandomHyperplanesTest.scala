@@ -2,6 +2,7 @@ package com.test
 
 import com.lsh.Constants
 import com.lsh.LSH
+import com.lsh.Mathematics
 import com.lsh.RandomHyperplanes
 import com.lsh.Utilities
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
@@ -59,19 +60,19 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
     val x = Vectors.dense(1.0, 0.5, 3.0)
     val y = Array(Vectors.dense(4.0, -4.0, 1.0), Vectors.dense(-4.0, -4.0, 1.0),
       Vectors.dense(6.0, -4.0, 1.0), Vectors.dense(4.0, -14.0, 1.0))
-    assert(Utilities.dot(x, y(0)) == 5)
-    assert(Utilities.dot(x, y(1)) == -3)
-    assert(Utilities.dot(x, y(2)) == 7)
-    assert(Utilities.dot(x, y(3)) == 0)
+    assert(Mathematics.dot(x, y(0)) == 5)
+    assert(Mathematics.dot(x, y(1)) == -3)
+    assert(Mathematics.dot(x, y(2)) == 7)
+    assert(Mathematics.dot(x, y(3)) == 0)
   }
 
   test("Se convierte de binario a decimal") {
     val numBin = Array(Array(1, 0, 1, 1), Array(1, 1, 0, 1, 0, 1, 1),
       Array(0, 0, 0, 0), Array(1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1))
-    assert(Utilities.binaryToDec(numBin(0)) == 11)
-    assert(Utilities.binaryToDec(numBin(1)) == 107)
-    assert(Utilities.binaryToDec(numBin(2)) == 0)
-    assert(Utilities.binaryToDec(numBin(3)) == 13765)
+    assert(Mathematics.binaryToDec(numBin(0)) == 11)
+    assert(Mathematics.binaryToDec(numBin(1)) == 107)
+    assert(Mathematics.binaryToDec(numBin(2)) == 0)
+    assert(Mathematics.binaryToDec(numBin(3)) == 13765)
   }
 
   test("Se realiza la hashfunction") {
