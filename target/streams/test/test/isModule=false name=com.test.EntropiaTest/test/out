@@ -1,2 +1,5 @@
 [0m[[0minfo[0m] [0m[32mEntropiaTest:[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se calcula la entropia correctamente[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se seleccionan todas las muestras cuando la entropia es 1[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se seleccionan todas las muestras cuando la entropia es 0[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se seleccionan todas las muestras cuando la entropia es distinta de 0 y 1[0m[0m

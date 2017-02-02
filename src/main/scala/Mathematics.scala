@@ -23,6 +23,14 @@ object Mathematics{
       numDec.toInt
   }
 
+  def stringSignature(numBin: Array[Int]): String = {
+    var stringSignature = ""
+    for(i <- 0 to (numBin.length-1)) {
+      stringSignature = stringSignature + numBin(i).toString
+    }
+    stringSignature
+  }
+
   def distance(a: Vector, b: Vector): Double = {
     Math.sqrt(Vectors.sqdist(a, b))
   }

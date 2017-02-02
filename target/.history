@@ -233,3 +233,16 @@ test-only com.test.Drop3Test
 compile
 scalastyle
 test-only com.test.Drop3Test
+compile
+test-only com.test.RandomHyperplanesTest
+scalastyle
+test:scalastyle
+compile
+test
+test-only com.test.RandomHyperplanesTest
+compile
+test-only com.test.RandomHyperplanesTest
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest

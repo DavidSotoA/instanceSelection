@@ -16,71 +16,94 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     spark = Utilities.initSparkSession
   }
 
-  test("Se calcula la entropia correctamente") {
-    val instances1 = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0)),
+  test("Se seleccionan todas las muestras cuando la entropia es 1 y las muestras debalanceadas") {
+    val instances = spark.createDataFrame(Seq(
+      (-1, Vectors.dense(1.0, 1.0)),
       (1, Vectors.dense(1.0, -1.0)),
       (1, Vectors.dense(-1.0, -1.0)),
-      (0, Vectors.dense(-1.0, 1.0))
+      (-1, Vectors.dense(-1.0, 1.0))
     )).toDF(Constants.LABEL, "keys")
 
-    val instances2 = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0)),
-      (0, Vectors.dense(1.0, -1.0)),
-      (0, Vectors.dense(-1.0, -1.0)),
-      (0, Vectors.dense(-1.0, 1.0))
+    assert(Entropia.instanceSelection(instances, true).count == 2.0)
+  }
+
+  test("Se seleccionan todas las muestras cuando la entropia es 1 y las muestras balanceadas") {
+    val instances = spark.createDataFrame(Seq(
+      (-1, Vectors.dense(1.0, 1.0)),
+      (1, Vectors.dense(1.0, -1.0)),
+      (1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, 1.0))
+    )).toDF(Constants.LABEL, "keys")
+
+    assert(Entropia.instanceSelection(instances, false).count == 4.0)
+  }
+
+  test("Se seleccionan todas las muestras cuando la entropia es 0, todas las muestras son de la clase minoritaria(desbalanceado)") {
+    val instances = spark.createDataFrame(Seq(
+      (1, Vectors.dense(1.0, 1.0)),
+      (1, Vectors.dense(1.0, -1.0)),
+      (1, Vectors.dense(-1.0, -1.0)),
+      ( 1, Vectors.dense(-1.0, 1.0))
       )).toDF(Constants.LABEL, "keys")
 
-    val instances3 = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0)),
+    assert(Entropia.instanceSelection(instances, true).count == 4.0)
+  }
+
+  test("Se seleccionan todas las muestras cuando la entropia es 0, todas las muestras son de la clase mayoritaria(desbalanceado)") {
+    val instances = spark.createDataFrame(Seq(
+      (-1, Vectors.dense(1.0, 1.0)),
+      (-1, Vectors.dense(1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, 1.0))
+      )).toDF(Constants.LABEL, "keys")
+
+    assert(Entropia.instanceSelection(instances, true).count == 1.0)
+  }
+
+  test("Se seleccionan todas las muestras cuando la entropia es 0(balanceado)") {
+    val instances = spark.createDataFrame(Seq(
+      (1, Vectors.dense(1.0, 1.0)),
       (1, Vectors.dense(1.0, -1.0)),
       (1, Vectors.dense(-1.0, -1.0)),
       (1, Vectors.dense(-1.0, 1.0))
       )).toDF(Constants.LABEL, "keys")
 
-   assert(Entropia.calcularEntropia(instances1) == 1.0)
-   assert(Entropia.calcularEntropia(instances2) == 0.0)
-   assert(Entropia.calcularEntropia(instances3) == 0.8112781244591328)
+    assert(Entropia.instanceSelection(instances, false).count == 1.0)
   }
 
-  test("Se seleccionan todas las muestras cuando la entropia es 1") {
+  test("Se seleccionan las muestras cuando la entropia no es 0 ni uno y las clases estan desbalanceadas") {
     val instances = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0)),
-      (1, Vectors.dense(1.0, -1.0)),
+      (-1, Vectors.dense(1.0, 1.0)),
+      (-1, Vectors.dense(1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
       (1, Vectors.dense(-1.0, -1.0)),
-      (0, Vectors.dense(-1.0, 1.0))
-    )).toDF(Constants.LABEL, "keys")
-
-    assert(Entropia.instanceSelection(instances).count == 4.0)
-  }
-
-  test("Se seleccionan todas las muestras cuando la entropia es 0") {
-    val instances = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0)),
-      (0, Vectors.dense(1.0, -1.0)),
-      (0, Vectors.dense(-1.0, -1.0)),
-      (0, Vectors.dense(-1.0, 1.0))
+      (-1, Vectors.dense(-1.0, 1.0))
       )).toDF(Constants.LABEL, "keys")
 
-    assert(Entropia.instanceSelection(instances).count == 1.0)
+    assert(Entropia.instanceSelection(instances, true).count == 3.0)
   }
 
-  test("Se seleccionan todas las muestras cuando la entropia es distinta de 0 y 1") {
-      val instances = spark.createDataFrame(Seq(
-        (0, Vectors.dense(1.0, 1.0)),
-        (1, Vectors.dense(1.0, -1.0)),
-        (0, Vectors.dense(-1.0, -1.0)),
-        (1, Vectors.dense(-1.0, -1.0)),
-        (1, Vectors.dense(-1.0, -1.0)),
-        (0, Vectors.dense(-1.0, -1.0)),
-        (1, Vectors.dense(-1.0, -1.0)),
-        (1, Vectors.dense(-1.0, -1.0)),
-        (1, Vectors.dense(-1.0, -1.0)),
-        (1, Vectors.dense(-1.0, 1.0))
-      )).toDF("label", "keys")
+  test("Se seleccionan las muestras cuando la entropia no es 0 ni uno y las clases estan balanceadas") {
+    val instances = spark.createDataFrame(Seq(
+      (-1, Vectors.dense(1.0, 1.0)),
+      (-1, Vectors.dense(1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, -1.0)),
+      (1, Vectors.dense(-1.0, -1.0)),
+      (-1, Vectors.dense(-1.0, 1.0))
+      )).toDF(Constants.LABEL, "keys")
 
-    assert(Entropia.instanceSelection(instances).count == 9)
+    assert(Entropia.instanceSelection(instances, false).count == 5.0)
   }
-
-
 }

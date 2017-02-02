@@ -6,7 +6,7 @@ import org.apache.spark.sql.functions.udf
 
 case class Drop3(instances: Dataset[_]) extends InstanceSelection {
 
-  override def instanceSelection(instances: Dataset[_]): Dataset[_] = {
+  override def instanceSelection(instances: Dataset[_], unbalanced: Boolean): Dataset[_] = {
     throw new IllegalArgumentException ("unimplement method")
   }
 }

@@ -43,7 +43,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     assert(Drop3.killFriends(instance, instances).count == 4)
   }
 
-  test("Se arroja IllegalArgumentException si el numero de vecinos no es positivo"){
+  test("Se arroja IllegalArgumentException si el numero de vecinos no es positivo") {
     val instances = spark.createDataFrame(Seq(
       (0, Vectors.dense(1.0, 1.0), 0),
       (1, Vectors.dense(1.0, -1.0), 1),
@@ -76,7 +76,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       (8, Vectors.dense(-1.0, -1.0), 1),
       (9, Vectors.dense(-1.0, 1.0), 0)
     )).toDF("id", "features", "label")
-    val v = Vectors.dense(1,4)
+    val v = Vectors.dense(1, 4)
     val columnNames = Drop3.knn(v, instances, 3).schema.fieldNames
     assert(columnNames.length == 2)
     assert(columnNames(0) == "id")
@@ -97,7 +97,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       (8, Vectors.dense(-1.0, -1.0), 1),
       (9, Vectors.dense(-1.0, 1.0), 0)
     )).toDF("id", "features", "label")
-    val v = Vectors.dense(1,4)
+    val v = Vectors.dense(1, 4)
     val knnDF = Drop3.knn(v, instances, 3)
     val ids = knnDF.select("id").collect
 

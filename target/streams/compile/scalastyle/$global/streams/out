@@ -7,20 +7,78 @@
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:14:39: There should be a space before the plus (+) sign[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:14:55: There should be a space before the plus (+) sign[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:14: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:16:37: No space after token ,[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:16:49: No space after token ,[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:16:58: No space after token ,[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:9: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:12: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:13: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:14: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:15: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:16: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:17: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:18: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:19: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:21: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:22: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:23: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:24: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:25: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:26: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:27: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:28: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:29: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:30: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:31: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:33: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:34: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:36: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:37: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:41: File line length exceeds 100 characters[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:9:10: No space before token =[0m
+[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala:9:10: No space after token =[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala[0m
 [0m[[0minfo[0m] [0mProcessed 9 file(s)[0m
-[0m[[0minfo[0m] [0mFound 0 errors[0m
+[0m[[0minfo[0m] [0mFound 33 errors[0m
 [0m[[0minfo[0m] [0mFound 0 warnings[0m
 [0m[[0minfo[0m] [0mFound 0 infos[0m
-[0m[[0minfo[0m] [0mFinished in 1 ms[0m
+[0m[[0minfo[0m] [0mFinished in 10 ms[0m
 [0m[[32msuccess[0m] [0mcreated output: /home/skorpionx/Escritorio/LSH/target[0m
+java.lang.RuntimeException: errors exist
+	at scala.sys.package$.error(package.scala:27)
+	at org.scalastyle.sbt.Tasks$.onHasErrors$1(Plugin.scala:132)
+	at org.scalastyle.sbt.Tasks$.doScalastyleWithConfig$1(Plugin.scala:187)
+	at org.scalastyle.sbt.Tasks$.doScalastyle(Plugin.scala:195)
+	at org.scalastyle.sbt.ScalastylePlugin$$anonfun$rawScalastyleSettings$1$$anonfun$apply$1$$anonfun$apply$2.apply(Plugin.scala:89)
+	at org.scalastyle.sbt.ScalastylePlugin$$anonfun$rawScalastyleSettings$1$$anonfun$apply$1$$anonfun$apply$2.apply(Plugin.scala:77)
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47)
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40)
+	at sbt.std.Transform$$anon$4.work(System.scala:63)
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:17)
+	at sbt.Execute.work(Execute.scala:237)
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[0m[[31merror[0m] [0m(compile:[31mscalastyle[0m) errors exist[0m

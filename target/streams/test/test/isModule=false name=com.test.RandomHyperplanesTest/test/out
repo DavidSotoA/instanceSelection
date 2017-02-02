@@ -4,7 +4,9 @@
 [0m[[0minfo[0m] [0m[32m- Los hiperplanos tienen el numero correcto de caracteristicas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza el producto punto[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se convierte de binario a decimal[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se realiza la hashfunction[0m[0m
+[0m[[0minfo[0m] [0m[31m- Se realiza la hashfunction *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  "1" did not equal 11 (RandomHyperplanesTest.scala:83)[0m[0m
 [0m[[0minfo[0m] [0m[32m- El metodo lsh retorna un dataframe con la estructura correcta[0m[0m
-[0m[[0minfo[0m] [0m[32m- El metodo lsh calcula las firmas correctas[0m[0m
+[0m[[0minfo[0m] [0m[31m- El metodo lsh calcula las firmas correctas *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  2 did not equal 3 (RandomHyperplanesTest.scala:120)[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se hace la conversion con VectorAssembler[0m[0m

@@ -8,12 +8,12 @@ trait LSH {
   var numHashTables: Int = _
   var spark: SparkSession = _
 
-  def hashFunction(instance: Vector, hashFunctions: Array[Vector]): Int
+  def hashFunction(instance: Vector, hashFunctions: Array[Vector]): String
   def lsh(): DataFrame
   def keyDistance(x: Vector, y: Vector): Array[Array[Vector]]
 
   def groupForBuckets(hashedDataSet: DataFrame): DataFrame = {
-    hashedDataSet.sort( Constants.SET_OUPUT_COL_LSH)
+    hashedDataSet.sort(Constants.SET_OUPUT_COL_LSH)
   }
   // those methods need are implements here
   // protected def LshKnn(instance: Vector, bucketDataset: Array[Vector],
