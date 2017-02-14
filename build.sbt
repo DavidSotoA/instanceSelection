@@ -1,4 +1,3 @@
-
 name := "Instance selection"
 
 version := "1.0"

@@ -144,4 +144,22 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
     assert(dimFeatures == selectFeatures.length)
   }
 
+  test("El metodo findBucket selecciona la cubeta indicada por la firma") {
+    val key = "010101010010100101"
+    val instances = spark.createDataFrame(Seq(
+      (0, Vectors.dense(234, 1344, 5, 345), 1, key),
+      (1, Vectors.dense(123, 4356, 135, 567), -1, key),
+      (2, Vectors.dense(1523, 556, 7865, 3485), 1, key),
+      (3, Vectors.dense(1783, 56, 5, 345), 1, "111111111111111"),
+      (4, Vectors.dense(5464, 4, 578, 7852), -1, "111111111111111"))
+    ).toDF("idn", "features", "label", "signature")
+
+    val bucketDF = LSH.findBucket(instances, key)
+    assert(bucketDF.count == 3)
+    val bucket = bucketDF.take(3)
+    assert(bucket(0)(0).asInstanceOf[Int] == 0)
+    assert(bucket(1)(0).asInstanceOf[Int] == 1)
+    assert(bucket(2)(0).asInstanceOf[Int] == 2)
+  }
+
 }

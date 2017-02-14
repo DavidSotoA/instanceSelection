@@ -17,8 +17,7 @@ object Utilities {
       SparkSession
     .builder()
     .appName(Constants.APP_NAME)
-    .master(Constants.MASTER)
-    .config("spark.some.config.option", "some-value")
+    .enableHiveSupport()
     .getOrCreate()
   }
 

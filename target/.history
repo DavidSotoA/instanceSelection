@@ -246,3 +246,101 @@ compile
 test-only com.test.EntropiaTest
 compile
 test-only com.test.EntropiaTest
+compile
+test-only com.test.RandomHyperplanesTest
+val instances = spark.createDataFrame(Seq(
+      (0, Vectors.dense(234, 1344, 5, 345), 1, key),
+      (1, Vectors.dense(123, 4356, 135, 567), -1, key),
+      (2, Vectors.dense(1523, 556, 7865, 3485), 1, key),
+      (3, Vectors.dense(1783, 56, 5, 345), 1, "111111111111111"),
+      (4, Vectors.dense(5464, 4, 578, 7852), -1, "111111111111111"))
+    ).toDF("idn", "features", "label", "signature")
+test-only com.test.RandomHyperplanesTest
+scalastyle
+test:scalastyle
+compile
+update
+reload
+compile
+test-only com.test.RandomHyperplanesTest
+test-only com.test.EntropiaTest
+compile
+reñoad
+reload
+compile
+test-only com.test.EntropiaTest
+test-only com.test.RandomHyperplanesTest
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compilw
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+  val base = spark.read.load("/home/skorpionx/Escritorio/prueba.parquet")
+compile
+package
+compile
+test-only com.test.Drop3
+test-only com.test.Drop3Test
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+Array(3.4)
+compile
+package
+compile
+package
+compile
+package
+compile
+test
+test-only com.test.EntropiaTest
+import org.apache.spark.mllib.tree.impurity.Entropy
+test-only com.test.EntropiaTest
+scalastyle
+compile
+test-only com.test.EntropiaTest
+test:scalastyle
+compile
+test-only com.test.EntropiaTest
+compile
+scalastyle
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package

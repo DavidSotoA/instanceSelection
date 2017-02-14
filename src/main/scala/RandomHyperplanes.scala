@@ -4,7 +4,7 @@ import scala.util.Random
 
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.sql._
-import org.apache.spark.sql.functions.udf
+import org.apache.spark.sql.functions._
 
 case class RandomHyperplanes(
     dataset_RH: Dataset[_],
@@ -37,7 +37,7 @@ case class RandomHyperplanes(
     val transformUDF = udf(partiallyHashFunction)
     val signatureDF = dataset.withColumn(Constants.SET_OUPUT_COL_LSH,
       transformUDF(dataset(Constants.SET_OUPUT_COL_ASSEMBLER)))
-    groupForBuckets(signatureDF)
+    signatureDF.repartition(col("signature"))
   }
 
   override def hashFunction(instance: Vector,

@@ -8,3 +8,4 @@
 [0m[[0minfo[0m] [0m[32m- El metodo lsh retorna un dataframe con la estructura correcta[0m[0m
 [0m[[0minfo[0m] [0m[32m- El metodo lsh calcula las firmas correctas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se hace la conversion con VectorAssembler[0m[0m
+[0m[[0minfo[0m] [0m[32m- El metodo findBucket selecciona la cubeta indicada por la firma[0m[0m
