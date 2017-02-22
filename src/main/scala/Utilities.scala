@@ -14,11 +14,11 @@ object Utilities {
   }
 
   def initSparkSession(): SparkSession = {
-      SparkSession
-    .builder()
-    .appName(Constants.APP_NAME)
-    .enableHiveSupport()
-    .getOrCreate()
+    SparkSession.builder()
+     .master(Constants.MASTER)
+     .appName(Constants.APP_NAME)
+     .config("spark.some.config.option", "some-value")
+     .getOrCreate()
   }
 
   def createVectorDataframe(selectFeatures: Array[String], df: DataFrame): DataFrame = {

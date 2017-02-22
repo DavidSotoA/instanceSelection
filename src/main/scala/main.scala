@@ -9,6 +9,36 @@ object Main {
   def main(args: Array[String]): Unit = {
     val spark = Utilities.initSparkSession
     val sc = spark.sqlContext.sparkContext
+    val instances = spark.createDataFrame(Seq(
+              (0, Vectors.dense(1.0, 3.0)),
+              (0, Vectors.dense(5.0, -7.0)),
+              (0, Vectors.dense(-18.0, -12.0)),
+              (0, Vectors.dense(-61.0, 31.0))
+            )).toDF("signature", "features")
+    val drop3 = new Drop3()
+    val pruebaVentana = drop3.instanceSelection(instances, true)
+    pruebaVentana.write.mode(SaveMode.Overwrite).format("parquet")
+      .save("/home/skorpionx/Escritorio/pruebaVentana")
+
+    /*
+    val aggKnn = new AggKnn()
+
+    val instances = spark.createDataFrame(Seq(
+              (0, Vectors.dense(1.0, 3.0)),
+              (0, Vectors.dense(5.0, -7.0)),
+              (0, Vectors.dense(-18.0, -12.0)),
+              (0, Vectors.dense(-61.0, 31.0))
+            )).toDF("id", "label")
+
+    val pruebaAggKnn = instances.groupBy("id")
+                               .agg(aggKnn(instances.col("label")).as("prueba"))
+
+   pruebaAggKnn.write.mode(SaveMode.Overwrite).format("parquet")
+     .save("/home/skorpionx/Escritorio/prueba")
+    
+
+
+
     val numHashTables = args(0).toInt
     // se cargan y preparan los datos
     val base = spark.read.load(args(1))
@@ -34,7 +64,7 @@ object Main {
     //   .save(args(2) + "/keys.parquet")
 
     instanceWithEntropy.write.mode(SaveMode.Overwrite).format("parquet")
-      .save(args(2) + "/entropy")
+      .save(args(2) + "/entropy")*/
 
   }
 }

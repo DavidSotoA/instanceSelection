@@ -18,6 +18,8 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Drop3$.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/AggKnn.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/AggKnn.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Constants.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Constants.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$1.class[0m
@@ -46,8 +48,6 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Utilities.class[0m
 [0m[[0mdebug[0m] [0m	com[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Main$$anonfun$1.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Constants$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Constants$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Entropia$.class[0m
@@ -66,12 +66,12 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/LSH$class.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/LSH$class.class[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Main$$anonfun$2.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Entropia.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Entropia.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/RandomHyperplanes$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/RandomHyperplanes$$anonfun$createHiperplanes$1$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/RandomHyperplanes$$anonfun$createHiperplanes$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Main$$typecreator1$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/Escritorio/LSH/target/scala-2.11/classes/com/lsh/Main$$typecreator1$1.class[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
