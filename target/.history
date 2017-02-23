@@ -374,3 +374,23 @@ compile
 package
 compile
 package
+compile
+package
+compile
+package
+test-only com.test.Drop3Test
+compile
+package
+compile
+package
+test-only com.test.Drop3Test
+scalastyle
+test:scalastyle
+scalastyle
+test-only com.test.Drop3Test
+compile
+package
+compile
+package
+compile
+package

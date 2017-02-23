@@ -48,7 +48,8 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     assert(entropyB(0).asInstanceOf[Double] == 0.7219280948873623)
   }
 
-  test("Si solo hay muestras de la clase mayoritaria, la entropia sera el porcentaje de 1 muestra") {
+  test("Si solo hay muestras de la clase mayoritaria, la entropia sera el "
+    + "porcentaje de 1 muestra") {
     val aggEntropy = new AggEntropy()
     val data = (1 to 1000).map{x: Int => Row("A", -1)}
 

@@ -1,5 +1,6 @@
 package com.test
 
+import com.lsh.AggKnn
 import com.lsh.Constants
 import com.lsh.Drop3
 import com.lsh.Mathematics
@@ -105,4 +106,45 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     assert(ids(1)(0).asInstanceOf[Int] == 9)
     assert(ids(2)(0).asInstanceOf[Int] == 1)
   }
+
+  test("La funcion de agregacion AggKnn devuelve un array de tipo vector con todas las"
+        + " caracteristicas de todas las muestras") {
+          val aggKnn = new AggKnn()
+
+          val instances = spark.createDataFrame(Seq(
+                    (0, Vectors.dense(1.0, 3.0)),
+                    (0, Vectors.dense(5.0, -7.0)),
+                    (0, Vectors.dense(-18.0, -12.0)),
+                    (0, Vectors.dense(-61.0, 31.0))
+                  )).toDF("signature", "features")
+
+          val pruebaAggKnn = instances.groupBy("signature")
+                                     .agg(aggKnn(instances.col("features")).as("prueba"))
+          val resp = pruebaAggKnn.head
+          assert(resp(1).asInstanceOf[Seq[Vector]].length == 4)
+  }
+
+  test("Al apicar las ventanas cada instancia queda con una nueva columna que contiene "
+    + "todas las instancias de la cubeta") {
+          val instances = spark.createDataFrame(Seq(
+                    (0, Vectors.dense(1.0, 3.0)),
+                    (0, Vectors.dense(5.0, -7.0)),
+                    (0, Vectors.dense(-18.0, -12.0)),
+                    (0, Vectors.dense(-6.0, 31.0)),
+                    (1, Vectors.dense(-61.0, 5.0)),
+                    (1, Vectors.dense(-54.0, 14.0))
+                  )).toDF("signature", "features")
+          val drop3 = new Drop3()
+          val pruebaVentana = drop3.instanceSelection(instances, true)
+
+          val c1 = pruebaVentana.select("colOfDistances").where("signature == 0")
+          val c2 = pruebaVentana.select("colOfDistances").where("signature == 1")
+
+          val respc1 = c1.head
+          val respc2 = c2.head
+
+          assert(respc1(0).asInstanceOf[Seq[Vector]].length == 4)
+          assert(respc2(0).asInstanceOf[Seq[Vector]].length == 2)
+  }
+
 }

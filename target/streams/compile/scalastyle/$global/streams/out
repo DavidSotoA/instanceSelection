@@ -1,50 +1,57 @@
-[0m[[0minfo[0m] [0mscalastyle using config /home/skorpionx/Escritorio/LSH/scalastyle-config.xml[0m
+[0m[[0minfo[0m] [0mscalastyle using config /home/david/P2P-fraud-processor/scalastyle-config.xml[0m
 [0m[[0mdebug[0m] [0mStarting scalastyle[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala[0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/InstanceSelection.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala[0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/LSH.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala[0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Drop3.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:3:0: Insert a space after the start of the comment[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:12:4: Insert a space after the start of the comment[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/main.scala:35:37: [0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/Constants.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/Constants.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/Drop3.scala[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Drop3.scala:46:16: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Drop3.scala:48:16: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Drop3.scala:52:16: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Drop3.scala:56:16: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Drop3.scala:60:16: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Drop3.scala:6:0: import.ordering.wrongOrderInGroup.message[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Drop3.scala:8:0: import.ordering.wrongOrderInGroup.message[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/Drop3.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/Mathematics.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/Mathematics.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/Utilities.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/Utilities.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/Entropia.scala[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:54:14: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:56:14: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:62:14: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:71:14: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:77:14: Public method must have explicit type[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:25:37: No space after token ,[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:29:4: No space after token if[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:78:3: No space after token if[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:8:0: import.ordering.wrongOrderInGroup.message[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:81:59: Space before token ,[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:34:22: [0m
 [0m[[31merror[0m] [0m      Single Space between ')' and `{`.[0m
 [0m[[31merror[0m] [0m    [0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/main.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:54:14: Public method must have explicit type[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:56:14: Public method must have explicit type[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:62:14: Public method must have explicit type[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:71:14: Public method must have explicit type[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:77:14: Public method must have explicit type[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:25:37: No space after token ,[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:29:4: No space after token if[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:78:3: No space after token if[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:8:0: import.ordering.wrongOrderInGroup.message[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:81:59: Space before token ,[0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:34:22: [0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/Entropia.scala:78:53: [0m
 [0m[[31merror[0m] [0m      Single Space between ')' and `{`.[0m
 [0m[[31merror[0m] [0m    [0m
-[0m[[31merror[0m] [0m/home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala:78:53: [0m
-[0m[[31merror[0m] [0m      Single Space between ')' and `{`.[0m
-[0m[[31merror[0m] [0m    [0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Entropia.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala[0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Mathematics.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala[0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Constants.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala[0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/Utilities.scala[0m
-[0m[[0mdebug[0m] [0mstart file /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala[0m
-[0m[[0mdebug[0m] [0mend file /home/skorpionx/Escritorio/LSH/src/main/scala/RandomHyperplanes.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/Entropia.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/main.scala[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/main.scala:25:4: Insert a space after the start of the comment[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/main.scala:5:34: import.ordering.wrongOrderInSelector.message[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/main.scala:5:34: import.ordering.wrongOrderInSelector.message[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/main.scala:5:34: import.ordering.wrongOrderInSelector.message[0m
+[0m[[31merror[0m] [0m/home/david/P2P-fraud-processor/src/main/scala/main.scala:6:0: import.ordering.wrongOrderInGroup.message[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/main.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/LSH.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/LSH.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/RandomHyperplanes.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/RandomHyperplanes.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/david/P2P-fraud-processor/src/main/scala/InstanceSelection.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/david/P2P-fraud-processor/src/main/scala/InstanceSelection.scala[0m
 [0m[[0minfo[0m] [0mProcessed 9 file(s)[0m
-[0m[[0minfo[0m] [0mFound 15 errors[0m
+[0m[[0minfo[0m] [0mFound 24 errors[0m
 [0m[[0minfo[0m] [0mFound 0 warnings[0m
 [0m[[0minfo[0m] [0mFound 0 infos[0m
-[0m[[0minfo[0m] [0mFinished in 9 ms[0m
-[0m[[32msuccess[0m] [0mcreated output: /home/skorpionx/Escritorio/LSH/target[0m
+[0m[[0minfo[0m] [0mFinished in 5 ms[0m
+[0m[[32msuccess[0m] [0mcreated output: /home/david/P2P-fraud-processor/target[0m
 java.lang.RuntimeException: errors exist
 	at scala.sys.package$.error(package.scala:27)
 	at org.scalastyle.sbt.Tasks$.onHasErrors$1(Plugin.scala:132)
@@ -63,10 +70,10 @@ java.lang.RuntimeException: errors exist
 	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
 	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
 	at java.lang.Thread.run(Thread.java:745)
 [0m[[31merror[0m] [0m(compile:[31mscalastyle[0m) errors exist[0m

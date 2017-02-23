@@ -12,9 +12,11 @@ import org.apache.spark.sql.expressions.Window
 case class Drop3() extends InstanceSelection {
 
   override def instanceSelection(instances: DataFrame, unbalanced: Boolean): DataFrame = {
-    val aggKnn = new AggKnn()
-    val ventana = Window.partitionBy(instances.col("signature"))
-    instances.withColumn("colOfDistances", aggKnn(instances.col("features")) over ventana)
+     val aggKnn = new AggKnn()
+    // val ventana = Window.partitionBy(instances.col("signature"))
+    // instances.withColumn("colOfDistances", aggKnn(instances.col("features")) over ventana)
+    instances.groupBy("signature").agg(aggKnn(instances.col("features"), instances.col("idn"),
+                      instances.col("label")).as("info"))
   }
 }
 
@@ -35,29 +37,44 @@ object Drop3 {
 }
 
 class AggKnn() extends UserDefinedAggregateFunction {
-  override def inputSchema: StructType = StructType(Array(StructField("item", VectorType)))
+  override def inputSchema: StructType = StructType(Array(
+    StructField("features", VectorType),
+    StructField("idn", IntegerType),
+    StructField("label", IntegerType)
+  ))
 
    override def bufferSchema: StructType = StructType(Array(
-     StructField("features", ArrayType(VectorType))
+     StructField("allInfo", ArrayType(StructType(Array(
+                                       StructField("features", VectorType),
+                                       StructField("idn", IntegerType),
+                                       StructField("label", IntegerType)
+                                     ))))
    ))
 
-   override def dataType: DataType = ArrayType(VectorType)
+   override def dataType: DataType = ArrayType(StructType(Array(
+                                     StructField("features", VectorType),
+                                     StructField("idn", IntegerType),
+                                     StructField("label", IntegerType)
+                                    )))
 
    override def deterministic = true
 
    override def initialize(buffer: MutableAggregationBuffer) = {
-     buffer(0) = Array[Vector]()
+     buffer(0) = Array[(Vector, Int, Int)]()
    }
 
    override def update(buffer: MutableAggregationBuffer, input: Row) = {
-       buffer(0) = buffer(0).asInstanceOf[Seq[Vector]] ++ Array(input(0).asInstanceOf[Vector])
+     buffer(0) = buffer(0).asInstanceOf[Seq[(Vector, Int, Int)]] :+
+        (input(0).asInstanceOf[Vector], input(1).asInstanceOf[Int], input(2).asInstanceOf[Int])
    }
 
    override def merge(buffer1: MutableAggregationBuffer, buffer2: Row) = {
-     buffer1(0) = buffer1(0).asInstanceOf[Seq[Vector]] ++ buffer2(0).asInstanceOf[Seq[Vector]]
+     buffer1(0) = buffer1(0).asInstanceOf[Seq[(Vector, Int, Int)]] ++
+                  buffer2(0).asInstanceOf[Seq[(Vector, Int, Int)]]
    }
 
    override def evaluate(buffer: Row) = {
      buffer(0)
    }
+
  }

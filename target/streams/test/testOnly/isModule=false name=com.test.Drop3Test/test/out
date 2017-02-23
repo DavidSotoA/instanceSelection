@@ -4,3 +4,5 @@
 [0m[[0minfo[0m] [0m[32m- Se arroja IllegalArgumentException si el numero de vecinos no es positivo[0m[0m
 [0m[[0minfo[0m] [0m[32m- El metodo knn devuelve un dataframe con la estructura correcta1[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se hallan los k vecinos mas cercanos[0m[0m
+[0m[[0minfo[0m] [0m[32m- La funcion de agregacion AggKnn devuelve un array de tipo vector con todas las caracteristicas de todas las muestras[0m[0m
+[0m[[0minfo[0m] [0m[32m- Al apicar las ventanas cada instancia queda con una nueva columna que contiene todas las instancias de la cubeta[0m[0m
