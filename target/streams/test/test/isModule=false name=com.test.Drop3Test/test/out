@@ -1,6 +1,0 @@
-[0m[[0minfo[0m] [0m[32mDrop3Test:[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se calcula la distancia entre 2 muestras[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se eliminan los amigos mas cercanos[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se arroja IllegalArgumentException si el numero de vecinos no es positivo[0m[0m
-[0m[[0minfo[0m] [0m[32m- El metodo knn devuelve un dataframe con la estructura correcta1[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se hallan los k vecinos mas cercanos[0m[0m

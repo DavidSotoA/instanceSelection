@@ -394,3 +394,72 @@ compile
 package
 compile
 package
+compile
+package
+compile
+clean
+compile
+package
+compile
+package
+compile
+package
+compile
+clean
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+package
+compile
+package
+compile
+package
+compile
+package
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+Seq(
+      Row((Vectors.dense(1,2), 3, 1)),
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test

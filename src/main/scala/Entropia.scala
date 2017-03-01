@@ -12,7 +12,7 @@ import org.apache.spark.sql.types._
 object Entropia extends InstanceSelection {
   var totalInstances: Long = _
 
-  override def instanceSelection(instances: DataFrame, unbalanced: Boolean ): DataFrame = {
+  override def instanceSelection(instances: DataFrame, unbalanced: Boolean): DataFrame = {
     val aggEntropy = new AggEntropy()
     val entropyForSignature = instances.groupBy("signature")
                                .agg(aggEntropy(instances.col("label")).as("entropy"))

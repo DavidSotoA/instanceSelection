@@ -9,30 +9,70 @@ import org.apache.spark.ml.linalg.SQLDataTypes.VectorType
 import org.apache.spark.sql.expressions.Window
 
 
-case class Drop3() extends InstanceSelection {
+case class Drop3(){
 
-  override def instanceSelection(instances: DataFrame, unbalanced: Boolean): DataFrame = {
+  def instanceSelection(instances: DataFrame, unbalanced: Boolean, k_Neighbors: Int): DataFrame = {
+    require((k_Neighbors%2 ==1) && (k_Neighbors > 0), "El numero de vecinos debe ser impar y positivo")
      val aggKnn = new AggKnn()
     // val ventana = Window.partitionBy(instances.col("signature"))
     // instances.withColumn("colOfDistances", aggKnn(instances.col("features")) over ventana)
-    instances.groupBy("signature").agg(aggKnn(instances.col("features"), instances.col("idn"),
-                      instances.col("label")).as("info"))
-  }
-}
+    val instancesWithInfo = instances.groupBy("signature").agg(aggKnn(instances.col("features"), instances.col("idn"),
+                                      instances.col("label")).as("info"))
 
-object Drop3 {
-
-  def knn(instance: Vector, allInstances: DataFrame, numNeighbors: Int): Dataset[_] = {
-    require(numNeighbors > 0, "El numero de vecinos debe ser mayor a 1")
-    val partiallyDistanceFunction = Mathematics.distance(_ : Vector, instance)
-    val keyDistUDF = udf(partiallyDistanceFunction)
-    val allNeighbors = allInstances.withColumn("distance", keyDistUDF(allInstances("features")))
-    allNeighbors.select("id", "distance").sort("distance").limit(numNeighbors)
+    val transformUDF = udf(drop3(_ : Seq[Row], k_Neighbors))
+    instancesWithInfo.withColumn("pruebaCol", transformUDF(instancesWithInfo.col("info")))
   }
 
-  def killFriends(instance: Row, allInstances: DataFrame): DataFrame = {
-    val labelInstance = instance(2)
-    allInstances.select("*").where("label != " + labelInstance)
+  def drop3(instances: Seq[Row], k_Neighbors: Int): Vector = {
+    val instanceSize = instances.size
+    var currentInstance: (Vector, Int, Int) = null.asInstanceOf[(Vector,Int, Int)]
+    for(i <- 0 to (instanceSize-1)){
+      currentInstance = (instances(i)(0).asInstanceOf[Vector], instances(i)(1).asInstanceOf[Int],
+                         instances(i)(2).asInstanceOf[Int])
+      val distancesOfCurrentInstance = calculateDistances(currentInstance._1, instances)
+      val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
+      val myEnemy = findMyNemesis(distancesOfCurrentInstance, currentInstance._3, false)
+
+    }
+    throw new IllegalArgumentException ("unimplement method")
+  }
+
+  def findNeighbors(instances: Seq[(Double, Int, Int)], k_Neighbors: Int, needOrder: Boolean): Seq[(Double, Int, Int)] = {
+    if(needOrder){
+      val instancesInOrder = scala.util.Sorting.stableSort(instances,(i1: (Double, Int, Int),
+                                          i2: (Double, Int, Int)) => i1._1 < i2._1)
+      return instancesInOrder.take(k_Neighbors + 1)
+    }
+    return instances.take(k_Neighbors + 1)
+  }
+
+  def findMyNemesis(instances: Seq[(Double, Int, Int)], myLabel: Int, needOrder: Boolean): Double = {
+    val myEnemies = killFriends(instances, myLabel)
+    if(needOrder){
+      var enemiesInOrder = scala.util.Sorting.stableSort(myEnemies,(i1: (Double, Int, Int),
+                                          i2: (Double, Int, Int)) => i1._1 < i2._1)
+      return enemiesInOrder.head._1
+    }
+    return myEnemies.head._1
+  }
+
+  def killFriends(instances: Seq[(Double, Int, Int)], myLabel: Int): Seq[(Double, Int, Int)] = {
+    instances.filter(x => (x._3 != myLabel))
+  }
+
+  def calculateDistances(sample: Vector, instances: Seq[Row]): Seq[(Double, Int, Int)] = {
+    val instanceSize = instances.size
+    var distances = Array[(Double, Int, Int)]()
+    for(i <- 0 to (instanceSize-1)){
+      val distance = Mathematics.distance(sample, instances(i)(0).asInstanceOf[Vector])
+      distances = distances :+ (distance, instances(i)(1).asInstanceOf[Int],
+                                instances(i)(2).asInstanceOf[Int])
+    }
+    if(!distances.isEmpty){
+      distances = scala.util.Sorting.stableSort(distances,(i1: (Double, Int, Int),
+                                            i2: (Double, Int, Int)) => i1._1 < i2._1)
+    }
+    distances
   }
 }
 

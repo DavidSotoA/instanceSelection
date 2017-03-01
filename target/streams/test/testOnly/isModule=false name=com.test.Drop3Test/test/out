@@ -1,8 +1,7 @@
 [0m[[0minfo[0m] [0m[32mDrop3Test:[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se calcula la distancia entre 2 muestras[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se eliminan los amigos mas cercanos[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se arroja IllegalArgumentException si el numero de vecinos no es positivo[0m[0m
-[0m[[0minfo[0m] [0m[32m- El metodo knn devuelve un dataframe con la estructura correcta1[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se hallan los k vecinos mas cercanos[0m[0m
-[0m[[0minfo[0m] [0m[32m- La funcion de agregacion AggKnn devuelve un array de tipo vector con todas las caracteristicas de todas las muestras[0m[0m
-[0m[[0minfo[0m] [0m[32m- Al apicar las ventanas cada instancia queda con una nueva columna que contiene todas las instancias de la cubeta[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se arroja IllegalArgumentException si el numero de vecinos es par[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se arroja IllegalArgumentException si el numero de vecinos es negativo[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se calculan las distancias y se ordenan descendentemente para una instancia dada[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se encuentran los k vecinos mas cercanos en base a las distancias calculadas[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se eliminan las intancias que tienen el mismo label[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se encuentra al enemigo mas cercano[0m[0m

@@ -8,6 +8,7 @@ import com.lsh.Utilities
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.ml.linalg.{Vector, Vectors}
+import org.apache.spark.sql.Row
 import org.apache.spark.sql.SparkSession
 
 class Drop3Test extends FunSuite with BeforeAndAfterAll {
@@ -18,133 +19,73 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     spark = Utilities.initSparkSession
   }
 
-  test("Se calcula la distancia entre 2 muestras") {
-    val v1 = Vectors.dense(1, 3, 5)
-    val v2 = Vectors.dense(13, -63, -4)
-    assert(Mathematics.distance(v1, v2) == 67.68308503607086)
-    assert(Mathematics.distance(v2, v1) == 67.68308503607086)
-  }
-
-  test("Se eliminan los amigos mas cercanos") {
+  test("Se arroja IllegalArgumentException si el numero de vecinos es par"){
     val instances = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0), 0),
-      (1, Vectors.dense(1.0, -1.0), 1),
-      (2, Vectors.dense(-1.0, -1.0), 0),
-      (3, Vectors.dense(-1.0, -1.0), 0),
-      (4, Vectors.dense(-1.0, -1.0), 0),
-      (5, Vectors.dense(-1.0, -1.0), 1),
-      (6, Vectors.dense(-1.0, -1.0), 1),
-      (7, Vectors.dense(-1.0, -1.0), 0),
-      (8, Vectors.dense(-1.0, -1.0), 1),
-      (9, Vectors.dense(-1.0, 1.0), 0)
-    )).toDF("id", "keys", "label")
-
-
-    val instance = instances.head
-    assert(Drop3.killFriends(instance, instances).count == 4)
-  }
-
-  test("Se arroja IllegalArgumentException si el numero de vecinos no es positivo") {
-    val instances = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0), 0),
-      (1, Vectors.dense(1.0, -1.0), 1),
-      (2, Vectors.dense(-1.0, -1.0), 0),
-      (3, Vectors.dense(-1.0, -1.0), 0),
-      (4, Vectors.dense(-1.0, -1.0), 0),
-      (5, Vectors.dense(-1.0, -1.0), 1),
-      (6, Vectors.dense(-1.0, -1.0), 1),
-      (7, Vectors.dense(-1.0, -1.0), 0),
-      (8, Vectors.dense(-1.0, -1.0), 1),
-      (9, Vectors.dense(-1.0, 1.0), 0)
-    )).toDF("id", "features", "label")
-
-    val v = Vectors.dense(13, -63, -4)
+              (0, Vectors.dense(1.0, 3.0), 1),
+              (0, Vectors.dense(5.0, -7.0), 2),
+              (0, Vectors.dense(-18.0, -12.0), 3),
+              (0, Vectors.dense(-6.0, 31.0), 4),
+              (1, Vectors.dense(-61.0, 5.0), 5),
+              (1, Vectors.dense(-54.0, 14.0), 6)
+            )).toDF("signature", "features", "idn")
+    val drop3 = new Drop3()
     assertThrows[IllegalArgumentException]{
-      Drop3.knn(v, instances, 0)
+      drop3.instanceSelection(instances, true, 2)
     }
   }
 
-  test("El metodo knn devuelve un dataframe con la estructura correcta1") {
+  test("Se arroja IllegalArgumentException si el numero de vecinos es negativo"){
     val instances = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0), 0),
-      (1, Vectors.dense(1.0, -1.0), 1),
-      (2, Vectors.dense(-1.0, -1.0), 0),
-      (3, Vectors.dense(-1.0, -1.0), 0),
-      (4, Vectors.dense(-1.0, -1.0), 0),
-      (5, Vectors.dense(-1.0, -1.0), 1),
-      (6, Vectors.dense(-1.0, -1.0), 1),
-      (7, Vectors.dense(-1.0, -1.0), 0),
-      (8, Vectors.dense(-1.0, -1.0), 1),
-      (9, Vectors.dense(-1.0, 1.0), 0)
-    )).toDF("id", "features", "label")
-    val v = Vectors.dense(1, 4)
-    val columnNames = Drop3.knn(v, instances, 3).schema.fieldNames
-    assert(columnNames.length == 2)
-    assert(columnNames(0) == "id")
-    assert(columnNames(1) == "distance")
+              (0, Vectors.dense(1.0, 3.0), 1),
+              (0, Vectors.dense(5.0, -7.0), 2),
+              (0, Vectors.dense(-18.0, -12.0), 3),
+              (0, Vectors.dense(-6.0, 31.0), 4),
+              (1, Vectors.dense(-61.0, 5.0), 5),
+              (1, Vectors.dense(-54.0, 14.0), 6)
+            )).toDF("signature", "features", "idn")
+    val drop3 = new Drop3()
+    assertThrows[IllegalArgumentException]{
+      drop3.instanceSelection(instances, true, -2)
+    }
+  }
+
+  test("Se calculan las distancias y se ordenan descendentemente para una instancia dada"){
+    val instances = Row(Seq(
+      Row(Vectors.dense(9,8), 3, 1),
+      Row(Vectors.dense(1,2), 5, -1)
+    ))
+    val instance = Vectors.dense(1,1)
+    val drop3 = new Drop3()
+    val distances = drop3.calculateDistances(instance, instances(0).asInstanceOf[Seq[Row]])
+    assert(distances(0) == (1.0, 5, -1))
+    assert(distances(1) == (10.63014581273465, 3, 1))
 
   }
 
-  test("Se hallan los k vecinos mas cercanos") {
-    val instances = spark.createDataFrame(Seq(
-      (0, Vectors.dense(1.0, 1.0), 0),
-      (1, Vectors.dense(1.0, -1.0), 1),
-      (2, Vectors.dense(-1.0, -1.0), 0),
-      (3, Vectors.dense(-1.0, -1.0), 0),
-      (4, Vectors.dense(-1.0, -1.0), 0),
-      (5, Vectors.dense(-1.0, -1.0), 1),
-      (6, Vectors.dense(-1.0, -1.0), 1),
-      (7, Vectors.dense(-1.0, -1.0), 0),
-      (8, Vectors.dense(-1.0, -1.0), 1),
-      (9, Vectors.dense(-1.0, 1.0), 0)
-    )).toDF("id", "features", "label")
-    val v = Vectors.dense(1, 4)
-    val knnDF = Drop3.knn(v, instances, 3)
-    val ids = knnDF.select("id").collect
-
-    assert(ids(0)(0).asInstanceOf[Int] == 0)
-    assert(ids(1)(0).asInstanceOf[Int] == 9)
-    assert(ids(2)(0).asInstanceOf[Int] == 1)
+  test("Se encuentran los k vecinos mas cercanos en base a las distancias calculadas"){
+    val instances = Seq( (1.0, 3, 1), (5.0, 3, 1), (2.0, 3, 1), (20.0, 3, 1),
+                          (456.0, 3, 1), (100.0, 3, 1))
+    val instance = Vectors.dense(1,1)
+    val drop3 = new Drop3()
+    val neighbors = drop3.findNeighbors(instances, 3, true)
+    assert(neighbors(0) == (1.0, 3, 1))
+    assert(neighbors(1) == (2.0, 3, 1))
+    assert(neighbors(2) == (5.0, 3, 1))
   }
 
-  test("La funcion de agregacion AggKnn devuelve un array de tipo vector con todas las"
-        + " caracteristicas de todas las muestras") {
-          val aggKnn = new AggKnn()
-
-          val instances = spark.createDataFrame(Seq(
-                    (0, Vectors.dense(1.0, 3.0)),
-                    (0, Vectors.dense(5.0, -7.0)),
-                    (0, Vectors.dense(-18.0, -12.0)),
-                    (0, Vectors.dense(-61.0, 31.0))
-                  )).toDF("signature", "features")
-
-          val pruebaAggKnn = instances.groupBy("signature")
-                                     .agg(aggKnn(instances.col("features")).as("prueba"))
-          val resp = pruebaAggKnn.head
-          assert(resp(1).asInstanceOf[Seq[Vector]].length == 4)
+  test("Se eliminan las intancias que tienen el mismo label") {
+    val instances = Seq( (1.0, 3, 1), (5.0, 3, -1), (2.0, 3, -1), (20.0, 3, 1),
+                          (456.0, 3, 1), (100.0, 3, 1))
+    val drop3 = new Drop3()
+    val enemies = drop3.killFriends(instances, 1)
+    assert(enemies.size == 2)
   }
 
-  test("Al apicar las ventanas cada instancia queda con una nueva columna que contiene "
-    + "todas las instancias de la cubeta") {
-          val instances = spark.createDataFrame(Seq(
-                    (0, Vectors.dense(1.0, 3.0)),
-                    (0, Vectors.dense(5.0, -7.0)),
-                    (0, Vectors.dense(-18.0, -12.0)),
-                    (0, Vectors.dense(-6.0, 31.0)),
-                    (1, Vectors.dense(-61.0, 5.0)),
-                    (1, Vectors.dense(-54.0, 14.0))
-                  )).toDF("signature", "features")
-          val drop3 = new Drop3()
-          val pruebaVentana = drop3.instanceSelection(instances, true)
-
-          val c1 = pruebaVentana.select("colOfDistances").where("signature == 0")
-          val c2 = pruebaVentana.select("colOfDistances").where("signature == 1")
-
-          val respc1 = c1.head
-          val respc2 = c2.head
-
-          assert(respc1(0).asInstanceOf[Seq[Vector]].length == 4)
-          assert(respc2(0).asInstanceOf[Seq[Vector]].length == 2)
+  test("Se encuentra al enemigo mas cercano") {
+    val instances = Seq( (1.0, 3, 1), (5.0, 3, -1), (2.0, 3, -1), (20.0, 3, 1),
+                          (456.0, 3, 1), (100.0, 3, 1))
+    val drop3 = new Drop3()
+    val nemseis = drop3.findMyNemesis(instances, 1,true)
+    assert(nemseis == 2.0)
   }
-
 }
