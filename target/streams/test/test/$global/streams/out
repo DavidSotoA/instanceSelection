@@ -1,0 +1,13 @@
+[0m[[0mdebug[0m] [0mRunning TaskDef(com.test.RandomHyperplanesTest, org.scalatest.tools.Framework$$anon$1@f32147, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(com.test.EntropiaTest, org.scalatest.tools.Framework$$anon$1@f32147, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(com.test.Drop3Test, org.scalatest.tools.Framework$$anon$1@f32147, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 3 seconds, 662 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 0[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 0, aborted 3[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[31m*** 3 SUITES ABORTED ***[0m[0m
+[0m[[31merror[0m] [0mError during tests:[0m
+[0m[[31merror[0m] [0m	com.test.EntropiaTest[0m
+[0m[[31merror[0m] [0m	com.test.Drop3Test[0m
+[0m[[31merror[0m] [0m	com.test.RandomHyperplanesTest[0m
+[0m[[31merror[0m] [0m(test:[31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

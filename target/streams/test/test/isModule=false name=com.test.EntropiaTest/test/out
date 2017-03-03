@@ -1,0 +1,14 @@
+[0m[[0minfo[0m] [0m[32mEntropiaTest:[0m[0m
+[0m[[0minfo[0m] [0m[31mcom.test.EntropiaTest *** ABORTED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  java.lang.IllegalArgumentException: Unable to instantiate SparkSession with Hive support because Hive classes are not found.[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.SparkSession$Builder.enableHiveSupport(SparkSession.scala:815)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.lsh.Utilities$.initSparkSession(Utilities.scala:19)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.test.EntropiaTest.beforeAll(EntropiaTest.scala:21)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.BeforeAndAfterAll$class.liftedTree1$1(BeforeAndAfterAll.scala:212)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.BeforeAndAfterAll$class.run(BeforeAndAfterAll.scala:210)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at com.test.EntropiaTest.run(EntropiaTest.scala:15)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.tools.Framework.org$scalatest$tools$Framework$$runSuite(Framework.scala:314)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:472)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at sbt.TestRunner.runTest$1(TestFramework.scala:76)[0m[0m
+[0m[[0minfo[0m] [0m[31m  at sbt.TestRunner.run(TestFramework.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m  ...[0m[0m

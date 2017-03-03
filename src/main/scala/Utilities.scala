@@ -15,9 +15,8 @@ object Utilities {
 
   def initSparkSession(): SparkSession = {
     SparkSession.builder()
-     .master(Constants.MASTER)
      .appName(Constants.APP_NAME)
-     .config("spark.some.config.option", "some-value")
+     .enableHiveSupport() 
      .getOrCreate()
   }
 

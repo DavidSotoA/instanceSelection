@@ -8,7 +8,6 @@ import org.apache.spark.sql.types._
 import org.apache.spark.ml.linalg.SQLDataTypes.VectorType
 import org.apache.spark.sql.expressions.Window
 
-
 case class Drop3(){
 
   def instanceSelection(instances: DataFrame, unbalanced: Boolean, k_Neighbors: Int): DataFrame = {

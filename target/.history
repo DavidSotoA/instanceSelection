@@ -463,3 +463,15 @@ compile
 test-only com.test.Drop3Test
 compile
 test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+val x = 2
+compile
+package
+assembly 
+package
+assembly 
+assembly
+compile
+assembly

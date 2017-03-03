@@ -5,11 +5,11 @@
 		organisation="default"
 		module="p2p-fraud-processor-build"
 		revision="0.1-SNAPSHOT"
-		extra-scalaVersion="2.10"
 		extra-sbtVersion="0.13"
+		extra-scalaVersion="2.10"
 		conf="optional"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170224133651"/>
+		date="20170303103029"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>
