@@ -85,7 +85,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     val instances = Seq( (1.0, 3, 1), (5.0, 3, -1), (2.0, 3, -1), (20.0, 3, 1),
                           (456.0, 3, 1), (100.0, 3, 1))
     val drop3 = new Drop3()
-    val nemseis = drop3.findMyNemesis(instances, 1,true)
-    assert(nemseis == 2.0)
+    val nemesis = drop3.findMyNemesis(instances, 1,true)
+    assert(nemesis == 2.0)
   }
 }

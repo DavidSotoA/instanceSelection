@@ -7,6 +7,7 @@ import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAg
 import org.apache.spark.sql.types._
 import org.apache.spark.ml.linalg.SQLDataTypes.VectorType
 import org.apache.spark.sql.expressions.Window
+import com.github.martincooper.datatable.{DataColumn, DataTable, DataValue, DataRow}
 
 case class Drop3(){
 
@@ -28,12 +29,29 @@ case class Drop3(){
     for(i <- 0 to (instanceSize-1)){
       currentInstance = (instances(i)(0).asInstanceOf[Vector], instances(i)(1).asInstanceOf[Int],
                          instances(i)(2).asInstanceOf[Int])
+      val intancesId = (currentInstance._2, currentInstance._3)
       val distancesOfCurrentInstance = calculateDistances(currentInstance._1, instances)
       val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
       val myEnemy = findMyNemesis(distancesOfCurrentInstance, currentInstance._3, false)
 
     }
     throw new IllegalArgumentException ("unimplement method")
+  }
+
+  def createDataTable(instances: Seq[Row]): DataTable = {
+    val id_col = new DataColumn[(Int, Int)]("id_col", Array[(Int, Int)]())
+    val dist_col = new DataColumn[Array[(Double, Int, Int)]]("Distancias", Array[Array[(Double, Int, Int)]]())
+    val vecinos_col = new DataColumn[Array[(Double, Int, Int)]]("Vecinos", Array[Array[(Double, Int, Int)]]())
+    val enemy_col = new DataColumn[Double]("Enemigo", Array[Double]())
+
+    var table = DataTable("NewTable", Seq(id_col,  dist_col, vecinos_col, enemy_col))
+    for(i <- 0 to (instanceSize-1)){
+      id_tuple = (instances(i)(1).asInstanceOf[Int], instances(i)(2).asInstanceOf[Int])
+      val value_id_tuple = DataValue.apply(id_tuple)
+      val value_null = DataValue.apply(null)
+      table = table.get.rows.add(value_id_tuple, value_null, value_null, value_null, value_null)
+    }
+    table
   }
 
   def findNeighbors(instances: Seq[(Double, Int, Int)], k_Neighbors: Int, needOrder: Boolean): Seq[(Double, Int, Int)] = {

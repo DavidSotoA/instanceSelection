@@ -9,16 +9,7 @@ import com.github.martincooper.datatable.DataTable
 
 object Main {
   def main(args: Array[String]): Unit = {
-
-    val stringCol = new DataColumn[String]("StringColumn", (1 to 100).map(i => "Cell Value " + i))
-    val integerCol = new DataColumn[Int]("IntegerColumn", (1 to 100).map(i => i * 20))
-    val booleanCol = new DataColumn[Boolean]("BooleanColumn", (1 to 100).map(i => true))
-
-    // DataTable created with using a table name and a collection of Data Columns.
-    val dataTableOption = DataTable("NewTable", Seq(stringCol, integerCol, booleanCol))
 /*
-
-
     val spark = Utilities.initSparkSession
     val sc = spark.sqlContext.sparkContext
     val instances = spark.createDataFrame(Seq(
