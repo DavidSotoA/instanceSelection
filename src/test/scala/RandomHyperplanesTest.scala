@@ -19,7 +19,7 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
   var numHashTables: Int = _
 
   override def beforeAll() {
-    spark = Utilities.initSparkSession
+    spark = Utilities.initSparkSession(Constants.SPARK_SESSION_MODE_LOCAL)
     numHashTables = 3
     val selectFeatures = Array("c2", "c3", "c4", "c5")
     val instances = spark.createDataFrame(Seq(

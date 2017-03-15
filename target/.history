@@ -1,33 +1,3 @@
-compile
-run
-compile
-test
-compile
-test
-compile
-run
-compile
-run
-n
-run
-test
-run
-test
-compile
-test
-compile
-test
-compile
-package
-compile
-sbt scalastyleGenerateConfig
-clean
-compile
-sbt scalastyleGenerateConfig
-compile
-reload plugins
-compile
-sbt scalastyleGenerateConfig
 scalastyleGenerateConfig
 sbt scalastyle
 scalastyle
@@ -476,3 +446,55 @@ assembly
 compile
 assembly
 compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+console
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+scalastyle
+compile
+scalastyle
+compile
+scalastyle
+compile
+scalastyle
+compile
+scalastyle
+compile
+scalastyle
+test-only com.test.Drop3Test
+test-only com.test.EntropiaTest
+test-only com.test.RandomHyperplanesTest
+test:scalastyle
+compile
+test-only com.test.Drop3Test

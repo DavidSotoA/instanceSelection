@@ -5,3 +5,6 @@
 [0m[[0minfo[0m] [0m[32m- Se encuentran los k vecinos mas cercanos en base a las distancias calculadas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se eliminan las intancias que tienen el mismo label[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se encuentra al enemigo mas cercano[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se crea el datatable inicial[0m[0m
+[0m[[0minfo[0m] [0m[32m- Dado un datatable y un id, se obtiene el indice y el row correpondiente a dicho id[0m[0m
+[0m[[0minfo[0m] [0m[32m- se llena el datatable segun la lista dada[0m[0m

@@ -6,6 +6,8 @@ object Constants {
   val SET_OUPUT_COL_ASSEMBLER = "features"
   val SET_OUPUT_COL_LSH = "signature"
   val LABEL = "label"
+  val SPARK_SESSION_MODE_LOCAL = "local"
+  val SPARK_SESSION_MODE_CLUSTER = "cluster"
   val cols = """idn,resp_code,label,fraude,nolabel,monto,valida_cifin,confiabilidad_documento
                 ,first_tarjeta,first_email,first_doc,coc_act_max_tarjeta,coc_act_pro_tarjeta
                 ,coc_act_max_email,coc_act_pro_email,coc_act_max_doc,coc_act_pro_doc,COP,OTH

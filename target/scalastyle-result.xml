@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.0">
+ <file name="/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala">
+  <error column="0" line="12" source="org.scalastyle.scalariform.SpaceAfterCommentStartChecker" severity="error" message="Insert a space after the start of the comment"/>
+  <error column="34" line="5" source="org.scalastyle.scalariform.ImportOrderChecker" severity="error" message="import.ordering.wrongOrderInSelector.message"/>
+  <error column="34" line="5" source="org.scalastyle.scalariform.ImportOrderChecker" severity="error" message="import.ordering.wrongOrderInSelector.message"/>
+  <error column="34" line="5" source="org.scalastyle.scalariform.ImportOrderChecker" severity="error" message="import.ordering.wrongOrderInSelector.message"/>
+  <error column="0" line="6" source="org.scalastyle.scalariform.ImportOrderChecker" severity="error" message="import.ordering.wrongOrderInGroup.message"/>
+  <error column="0" line="7" source="org.scalastyle.scalariform.ImportOrderChecker" severity="error" message="import.ordering.wrongGroup.message"/>
+  <error column="0" line="8" source="org.scalastyle.scalariform.ImportOrderChecker" severity="error" message="import.ordering.wrongGroup.message"/>
+ </file>
+</checkstyle>

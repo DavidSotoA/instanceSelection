@@ -13,11 +13,23 @@ object Utilities {
     new SparkContext(conf)
   }
 
-  def initSparkSession(): SparkSession = {
-    SparkSession.builder()
-     .appName(Constants.APP_NAME)
-     .enableHiveSupport() 
-     .getOrCreate()
+  def initSparkSession(mode: String): SparkSession = {
+    mode match {
+      case Constants.SPARK_SESSION_MODE_CLUSTER => (
+        SparkSession.builder()
+        .appName(Constants.APP_NAME)
+        .enableHiveSupport()
+        .getOrCreate()
+      )
+
+      case Constants.SPARK_SESSION_MODE_LOCAL => (
+        SparkSession.builder()
+        .appName(Constants.APP_NAME)
+        .master(Constants.MASTER)
+        .config("spark.some.config.option", "some-value")
+        .getOrCreate()
+      )
+    }
   }
 
   def createVectorDataframe(selectFeatures: Array[String], df: DataFrame): DataFrame = {

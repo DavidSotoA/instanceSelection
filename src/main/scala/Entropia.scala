@@ -4,8 +4,8 @@ import scala.util.Random
 
 import org.apache.spark.mllib.tree.impurity.Entropy
 import org.apache.spark.sql._
-import org.apache.spark.sql.functions.udf
 import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction}
+import org.apache.spark.sql.functions.udf
 import org.apache.spark.sql.types._
 
 
@@ -22,16 +22,16 @@ object Entropia extends InstanceSelection {
           .drop(entropyForSignature("signature"))
 
     instancesWithEntropy.filter(x => pickInstance(x(4).asInstanceOf[Double]
-                                     ,x(2).asInstanceOf[Int]))
+                                     , x(2).asInstanceOf[Int]))
   }
 
   def pickInstance(entropia: Double, label: Int): Boolean = {
-    if(label == 1) {
+    if (label == 1) {
       return true
     }
 
     val rnd = scala.util.Random.nextFloat
-    if (rnd < entropia){
+    if (rnd < entropia) {
       return true
     }
     return false
@@ -41,7 +41,7 @@ object Entropia extends InstanceSelection {
 
 class AggEntropy() extends UserDefinedAggregateFunction {
 
- override def inputSchema: StructType = StructType(Array(StructField("item", IntegerType)))
+   override def inputSchema: StructType = StructType(Array(StructField("item", IntegerType)))
 
  override def bufferSchema: StructType = StructType(Array(
    StructField("fraude", LongType),
@@ -51,15 +51,15 @@ class AggEntropy() extends UserDefinedAggregateFunction {
 
  override def dataType: DataType = DoubleType
 
- override def deterministic = true
+ override def deterministic: Boolean = true
 
- override def initialize(buffer: MutableAggregationBuffer) = {
+ override def initialize(buffer: MutableAggregationBuffer): Unit = {
    buffer(0) = 0L
    buffer(1) = 0L
    buffer(2) = 0L
  }
 
- override def update(buffer: MutableAggregationBuffer, input: Row) = {
+ override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {
    if (input.getInt(0) == 1) {
      buffer(0) = buffer.getLong(0) + 1
    } else {
@@ -68,17 +68,17 @@ class AggEntropy() extends UserDefinedAggregateFunction {
    buffer(2) = buffer.getLong(2) + 1
  }
 
- override def merge(buffer1: MutableAggregationBuffer, buffer2: Row) = {
+ override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {
    buffer1(0) = buffer1.getLong(0) + buffer2.getLong(0)
    buffer1(1) = buffer1.getLong(1) + buffer2.getLong(1)
    buffer1(2) = buffer1.getLong(2) + buffer2.getLong(2)
  }
 
- override def evaluate(buffer: Row) = {
-   if(buffer.getLong(1).toDouble == buffer.getLong(2)){
+ override def evaluate(buffer: Row): Any = {
+   if (buffer.getLong(1).toDouble == buffer.getLong(2)) {
      1.toDouble/buffer.getLong(2)
    } else {
-     val numOfInstances = Array(buffer.getLong(0).toDouble , buffer.getLong(1).toDouble )
+     val numOfInstances = Array(buffer.getLong(0).toDouble, buffer.getLong(1).toDouble)
      Entropy.calculate(numOfInstances, buffer.getLong(2))
    }
  }

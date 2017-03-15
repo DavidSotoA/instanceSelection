@@ -18,7 +18,7 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
   var sc : SparkContext = _
 
   override def beforeAll() {
-    spark = Utilities.initSparkSession
+    spark = Utilities.initSparkSession(Constants.SPARK_SESSION_MODE_LOCAL)
     sc = spark.sqlContext.sparkContext
   }
 
