@@ -29,7 +29,7 @@
 [0m[[0minfo[0m] [0mFound 7 errors[0m
 [0m[[0minfo[0m] [0mFound 0 warnings[0m
 [0m[[0minfo[0m] [0mFound 0 infos[0m
-[0m[[0minfo[0m] [0mFinished in 0 ms[0m
+[0m[[0minfo[0m] [0mFinished in 2 ms[0m
 [0m[[32msuccess[0m] [0mcreated output: /home/skorpionx/P2P-fraud-processor/target[0m
 java.lang.RuntimeException: errors exist
 	at scala.sys.package$.error(package.scala:27)

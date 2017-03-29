@@ -1,27 +1,3 @@
-scalastyleGenerateConfig
-sbt scalastyle
-scalastyle
-compile
-scalastyleGenerateConfig
-scalastyle
-compile
-scalastyle
-test:scalastyle
-compile
-scalastyle
-compile
-scalastyle
-compile
-scalastyle
-test:scalastyle
-compile
-scalastyle
-test:scalastyle
-test
-test:scalastyle
-test
-compile
-scalastyle
 test
 compile
 test
@@ -496,5 +472,29 @@ test-only com.test.Drop3Test
 test-only com.test.EntropiaTest
 test-only com.test.RandomHyperplanesTest
 test:scalastyle
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+test:scalastyle
+scalastyle
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+val instances = Seq(Row(Vectors.dense(1.0), 3, 1),
+                        Row(Vectors.dense(5.0), 4, -1),
+                        Row(Vectors.dense(2.0), 5, -1),
+                        Row(Vectors.dense(3.0), 6, -1),
+                        Row(Vectors.dense(20.0), 7, 1),
+                        Row(Vectors.dense(14.0), 8, 1),
+                        Row(Vectors.dense(30.0), 9, -1),
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile+
 compile
 test-only com.test.Drop3Test
