@@ -7,7 +7,7 @@ import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.ml.linalg.SQLDataTypes.VectorType
 import org.apache.spark.sql._
 import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction, Window}
-import org.apache.spark.sql.functions.udf
+import org.apache.spark.sql.functions.{udf, explode}
 import org.apache.spark.sql.types._
 
 case class RowTable(id: (Int, Int),
@@ -26,7 +26,17 @@ case class Drop3() {
                                       instances.col("idn"), instances.col("label")).as("info"))
 
     val transformUDF = udf(drop3(_ : Seq[Row], unbalanced, k_Neighbors))
-    instancesWithInfo.withColumn("pruebaCol", transformUDF(instancesWithInfo.col("info")))
+
+    val remove = instancesWithInfo.withColumn("InstancesToEliminate", transformUDF(instancesWithInfo.col("info")))
+    .drop("info", "signature")
+
+    val explodeDF = remove.select(explode(remove("InstancesToEliminate")).as("idn"))
+
+    instances.join(explodeDF, Seq("idn"), "leftanti")
+  }
+
+  def eliminateInstances(instances: Seq[Row], instancesForRemove: Seq[Int]): Seq[Row] = {
+    instances.filter(x => !instancesForRemove.contains(x.getInt(1)))
   }
 
   def drop3(instances: Seq[Row], unbalanced: Boolean, k_Neighbors: Int):  Seq[Int] = {
@@ -64,8 +74,6 @@ case class Drop3() {
     instanceAssociates: Seq[Int],
     table: DataTable,
     instanceRemove: Seq[Int]): DataTable = {
-    println("instanceToRemove: " + instanceToRemove)
-    println("instanceAssociates: " + instanceAssociates)
     var mytable = table
     for (associate <- instanceAssociates) {
       if (!instanceRemove.contains(associate)){

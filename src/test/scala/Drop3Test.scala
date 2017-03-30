@@ -392,4 +392,31 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     val instanceToRemove = drop3.drop3(instances, true, 4)
     assert(instanceToRemove == List(11, 12))
   }
+
+  test("Se realiza el drop3 sobre un dataframe") {
+    val instances = spark.createDataFrame(Seq(
+              (0, Vectors.dense(1.0, 3.0), 1, 1),
+              (0, Vectors.dense(5.0, -7.0), 2, 1),
+              (0, Vectors.dense(-18.0, -12.0), 3, 1),
+              (0, Vectors.dense(-6.0, 31.0), 4, -1),
+              (1, Vectors.dense(-61.0, 5.0), 5, -1),
+              (1, Vectors.dense(-54.0, 14.0), 6, -1)
+            )).toDF("signature", "features", "idn", "label" )
+
+    val resp = Seq(
+      Row(1,0,Vectors.dense(1.0,3.0),1),
+      Row(2,0,Vectors.dense(5.0,-7.0),1),
+      Row(3,0,Vectors.dense(-18.0,-12.0),1),
+      Row(5,1,Vectors.dense(-61.0,5.0),-1),
+      Row(6,1,Vectors.dense(-54.0,14.0),-1))
+
+    val drop3 = new Drop3()
+    val prueba = drop3.instanceSelection(instances, true, 3)
+    val pruebaCollect = prueba.collect
+    assert(resp(0) == pruebaCollect(0))
+    assert(resp(1) == pruebaCollect(1))
+    assert(resp(2) == pruebaCollect(2))
+    assert(resp(3) == pruebaCollect(3))
+    assert(resp(4) == pruebaCollect(4))
+  }
 }

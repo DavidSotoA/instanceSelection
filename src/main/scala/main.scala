@@ -9,8 +9,8 @@ import com.github.martincooper.datatable.DataTable
 
 object Main {
   def main(args: Array[String]): Unit = {
-/*
-    val spark = Utilities.initSparkSession
+
+    val spark = Utilities.initSparkSession("local")
     val sc = spark.sqlContext.sparkContext
     val instances = spark.createDataFrame(Seq(
               (0, Vectors.dense(1.0, 3.0), 1, 1),
@@ -21,10 +21,11 @@ object Main {
               (1, Vectors.dense(-54.0, 14.0), 6, -1)
             )).toDF("signature", "features", "idn", "label" )
     val drop3 = new Drop3()
-    val pruebaVentana = drop3.instanceSelection(instances, true, 3)
+    val pruebaVentana = drop3.instanceSelection(instances, false, 3)
     pruebaVentana.write.mode(SaveMode.Overwrite).format("parquet")
       .save("/home/skorpionx/Escritorio/pruebaVentana")
 
+/*
 
     val aggKnn = new AggKnn()
 
