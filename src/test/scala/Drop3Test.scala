@@ -77,7 +77,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     assert(neighbors(2) == (5.0, 3, 1))
   }
 
-  test("Se eliminan las intancias que tienen el mismo label") {
+  test("Se eliminan las instancias que tienen el mismo label") {
     val instances = Seq( (1.0, 3, 1), (5.0, 3, -1), (2.0, 3, -1), (20.0, 3, 1),
                           (456.0, 3, 1), (100.0, 3, 1))
     val drop3 = new Drop3()
@@ -192,80 +192,6 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     assert(table(7).values == row7)
   }
 
-  test("Se llena el datatable segun la lista dada con todas las muestras de la misma clase") {
-    val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
-                        Row(Vectors.dense(5.0), 4, -1),
-                        Row(Vectors.dense(2.0), 5, -1),
-                        Row(Vectors.dense(3.0), 6, -1),
-                        Row(Vectors.dense(20.0), 7, -1),
-                        Row(Vectors.dense(14.0), 8, -1),
-                        Row(Vectors.dense(30.0), 9, -1),
-                        Row(Vectors.dense(7.0), 10, -1))
-    val drop3 = new Drop3()
-    val table = drop3.completeTable(instances, 3, drop3.createDataTable(instances))
-
-
-    val row5: IndexedSeq[Any] = Vector((7,-1),
-                                      Seq((17.0,6,-1), (18.0,5,-1), (19.0,3,-1)),
-                                      Seq((6.0,8,-1), (10.0,9,-1), (13.0,10,-1),
-                                      (15.0,4,-1)),
-                                      0.0,
-                                      List(8, 9))
-
-    val row7: IndexedSeq[Any] = Vector((9,-1),
-                                       Seq((27.0,6,-1), (28.0,5,-1), (29.0,3,-1)),
-                                       Seq((10.0,7,-1), (16.0,8,-1), (23.0,10,-1), (25.0,4,-1)),
-                                       0.0,
-                                       List(7))
-
-    val row6: IndexedSeq[Any] = Vector((8,-1),
-                                       Seq((12.0,5,-1), (13.0,3,-1), (16.0,9,-1)),
-                                       Seq((6.0,7,-1), (7.0,10,-1), (9.0,4,-1), (11.0,6,-1)),
-                                       0.0,
-                                       List(7, 9))
-
-    val row2: IndexedSeq[Any] = Vector((4,-1),
-                                       Seq((9.0,8,-1), (15.0,7,-1), (25.0,9,-1)),
-                                       Seq((2.0,6,-1), (2.0,10,-1), (3.0,5,-1), (4.0,3,-1)),
-                                       0.0,
-                                       List(3, 5, 6, 7, 8, 9, 10))
-
-    val row4: IndexedSeq[Any] = Vector((6,-1),
-                                       Seq((11.0,8,-1), (17.0,7,-1), (27.0,9,-1)),
-                                       Seq((1.0,5,-1), (2.0,3,-1), (2.0,4,-1), (4.0,10,-1)),
-                                       0.0,
-                                       List(3, 4, 5, 8, 10))
-
-    val row8: IndexedSeq[Any] = Vector((10,-1),
-                                       Seq((7.0,8,-1), (13.0,7,-1), (23.0,9,-1)),
-                                       Seq((2.0,4,-1), (4.0,6,-1), (5.0,5,-1), (6.0,3,-1)),
-                                       0.0,
-                                       List(3, 4, 5, 6, 7, 8, 9))
-
-    val row1: IndexedSeq[Any] = Vector((3,-1),
-                                       Seq((13.0,8,-1), (19.0,7,-1), (29.0,9,-1)),
-                                       Seq((1.0,5,-1), (2.0,6,-1), (4.0,4,-1), (6.0,10,-1)),
-                                       0.0,
-                                       List(4, 5, 6, 10))
-
-
-    val row3: IndexedSeq[Any] = Vector((5,-1),
-                                       Seq((12.0,8,-1), (18.0,7,-1), (28.0,9,-1)),
-                                       Seq((1.0,3,-1), (1.0,6,-1), (3.0,4,-1), (5.0,10,-1)),
-                                       0.0,
-                                       List(3, 4, 6, 10))
-
-    assert(table.size == 8)
-    assert(table(0).values == row1)
-    assert(table(1).values == row2)
-    assert(table(2).values == row3)
-    assert(table(3).values == row4)
-    assert(table(4).values == row5)
-    assert(table(5).values == row6)
-    assert(table(6).values == row7)
-    assert(table(7).values == row8)
-  }
-
   test("El metodo knn retorna la etiqueta que tiene la mayoria de los vecinos") {
     val labels = Seq(-1, 1)
     val neighbors = Seq((2.2, 4, 1), (2.2, 4, 1), (2.2, 4, -1))
@@ -373,7 +299,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
 
     val drop3 = new Drop3()
     val instanceToRemove = drop3.drop3(instances, false, 3)
-    assert(instanceToRemove == List(11, 12, 6, 7, 4, 8, 9, 5, 10))
+    assert(instanceToRemove == List(11, 12, 6, 7, 3, 4, 5, 10))
   }
 
   test("Se realiza el metodo de DROP3 con clases desbalanceadas") {
@@ -407,8 +333,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(1,0,Vectors.dense(1.0,3.0),1),
       Row(2,0,Vectors.dense(5.0,-7.0),1),
       Row(3,0,Vectors.dense(-18.0,-12.0),1),
-      Row(5,1,Vectors.dense(-61.0,5.0),-1),
-      Row(6,1,Vectors.dense(-54.0,14.0),-1))
+      Row(5,1,Vectors.dense(-61.0,5.0),-1))
 
     val drop3 = new Drop3()
     val prueba = drop3.instanceSelection(instances, true, 3)
@@ -417,6 +342,118 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     assert(resp(1) == pruebaCollect(1))
     assert(resp(2) == pruebaCollect(2))
     assert(resp(3) == pruebaCollect(3))
-    assert(resp(4) == pruebaCollect(4))
+  }
+
+  test("Se determina que las muestras dadas son todas de una misma clase") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
+                        Row(Vectors.dense(5.0), 4, -1),
+                        Row(Vectors.dense(2.0), 5, -1),
+                        Row(Vectors.dense(3.0), 6, -1),
+                        Row(Vectors.dense(20.0), 7, -1),
+                        Row(Vectors.dense(14.0), 8, -1),
+                        Row(Vectors.dense(30.0), 9, -1),
+                        Row(Vectors.dense(7.0), 10, -1))
+    val drop3 = new Drop3()
+    val label = instances.head.getInt(2)
+    val oneClasss = drop3.isOneClass(instances, label)
+    assert(oneClasss == true)
+  }
+
+  test("Se determina que las muestras dadas son de diferentes clases") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
+                        Row(Vectors.dense(5.0), 4, -1),
+                        Row(Vectors.dense(2.0), 5, -1),
+                        Row(Vectors.dense(3.0), 6, -1),
+                        Row(Vectors.dense(20.0), 7, -1),
+                        Row(Vectors.dense(14.0), 8, -1),
+                        Row(Vectors.dense(30.0), 9, -1),
+                        Row(Vectors.dense(7.0), 10, 1))
+    val drop3 = new Drop3()
+    val label = instances.head.getInt(2)
+    val oneClasss = drop3.isOneClass(instances, label)
+    assert(oneClasss == false)
+  }
+
+  test("Si las muestras son desbalanceadas y todas las muestras son de la clase mayoritaria se"
+      + " indica que se deben de eliminar todas las instancias menos una") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
+                        Row(Vectors.dense(5.0), 4, -1),
+                        Row(Vectors.dense(2.0), 5, -1),
+                        Row(Vectors.dense(3.0), 6, -1),
+                        Row(Vectors.dense(20.0), 7, -1),
+                        Row(Vectors.dense(14.0), 8, -1),
+                        Row(Vectors.dense(30.0), 9, -1),
+                        Row(Vectors.dense(7.0), 10, -1))
+    val drop3 = new Drop3()
+    val label = instances.head.getInt(2)
+    val unbalanced = true
+    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    assert(selectInstances.size == 7)
+  }
+
+  test("Si las muestras son desbalanceadas y todas las muestras son de la clase minoritaria se"
+      + " indica que no se deben de eliminar instancias") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, 1),
+                        Row(Vectors.dense(5.0), 4, 1),
+                        Row(Vectors.dense(2.0), 5, 1),
+                        Row(Vectors.dense(3.0), 6, 1),
+                        Row(Vectors.dense(20.0), 7, 1),
+                        Row(Vectors.dense(14.0), 8, 1),
+                        Row(Vectors.dense(30.0), 9, 1),
+                        Row(Vectors.dense(7.0), 10, 1))
+    val drop3 = new Drop3()
+    val label = instances.head.getInt(2)
+    val unbalanced = true
+    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    assert(selectInstances.size == 0)
+  }
+
+  test("Si las muestras son balanceadas y todas las muestras son de la clase mayoriatria se"
+      + " indica que se deben de eliminar todas las instancias menos una") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, 1),
+                        Row(Vectors.dense(5.0), 4, 1),
+                        Row(Vectors.dense(2.0), 5, 1),
+                        Row(Vectors.dense(3.0), 6, 1),
+                        Row(Vectors.dense(20.0), 7, 1),
+                        Row(Vectors.dense(14.0), 8, 1),
+                        Row(Vectors.dense(30.0), 9, 1),
+                        Row(Vectors.dense(7.0), 10, 1))
+    val drop3 = new Drop3()
+    val label = instances.head.getInt(2)
+    val unbalanced = false
+    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    assert(selectInstances.size == 7)
+  }
+
+  test("Si las muestras son balanceadas y todas las muestras son de la clase minoritaria se"
+      + " indica que se deben de eliminar todas las instancias menos una") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, 1),
+                        Row(Vectors.dense(5.0), 4, 1),
+                        Row(Vectors.dense(2.0), 5, 1),
+                        Row(Vectors.dense(3.0), 6, 1),
+                        Row(Vectors.dense(20.0), 7, 1),
+                        Row(Vectors.dense(14.0), 8, 1),
+                        Row(Vectors.dense(30.0), 9, 1),
+                        Row(Vectors.dense(7.0), 10, 1))
+    val drop3 = new Drop3()
+    val label = instances.head.getInt(2)
+    val unbalanced = false
+    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    assert(selectInstances.size == 7)
+  }
+
+  test("Solo hay solo una instancia, no se elimina ninguna muestra") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, -1))
+    val drop3 = new Drop3()
+    val instanceToRemove = drop3.drop3(instances, false, 4)
+    assert(instanceToRemove == List())
+  }
+
+  test("Solo dos instancias") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
+                        Row(Vectors.dense(66.0), 7, 1))
+    val drop3 = new Drop3()
+    val instanceToRemove = drop3.drop3(instances, false, 4)
+    assert(instanceToRemove == List(3, 7))
   }
 }

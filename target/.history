@@ -1,34 +1,6 @@
 compile
 test
 compile
-test
-compile
-scalastyle
-compile
-scalastyle
-compile
-test
-scalastyle
-test:scalastyle
-compile
-scalastyle
-test:scalastyle
-test
-test:scalastyle
-compile
-scalastyle
-test
-compile
-test
-compile
-test
-compile
-test
-compile
-test
-compile
-test
-compile
 scalastyle
 test:scalastyle
 compile
@@ -498,3 +470,31 @@ assembly
 compile
 assembly
 test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+n
+compile
+assembly
+test-only com.test.Drop3Test
+scalastyle
+compile
+test-only com.test.Drop3Test
+compile
+assembly
+compile
+assembly
+cmp0ile
+compile
+assembly
+assmbly
+assembly

@@ -6,7 +6,6 @@
 [0m[[0minfo[0m] [0mMerging files...[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
-[0m[[0minfo[0m] [0mSHA-1: 693cee99f09474de3db109cc97ec7ea5e4c4d48a[0m
 [0m[[0minfo[0m] [0mPackaging /home/skorpionx/P2P-fraud-processor/target/scala-2.11/Instance selection-assembly-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	com/github/martincooper/datatable/BaseTable.class[0m
@@ -343,18 +342,24 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$createDataTable$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$eliminateInstances$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$eliminateInstances$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$isOneClass$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$isOneClass$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$killFriends$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$killFriends$1.class[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$knn$1$$anonfun$apply$1.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$knn$1$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$knn$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$knn$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$knn$2$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$knn$2$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$knn$2.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$knn$2.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$knn$3.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$knn$3.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$removeInstance$1$$anonfun$6.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$removeInstance$1$$anonfun$6.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$removeInstance$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$removeInstance$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$returnIfOneClass$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$returnIfOneClass$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$updateTableForRemove$1$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Drop3$$anonfun$updateTableForRemove$1$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Drop3$$anonfun$updateTableForRemove$1$$anonfun$4.class[0m
@@ -411,8 +416,14 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/LSH$class.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/LSH.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/LSH.class[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Main$$typecreator1$1.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Main$$typecreator1$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/LogHelper$class.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/LogHelper$class.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/LogHelper.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/LogHelper.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Main$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Main$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Main$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Main$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Main$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Main$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Main.class[0m

@@ -6,14 +6,9 @@
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/P2P-fraud-processor/src/main/scala/LSH.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/P2P-fraud-processor/src/main/scala/Drop3.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/P2P-fraud-processor/src/main/scala/Drop3.scala[0m
+[0m[[0mdebug[0m] [0mstart file /home/skorpionx/P2P-fraud-processor/src/main/scala/LogHelper.scala[0m
+[0m[[0mdebug[0m] [0mend file /home/skorpionx/P2P-fraud-processor/src/main/scala/LogHelper.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala[0m
-[0m[[31merror[0m] [0m/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala:12:0: Insert a space after the start of the comment[0m
-[0m[[31merror[0m] [0m/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala:5:34: import.ordering.wrongOrderInSelector.message[0m
-[0m[[31merror[0m] [0m/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala:5:34: import.ordering.wrongOrderInSelector.message[0m
-[0m[[31merror[0m] [0m/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala:5:34: import.ordering.wrongOrderInSelector.message[0m
-[0m[[31merror[0m] [0m/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala:6:0: import.ordering.wrongOrderInGroup.message[0m
-[0m[[31merror[0m] [0m/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala:7:0: import.ordering.wrongGroup.message[0m
-[0m[[31merror[0m] [0m/home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala:8:0: import.ordering.wrongGroup.message[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/P2P-fraud-processor/src/main/scala/main.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/P2P-fraud-processor/src/main/scala/Entropia.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/P2P-fraud-processor/src/main/scala/Entropia.scala[0m
@@ -25,34 +20,9 @@
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/P2P-fraud-processor/src/main/scala/Utilities.scala[0m
 [0m[[0mdebug[0m] [0mstart file /home/skorpionx/P2P-fraud-processor/src/main/scala/RandomHyperplanes.scala[0m
 [0m[[0mdebug[0m] [0mend file /home/skorpionx/P2P-fraud-processor/src/main/scala/RandomHyperplanes.scala[0m
-[0m[[0minfo[0m] [0mProcessed 9 file(s)[0m
-[0m[[0minfo[0m] [0mFound 7 errors[0m
+[0m[[0minfo[0m] [0mProcessed 10 file(s)[0m
+[0m[[0minfo[0m] [0mFound 0 errors[0m
 [0m[[0minfo[0m] [0mFound 0 warnings[0m
 [0m[[0minfo[0m] [0mFound 0 infos[0m
-[0m[[0minfo[0m] [0mFinished in 2 ms[0m
+[0m[[0minfo[0m] [0mFinished in 0 ms[0m
 [0m[[32msuccess[0m] [0mcreated output: /home/skorpionx/P2P-fraud-processor/target[0m
-java.lang.RuntimeException: errors exist
-	at scala.sys.package$.error(package.scala:27)
-	at org.scalastyle.sbt.Tasks$.onHasErrors$1(Plugin.scala:132)
-	at org.scalastyle.sbt.Tasks$.doScalastyleWithConfig$1(Plugin.scala:187)
-	at org.scalastyle.sbt.Tasks$.doScalastyle(Plugin.scala:195)
-	at org.scalastyle.sbt.ScalastylePlugin$$anonfun$rawScalastyleSettings$1$$anonfun$apply$1$$anonfun$apply$2.apply(Plugin.scala:89)
-	at org.scalastyle.sbt.ScalastylePlugin$$anonfun$rawScalastyleSettings$1$$anonfun$apply$1$$anonfun$apply$2.apply(Plugin.scala:77)
-	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47)
-	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40)
-	at sbt.std.Transform$$anon$4.work(System.scala:63)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:17)
-	at sbt.Execute.work(Execute.scala:237)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
-	at sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[0m[[31merror[0m] [0m(compile:[31mscalastyle[0m) errors exist[0m

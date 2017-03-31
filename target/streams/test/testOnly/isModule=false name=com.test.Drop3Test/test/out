@@ -1,15 +1,22 @@
 [0m[[0minfo[0m] [0m[32mDrop3Test:[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se calculan las distancias y se ordenan descendentemente para una instancia dada[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se encuentran los k vecinos mas cercanos en base a las distancias calculadas[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se eliminan las intancias que tienen el mismo label[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se eliminan las instancias que tienen el mismo label[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se encuentra al enemigo mas cercano[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se crea el datatable inicial[0m[0m
 [0m[[0minfo[0m] [0m[32m- Dado un datatable y un id, se obtiene el indice y el row correpondiente a dicho id[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se llena el datatable segun la lista dada[0m[0m
-[0m[[0minfo[0m] [0m[32m- Se llena el datatable segun la lista dada con todas las muestras de la misma clase[0m[0m
 [0m[[0minfo[0m] [0m[32m- El metodo knn retorna la etiqueta que tiene la mayoria de los vecinos[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se determina si remover una instancia en base a la clasificacion de los asosiados de una instancia p con y sin p[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se actualiza el datatable al remover una instancia[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza el metodo de DROP3 con clases balanceadas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza el metodo de DROP3 con clases desbalanceadas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza el drop3 sobre un dataframe[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se determina que las muestras dadas son todas de una misma clase[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se determina que las muestras dadas son de diferentes clases[0m[0m
+[0m[[0minfo[0m] [0m[32m- Si las muestras son desbalanceadas y todas las muestras son de la clase mayoritaria se indica que se deben de eliminar todas las instancias menos una[0m[0m
+[0m[[0minfo[0m] [0m[32m- Si las muestras son desbalanceadas y todas las muestras son de la clase minoritaria se indica que no se deben de eliminar instancias[0m[0m
+[0m[[0minfo[0m] [0m[32m- Si las muestras son balanceadas y todas las muestras son de la clase mayoriatria se indica que se deben de eliminar todas las instancias menos una[0m[0m
+[0m[[0minfo[0m] [0m[32m- Si las muestras son balanceadas y todas las muestras son de la clase minoritaria se indica que se deben de eliminar todas las instancias menos una[0m[0m
+[0m[[0minfo[0m] [0m[32m- Solo hay solo una instancia, no se elimina ninguna muestra[0m[0m
+[0m[[0minfo[0m] [0m[32m- Solo dos instancias[0m[0m
