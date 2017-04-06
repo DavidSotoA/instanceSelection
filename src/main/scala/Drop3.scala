@@ -10,12 +10,6 @@ import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAg
 import org.apache.spark.sql.functions.{explode, udf}
 import org.apache.spark.sql.types._
 
-case class RowTable(id: (Int, Int),
-                    distances: Seq[(Double, Int, Int)],
-                    neighbors: Seq[(Double, Int, Int)],
-                    enemy: Double,
-                    associates: Seq[Int])
-
 case class Drop3() extends LogHelper {
 
   def instanceSelection(instances: DataFrame, unbalanced: Boolean, k_Neighbors: Int): DataFrame = {
@@ -301,6 +295,66 @@ case class Drop3() extends LogHelper {
     }
     distances
   }
+
+  def completeTable2(instances: Seq[Row], k_Neighbors: Int, table: Table): Table = {
+    var myTable = table
+    var currentInstance: (Vector, Int, Int) = null.asInstanceOf[(Vector, Int, Int)]
+    val instanceSize = instances.size
+    for(i <- 0 to (instanceSize-1)) {
+      println(i)
+      currentInstance = (instances(i)(0).asInstanceOf[Vector],
+                         instances(i)(1).asInstanceOf[Int],
+                         instances(i)(2).asInstanceOf[Int])
+     val instancesId = (currentInstance._2, currentInstance._3)
+     val distancesOfCurrentInstance = calculateDistances(currentInstance._1, instances)
+     val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
+     val myEnemy = findMyNemesis(distancesOfCurrentInstance, currentInstance._3, false)
+
+     val (index, row) = myTable.getIndexAndRowById(instancesId._1)
+     val newRow = RowTable(instancesId,
+                           distancesOfCurrentInstance.drop(k_Neighbors + 1),
+                           myNeighbors,
+                           myEnemy,
+                           row.associates)
+     myTable.replaceRow(index, newRow)
+
+     for(neighbor <- myNeighbors) {
+       myTable = updateAssociates2(instancesId._1, neighbor._2, myTable)
+     }
+    }
+    myTable.orderByEnemy
+    myTable
+  }
+
+  def createDataTable2(instances: Seq[Row]): Table = {
+    val dist_null = null.asInstanceOf[Seq[(Double, Int, Int)]]
+    val neighbors_null = dist_null
+    val enemy_null = null.asInstanceOf[Double]
+    val associates_null = Seq.empty[Int]
+
+    val instanceSize = instances.size
+    val table = new Table()
+    var row = null.asInstanceOf[RowTable]
+    for(i <- 0 to (instanceSize-1)) {
+      val id_tuple = (instances(i)(1).asInstanceOf[Int], instances(i)(2).asInstanceOf[Int])
+      row = new RowTable(id_tuple, dist_null, neighbors_null, enemy_null, associates_null)
+      table.addRow(row)
+    }
+    table
+  }
+
+def updateAssociates2(associate: Int, instanceForUpdate: Int, table: Table): Table = {
+    var myTable = table
+    val (index, row) = myTable.getIndexAndRowById(instanceForUpdate)
+    val newRow = RowTable(row.id,
+                          row.distances,
+                          row.neighbors,
+                          row.enemy,
+                          row.associates :+ associate)
+    myTable.replaceRow(index, newRow)
+    myTable
+  }
+
 }
 
 class AggKnn() extends UserDefinedAggregateFunction {

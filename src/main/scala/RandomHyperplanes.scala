@@ -32,12 +32,12 @@ case class RandomHyperplanes(
     }
   }
 
-  override def lsh(): DataFrame = {
+  override def lsh(colForLsh: String): DataFrame = {
     val partiallyHashFunction = hashFunction( _ : Vector, hyperplanes)
     val transformUDF = udf(partiallyHashFunction)
     val signatureDF = dataset.withColumn(Constants.SET_OUPUT_COL_LSH,
-      transformUDF(dataset(Constants.SET_OUPUT_COL_ASSEMBLER)))
-    signatureDF.repartition(col("signature"))
+      transformUDF(dataset(colForLsh)))
+    signatureDF.repartition(col(Constants.SET_OUPUT_COL_LSH ))
   }
 
   override def hashFunction(instance: Vector,

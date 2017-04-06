@@ -84,7 +84,7 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
   }
 
   test("El metodo lsh retorna un dataframe con la estructura correcta") {
-      val instancesWithSignature = randomHyperplanes.lsh()
+      val instancesWithSignature = randomHyperplanes.lsh(Constants.SET_OUPUT_COL_ASSEMBLER)
       val columnNames = instancesWithSignature.schema.fieldNames
       assert(instancesWithSignature.count() == 5)
       assert(columnNames.length == 4)
@@ -113,14 +113,14 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
     val hyp = new RandomHyperplanes(vectorizedDF, 4, spark)
     hyp.setHyperplanes(hyperplanes)
-    val instancesWithSignature = hyp.lsh()
+    val instancesWithSignature = hyp.lsh(Constants.SET_OUPUT_COL_ASSEMBLER)
     val keysDF = LSH.getKeys(instancesWithSignature)
     val size = keysDF.count
     val keys = keysDF.select(Constants.SET_OUPUT_COL_LSH).take(3)
     assert(size == 3)
-    assert(keys(0)(0).asInstanceOf[String] == "0000")
-    assert(keys(1)(0).asInstanceOf[String] == "0111")
-    assert(keys(2)(0).asInstanceOf[String] == "1110")
+    assert(keys(0)(0).asInstanceOf[String] == "0111")
+    assert(keys(1)(0).asInstanceOf[String] == "1110")
+    assert(keys(2)(0).asInstanceOf[String] == "0000")
   }
 
   test("Se hace la conversion con VectorAssembler") {
@@ -160,6 +160,28 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
     assert(bucket(0)(0).asInstanceOf[Int] == 0)
     assert(bucket(1)(0).asInstanceOf[Int] == 1)
     assert(bucket(2)(0).asInstanceOf[Int] == 2)
+  }
+
+  test("Se normalizan los datos del DF") {
+    val selectFeatures = Array("c1", "c2")
+    val instances = spark.createDataFrame(Seq(
+      (0, 3.0, 0.5, 0),
+      (1, 4.0, 0.4, 0),
+      (2, -0.5, 3.0, 1),
+      (3, -0.4, 4.0, 0),
+      (4, -0.5, -3.0, 1),
+      (5, -0.4, -4.0, 0))
+    ).toDF("idn", "c1", "c2", "label")
+    val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
+    val normalizeDF = Mathematics.normalize(vectorizedDF, Constants.SET_OUPUT_COL_ASSEMBLER)
+    val valuesNormalize = normalizeDF.select(Constants.SET_OUPUT_COL_SCALED)
+    val valuesNormalizeList = valuesNormalize.collect
+    assert(valuesNormalizeList(0)(0).asInstanceOf[Vector] == Vectors.dense(1.033280022572002,0.11037659867723067))
+    assert(valuesNormalizeList(1)(0).asInstanceOf[Vector] == Vectors.dense(1.5176300331526282,0.07884042762659332))
+    assert(valuesNormalizeList(2)(0).asInstanceOf[Vector] == Vectors.dense(-0.6619450144601892,0.8987808749431643))
+    assert(valuesNormalizeList(3)(0).asInstanceOf[Vector] == Vectors.dense(-0.6135100134021266,1.2141425854495378))
+    assert(valuesNormalizeList(4)(0).asInstanceOf[Vector] == Vectors.dense(-0.6619450144601892,-0.9933893880950765))
+    assert(valuesNormalizeList(5)(0).asInstanceOf[Vector] == Vectors.dense(-0.6135100134021266,-1.30875109860145))
   }
 
 }

@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0m[32mRandomProjectionLSHTest:[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se retorna IllegalArgumentException si el nuero de andsFunctions es menor o igual a cero[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se retorna IllegalArgumentException si el nuero de orsFunctions es menor o igual a cero[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se crean la familias de funciones[0m[0m

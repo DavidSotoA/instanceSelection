@@ -1,6 +1,8 @@
 package com.lsh
 
 import org.apache.spark.ml.linalg.{Vector, Vectors}
+import org.apache.spark.ml.feature.{StandardScaler, StandardScalerModel}
+import org.apache.spark.sql.DataFrame
 
 object Mathematics{
   def dot(x: Vector, y: Vector): Double = {
@@ -34,4 +36,16 @@ object Mathematics{
   def distance(a: Vector, b: Vector): Double = {
     Math.sqrt(Vectors.sqdist(a, b))
   }
+
+  def normalize(df: DataFrame, inputCol: String): DataFrame = {
+     val scaler = (new StandardScaler()
+     .setInputCol(inputCol)
+     .setOutputCol(Constants.SET_OUPUT_COL_SCALED)
+     .setWithStd(true)
+     .setWithMean(true))
+     // Compute summary statistics by fitting the StandardScaler.
+     val scalerModel = scaler.fit(df)
+     val scaledData = scalerModel.transform(df)
+     scaledData
+   }
 }

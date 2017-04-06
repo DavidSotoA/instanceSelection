@@ -40,5 +40,4 @@ object Utilities {
     val vectorDF = assembler.transform(df)
     vectorDF.select("idn", Constants.SET_OUPUT_COL_ASSEMBLER, "label")
   }
-
 }

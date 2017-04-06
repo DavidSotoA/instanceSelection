@@ -97,12 +97,12 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     val instances = Seq(Row(1.0, 3, 1), Row(5.0, 4, -1),
                         Row(2.0, 5, -1), Row(20.0, 6, 1))
     val drop3 = new Drop3()
-    val table = drop3.createDataTable(instances)
+    val table = drop3.createDataTable2(instances).getTable
     assert(table.size == 4)
-    assert(table(0)(0) == (3, 1))
-    assert(table(1)(0) == (4, -1))
-    assert(table(2)(0) == (5, -1))
-    assert(table(3)(0) == (6, 1))
+    assert(table(0).id == (3, 1))
+    assert(table(1).id == (4, -1))
+    assert(table(2).id == (5, -1))
+    assert(table(3).id == (6, 1))
   }
 
   test("Dado un datatable y un id, se obtiene el indice y el row correpondiente a dicho id") {
@@ -129,67 +129,67 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, 1))
     val drop3 = new Drop3()
-    val table = drop3.completeTable(instances, 3, drop3.createDataTable(instances))
+    val table = drop3.completeTable2(instances, 3, drop3.createDataTable2(instances)).getTable
 
-    val row0: IndexedSeq[Any] = Vector((7,1),
+    val row1 = new RowTable((7,1),
                                       Seq((17.0,6,-1), (18.0,5,-1), (19.0,3,1)),
                                       Seq((6.0,8,1), (10.0,9,-1), (13.0,10,1),
                                       (15.0,4,-1)),
                                       10.0,
                                       List(8, 9))
 
-    val row1: IndexedSeq[Any] = Vector((9,-1),
+    val row0 = new RowTable((9,-1),
                                        Seq((27.0,6,-1), (28.0,5,-1), (29.0,3,1)),
                                        Seq((10.0,7,1), (16.0,8,1), (23.0,10,1), (25.0,4,-1)),
                                        10.0,
                                        List(7))
 
-    val row2: IndexedSeq[Any] = Vector((8,1),
+    val row2 = new RowTable((8,1),
                                        Seq((12.0,5,-1), (13.0,3,1), (16.0,9,-1)),
                                        Seq((6.0,7,1), (7.0,10,1), (9.0,4,-1), (11.0,6,-1)),
                                        9.0,
                                        List(7, 9))
 
-    val row3: IndexedSeq[Any] = Vector((4,-1),
+    val row5 = new RowTable((4,-1),
                                        Seq((9.0,8,1), (15.0,7,1), (25.0,9,-1)),
                                        Seq((2.0,6,-1), (2.0,10,1), (3.0,5,-1), (4.0,3,1)),
                                        2.0,
                                        List(3, 5, 6, 7, 8, 9, 10))
 
-    val row4: IndexedSeq[Any] = Vector((6,-1),
+    val row4 = new RowTable((6,-1),
                                        Seq((11.0,8,1), (17.0,7,1), (27.0,9,-1)),
                                        Seq((1.0,5,-1), (2.0,3,1), (2.0,4,-1), (4.0,10,1)),
                                        2.0,
                                        List(3, 4, 5, 8, 10))
 
-    val row5: IndexedSeq[Any] = Vector((10,1),
+    val row3 = new RowTable((10,1),
                                        Seq((7.0,8,1), (13.0,7,1), (23.0,9,-1)),
                                        Seq((2.0,4,-1), (4.0,6,-1), (5.0,5,-1), (6.0,3,1)),
                                        2.0,
                                        List(3, 4, 5, 6, 7, 8, 9))
 
-    val row6: IndexedSeq[Any] = Vector((3,1),
+    val row7 = new RowTable((3,1),
                                        Seq((13.0,8,1), (19.0,7,1), (29.0,9,-1)),
                                        Seq((1.0,5,-1), (2.0,6,-1), (4.0,4,-1), (6.0,10,1)),
                                        1.0,
                                        List(4, 5, 6, 10))
 
 
-    val row7: IndexedSeq[Any] = Vector((5,-1),
+    val row6 = new RowTable((5,-1),
                                        Seq((12.0,8,1), (18.0,7,1), (28.0,9,-1)),
                                        Seq((1.0,3,1), (1.0,6,-1), (3.0,4,-1), (5.0,10,1)),
                                        1.0,
                                        List(3, 4, 6, 10))
 
     assert(table.size == 8)
-    assert(table(0).values == row0)
-    assert(table(1).values == row1)
-    assert(table(2).values == row2)
-    assert(table(3).values == row3)
-    assert(table(4).values == row4)
-    assert(table(5).values == row5)
-    assert(table(6).values == row6)
-    assert(table(7).values == row7)
+    assert(table(0) == row0)
+    assert(table(1) == row1)
+    assert(table(2) == row2)
+    assert(table(3) == row3)
+    assert(table(4) == row4)
+    assert(table(5) == row5)
+    assert(table(6) == row6)
+    assert(table(7) == row7)
   }
 
   test("El metodo knn retorna la etiqueta que tiene la mayoria de los vecinos") {

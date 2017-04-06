@@ -20,8 +20,9 @@ object Main {
     val selectFeatures = for (i <- names if !(ignore contains i )) yield i
     // se realiza el LSH
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
+    val normalizeDF = Mathematics.normalize(vectorizedDF, Constants.SET_OUPUT_COL_ASSEMBLER)
     val randomHyperplanes = new RandomHyperplanes(vectorizedDF, numHashTables, spark)
-    val instancesWithSignature = randomHyperplanes.lsh()
+    val instancesWithSignature = randomHyperplanes.lsh(Constants.SET_OUPUT_COL_SCALED)
 
     instancesWithSignature.write.mode(SaveMode.Overwrite).format("parquet")
       .save(args(2) + "/prueba")
@@ -31,11 +32,7 @@ object Main {
     val drop3 = new Drop3()
     val instanceWithDrop3 = drop3.instanceSelection(instancesWithSignature, true, 2)
 
-    // instancesKeys.write.mode(SaveMode.Overwrite).format("parquet")
-    //   .save(args(2) + "/keys.parquet")
-
-    instanceWithDrop3.write.mode(SaveMode.Overwrite).format("parquet")
-      .save(args(2) + "/drop3")
+    instanceWithDrop3.write.mode(SaveMode.Overwrite).format("parquet").save(args(2) + "/drop3")
 
   }
 }

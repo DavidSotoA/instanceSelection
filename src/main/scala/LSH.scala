@@ -9,7 +9,7 @@ trait LSH {
   var spark: SparkSession = _
 
   def hashFunction(instance: Vector, hashFunctions: Array[Vector]): String
-  def lsh(): DataFrame
+  def lsh(colForLsh: String): DataFrame
   def keyDistance(x: Vector, y: Vector): Array[Array[Vector]]
 
   def groupForBuckets(hashedDataSet: DataFrame): DataFrame = {

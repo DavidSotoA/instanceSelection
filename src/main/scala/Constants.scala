@@ -5,6 +5,7 @@ object Constants {
   val MASTER = "local"
   val SET_OUPUT_COL_ASSEMBLER = "features"
   val SET_OUPUT_COL_LSH = "signature"
+  val SET_OUPUT_COL_SCALED = "scaled"
   val LABEL = "label"
   val SPARK_SESSION_MODE_LOCAL = "local"
   val SPARK_SESSION_MODE_CLUSTER = "cluster"
