@@ -38,6 +38,6 @@ object Utilities {
       .setOutputCol(Constants.SET_OUPUT_COL_ASSEMBLER)
 
     val vectorDF = assembler.transform(df)
-    vectorDF.select("idn", Constants.SET_OUPUT_COL_ASSEMBLER, "label")
+    vectorDF.select(Constants.INSTANCE_ID, Constants.SET_OUPUT_COL_ASSEMBLER, Constants.LABEL)
   }
 }

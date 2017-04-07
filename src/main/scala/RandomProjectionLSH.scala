@@ -10,13 +10,14 @@ case class RandomProjectionLSH(
     dataset_RH: Dataset[_],
     andsFunctions: Int,
     orsFunctions: Int,
+    sizeBucket: Int,
     spark_RH: SparkSession) extends LSH {
 
     dataset = dataset_RH
     spark = spark_RH
     require(andsFunctions > 0, "andsFunctions debe ser mayor a cero")
     require(orsFunctions > 0, "orsFunctions debe ser mayor a cero")
-    val functionFamilies = createFunctionsForFamilies(orsFunctions, andsFunctions )
+    var functionFamilies = createFunctionsForFamilies(orsFunctions, andsFunctions )
 
     def createFunctions(inputDim: Int): Vector = {
       Vectors.dense(Array.fill(inputDim)(Random.nextGaussian()))
@@ -24,29 +25,35 @@ case class RandomProjectionLSH(
 
     def createFunctionsForFamilies(
       orsFunctions: Int,
-      andsFunctions: Int): Seq[(Int, List[(Vector, Float)])] = {
-      var functionsForFamilies = Seq[(Int, List[(Vector, Float)])]()
+      andsFunctions: Int): Seq[(List[(Vector, Double)])] = {
+      var functionsForFamilies = Seq[List[(Vector, Double)]] ()
       val inputDim = dataset.select(Constants.SET_OUPUT_COL_ASSEMBLER).head.get(0)
         .asInstanceOf[Vector].size
       for(i <- 1 to orsFunctions) {
-        var w = 0
-        do {
-          w = Random.nextInt(100) + 1
-        }while(functionsForFamilies.exists(_._1 == w))
-
-        var functions = List[(Vector, Float)]()
+        var functions = List[(Vector, Double)]()
         for(i <- 1 to andsFunctions){
           val a = createFunctions(inputDim)
-          val b = Random.nextFloat * (w - 1) + 1
+          val b = Random.nextDouble * (sizeBucket - 1) + 1
           functions = functions :+ (a, b)
         }
-        functionsForFamilies = functionsForFamilies :+ (w, functions)
+        functionsForFamilies = functionsForFamilies :+ (functions)
       }
       functionsForFamilies
     }
 
-    def getFamilies(): Seq[(Int, List[(Vector, Float)])] = {
+    def setFamilies(families: Seq[List[(Vector, Double)]]) {
+      functionFamilies = families
+    }
+
+    def getFamilies(): Seq[List[(Vector, Double)]] = {
       functionFamilies
+    }
+
+    def hashFunction2(instance: Vector, familieFunctions: List[(Vector, Double)]): String = {
+      val signature = familieFunctions.map {
+        case (a, b) => ((Mathematics.dot(a, instance) + b) / sizeBucket).floor.toInt
+      }
+      Mathematics.stringSignature(signature.toArray)
     }
 
     def hashFunction(instance: Vector, hashFunctions: Array[Vector]): String = {
@@ -54,7 +61,16 @@ case class RandomProjectionLSH(
     }
 
     def lsh(colForLsh: String): DataFrame = {
-      throw new IllegalArgumentException ("unimplement method")
+      var i = 1
+      var signatureDF = dataset
+      for(familie <- functionFamilies) {
+        val partiallyHashFunction = hashFunction2( _ : Vector, familie)
+        val transformUDF = udf(partiallyHashFunction)
+        signatureDF = signatureDF.withColumn((Constants.SET_OUPUT_COL_LSH + "_" + i),
+                      transformUDF(signatureDF(colForLsh)))
+        i = i +1
+      }
+      signatureDF.toDF
     }
 
     def keyDistance(x: Vector, y: Vector): Array[Array[Vector]] = {

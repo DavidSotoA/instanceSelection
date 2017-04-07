@@ -6,7 +6,13 @@ object Constants {
   val SET_OUPUT_COL_ASSEMBLER = "features"
   val SET_OUPUT_COL_LSH = "signature"
   val SET_OUPUT_COL_SCALED = "scaled"
+  val SET_OUPUT_COL_ENTROPY = "entropy"
+  val INSTANCE_ID = "idn"
   val LABEL = "label"
+  val PICK_INSTANCE = "pick_instance"
+  val PICK_CONCAT = "pick_concat"
+  val ENTROPY_AND_METHOD = "and_method"
+  val ENTROPY_OR_METHOD = "or_method"
   val SPARK_SESSION_MODE_LOCAL = "local"
   val SPARK_SESSION_MODE_CLUSTER = "cluster"
   val cols = """idn,resp_code,label,fraude,nolabel,monto,valida_cifin,confiabilidad_documento

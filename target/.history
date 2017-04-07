@@ -26,3 +26,30 @@ compile
 test-only com.test.Drop3Test
 compile
 test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.RandomHyperplanesTest.scala
+test-only com.test.RandomProjectionLSHTest
+compile
+test-only com.test.RandomProjectionLSHTest
+compile
+test-only com.test.RandomProjectionLSHTest
+compile
+assembly
+test-only com.test.RandomProjectionLSHTest
+compile
+test-only com.test.RandomProjectionLSHTest
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+assembly
+compile
+assembly
+compile
+assembly
+compile
+test-only com.test.EntropiaTest
+compile

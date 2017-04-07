@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: com.github.martincooper
+Implementation-Title: scala-datatable
+Implementation-Version: 0.7.0
+Implementation-Vendor-Id: com.github.martincooper
+Specification-Vendor: com.github.martincooper
+Specification-Title: scala-datatable
+Specification-Version: 0.7.0
+
