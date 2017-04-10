@@ -70,12 +70,13 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
 
   test("Se halla la entropia de las instancias en el dataframe cuando las clases son desbalanceadas"){
     val instances = spark.createDataFrame(Seq(
-      (0, Vectors.dense(3.0, 0.5), -1 , "00", "00"),
-      (1, Vectors.dense(4.0, 0.4), -1, "01", "01"),
-      (2, Vectors.dense(-0.5, 3.0), 1, "00", "10"),
-      (3, Vectors.dense(-0.4, 4.0), -1, "10", "00"),
-      (4, Vectors.dense(-0.5, -3.0), 1, "10", "01"),
-      (5, Vectors.dense(-0.4, -4.0), -1, "01", "10"))
+      (1, Vectors.dense(3.0, 0.5), -1 , "00", "00"),
+      (2, Vectors.dense(4.0, 0.4), -1, "01", "01"),
+      (3, Vectors.dense(-0.5, 3.0), 1, "00", "10"),
+      (4, Vectors.dense(-0.4, 4.0), -1, "10", "00"),
+      (5, Vectors.dense(-0.5, -3.0), 1, "10", "01"),
+      (6, Vectors.dense(-0.4, -4.0), -1, "01", "10"),
+      (7, Vectors.dense(-0.4, -4.0), 21, "01", "10"))
     ).toDF("idn", "features", "label", "signature_1", "signature_2")
 
     val aggEntropy = new AggEntropyUnbalanced()
@@ -143,7 +144,5 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     assert(entropy(4)(3).asInstanceOf[Int] == 1)
     assert(entropy(5)(3).asInstanceOf[Int] == 0)
   }
-
-
 
 }

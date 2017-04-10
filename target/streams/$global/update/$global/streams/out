@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/skorponx/P2P-fraud-processor/}p2p-fraud-processor...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/skorpionx/P2P-fraud-processor/}p2p-fraud-processor...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: instance-selection#instance-selection_2.11;1.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -479,7 +479,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-core_2.11;2.1.0 {provided=[default(compile)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-core_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-core_2.11;2.1.0 {provided=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-core_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-core_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-core_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-core_2.11;2.1.0[0m
@@ -488,12 +488,12 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.1.0/spark-core_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-core_2.11;2.1.0!spark-core_2.11.pom(pom.original) (584ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-core_2.11;2.1.0!spark-core_2.11.pom(pom.original) (388ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-parent_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-parent_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-parent_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-parent_2.11/2.1.0/spark-parent_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -502,11 +502,11 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-parent_2.11/2.1.0/spark-parent_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-parent_2.11/2.1.0/spark-parent_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-parent_2.11/2.1.0/spark-parent_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-parent_2.11;2.1.0!spark-parent_2.11.pom(pom.original) (673ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-parent_2.11;2.1.0!spark-parent_2.11.pom(pom.original) (426ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache#apache;14 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache#apache;14 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache#apache;14[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-parent_2.11/2.1.0/jars/spark-parent_2.11.jar[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-parent_2.11/2.1.0/jars/spark-parent_2.11.jar[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-parent_2.11/2.1.0/spark-parent_2.11-2.1.0.jar[0m
 [0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/apache/spark/spark-parent_2.11/2.1.0/spark-parent_2.11-2.1.0.jar[0m
 [0m[[0mdebug[0m] [0m	found org.apache.spark#spark-core_2.11;2.1.0 in public[0m
@@ -2765,7 +2765,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-launcher_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-launcher_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-launcher_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-launcher_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-launcher_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-launcher_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.1.0/spark-launcher_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-launcher_2.11;2.1.0[0m
@@ -2774,7 +2774,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.1.0/spark-launcher_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.1.0/spark-launcher_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.1.0/spark-launcher_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-launcher_2.11;2.1.0!spark-launcher_2.11.pom(pom.original) (361ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-launcher_2.11;2.1.0!spark-launcher_2.11.pom(pom.original) (326ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -2792,7 +2792,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-tags_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-tags_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-tags_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-tags_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-tags_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-tags_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.1.0/spark-tags_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-tags_2.11;2.1.0[0m
@@ -2801,7 +2801,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.1.0/spark-tags_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.1.0/spark-tags_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.1.0/spark-tags_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-tags_2.11;2.1.0!spark-tags_2.11.pom(pom.original) (299ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-tags_2.11;2.1.0!spark-tags_2.11.pom(pom.original) (297ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -2965,7 +2965,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-network-common_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-network-common_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-network-common_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-network-common_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-network-common_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-network-common_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.1.0/spark-network-common_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-network-common_2.11;2.1.0[0m
@@ -2974,7 +2974,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.1.0/spark-network-common_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.1.0/spark-network-common_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.1.0/spark-network-common_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-network-common_2.11;2.1.0!spark-network-common_2.11.pom(pom.original) (303ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-network-common_2.11;2.1.0!spark-network-common_2.11.pom(pom.original) (305ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -3107,7 +3107,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-network-shuffle_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-network-shuffle_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-network-shuffle_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-network-shuffle_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-network-shuffle_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-network-shuffle_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.1.0/spark-network-shuffle_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-network-shuffle_2.11;2.1.0[0m
@@ -3116,7 +3116,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.1.0/spark-network-shuffle_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.1.0/spark-network-shuffle_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.1.0/spark-network-shuffle_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-network-shuffle_2.11;2.1.0!spark-network-shuffle_2.11.pom(pom.original) (297ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-network-shuffle_2.11;2.1.0!spark-network-shuffle_2.11.pom(pom.original) (318ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -3168,7 +3168,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-unsafe_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-unsafe_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-unsafe_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-unsafe_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-unsafe_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-unsafe_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.1.0/spark-unsafe_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-unsafe_2.11;2.1.0[0m
@@ -3177,7 +3177,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.1.0/spark-unsafe_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.1.0/spark-unsafe_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.1.0/spark-unsafe_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-unsafe_2.11;2.1.0!spark-unsafe_2.11.pom(pom.original) (319ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-unsafe_2.11;2.1.0!spark-unsafe_2.11.pom(pom.original) (300ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -4693,7 +4693,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-mllib_2.11;2.1.0 {provided=[default(compile)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-mllib_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-mllib_2.11;2.1.0 {provided=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-mllib_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-mllib_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-mllib_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-mllib_2.11;2.1.0[0m
@@ -4702,7 +4702,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-mllib_2.11/2.1.0/spark-mllib_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-mllib_2.11;2.1.0!spark-mllib_2.11.pom(pom.original) (308ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-mllib_2.11;2.1.0!spark-mllib_2.11.pom(pom.original) (310ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -4720,7 +4720,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: MergedDescriptors(dependency: org.apache.spark#spark-streaming_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]},dependency: org.apache.spark#spark-streaming_2.11;2.1.0 {test=[runtime(*), master(compile)]})[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-streaming_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: MergedDescriptors(dependency: org.apache.spark#spark-streaming_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]},dependency: org.apache.spark#spark-streaming_2.11;2.1.0 {test=[runtime(*), master(compile)]})[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-streaming_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-streaming_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-streaming_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-streaming_2.11/2.1.0/spark-streaming_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-streaming_2.11;2.1.0[0m
@@ -4729,7 +4729,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-streaming_2.11/2.1.0/spark-streaming_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-streaming_2.11/2.1.0/spark-streaming_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-streaming_2.11/2.1.0/spark-streaming_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-streaming_2.11;2.1.0!spark-streaming_2.11.pom(pom.original) (295ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-streaming_2.11;2.1.0!spark-streaming_2.11.pom(pom.original) (313ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -4783,7 +4783,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-sql_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-sql_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-sql_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-sql_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-sql_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-sql_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-sql_2.11;2.1.0[0m
@@ -4792,7 +4792,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.1.0/spark-sql_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-sql_2.11;2.1.0!spark-sql_2.11.pom(pom.original) (308ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-sql_2.11;2.1.0!spark-sql_2.11.pom(pom.original) (314ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -4813,7 +4813,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-sketch_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-sketch_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-sketch_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-sketch_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-sketch_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-sketch_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.11/2.1.0/spark-sketch_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-sketch_2.11;2.1.0[0m
@@ -4822,7 +4822,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.11/2.1.0/spark-sketch_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.11/2.1.0/spark-sketch_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.11/2.1.0/spark-sketch_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-sketch_2.11;2.1.0!spark-sketch_2.11.pom(pom.original) (303ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-sketch_2.11;2.1.0!spark-sketch_2.11.pom(pom.original) (293ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -4841,7 +4841,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: MergedDescriptors(dependency: org.apache.spark#spark-catalyst_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]},dependency: org.apache.spark#spark-catalyst_2.11;2.1.0 {test=[runtime(*), master(compile)]})[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-catalyst_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: MergedDescriptors(dependency: org.apache.spark#spark-catalyst_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]},dependency: org.apache.spark#spark-catalyst_2.11;2.1.0 {test=[runtime(*), master(compile)]})[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-catalyst_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-catalyst_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-catalyst_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.11/2.1.0/spark-catalyst_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-catalyst_2.11;2.1.0[0m
@@ -4850,7 +4850,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.11/2.1.0/spark-catalyst_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.11/2.1.0/spark-catalyst_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.11/2.1.0/spark-catalyst_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-catalyst_2.11;2.1.0!spark-catalyst_2.11.pom(pom.original) (292ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-catalyst_2.11;2.1.0!spark-catalyst_2.11.pom(pom.original) (293ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -5099,7 +5099,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-graphx_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-graphx_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-graphx_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-graphx_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-graphx_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-graphx_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.1.0/spark-graphx_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-graphx_2.11;2.1.0[0m
@@ -5108,7 +5108,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.1.0/spark-graphx_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.1.0/spark-graphx_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.1.0/spark-graphx_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-graphx_2.11;2.1.0!spark-graphx_2.11.pom(pom.original) (286ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-graphx_2.11;2.1.0!spark-graphx_2.11.pom(pom.original) (391ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -5123,7 +5123,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-mllib-local_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-mllib-local_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: org.apache.spark#spark-mllib-local_2.11;2.1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried /home/skorponx/.ivy2/local/org.apache.spark/spark-mllib-local_2.11/2.1.0/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m		tried /home/skorpionx/.ivy2/local/org.apache.spark/spark-mllib-local_2.11/2.1.0/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	local: no ivy file found for org.apache.spark#spark-mllib-local_2.11;2.1.0[0m
 [0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/spark/spark-mllib-local_2.11/2.1.0/spark-mllib-local_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: found md file for org.apache.spark#spark-mllib-local_2.11;2.1.0[0m
@@ -5132,7 +5132,7 @@
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-mllib-local_2.11/2.1.0/spark-mllib-local_2.11-2.1.0.pom[0m
 [0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/spark/spark-mllib-local_2.11/2.1.0/spark-mllib-local_2.11-2.1.0.pom.sha1[0m
 [0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/spark/spark-mllib-local_2.11/2.1.0/spark-mllib-local_2.11-2.1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-mllib-local_2.11;2.1.0!spark-mllib-local_2.11.pom(pom.original) (305ms)[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.apache.spark#spark-mllib-local_2.11;2.1.0!spark-mllib-local_2.11.pom(pom.original) (667ms)[0m
 [0m[[0minfo[0m] [0mResolving org.apache.spark#spark-parent_2.11;2.1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.spark#spark-parent_2.11;2.1.0 {}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.spark#spark-parent_2.11;2.1.0[0m
@@ -17111,19 +17111,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.spire-math#spire-macros_2.11;0.7.4!spire-macros_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jpmml#pmml-schema;1.2.15!pmml-schema.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 13455ms :: artifacts dl 57ms[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 compile produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 runtime produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 test produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 provided produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 optional produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 compile-internal produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 runtime-internal produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 test-internal produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 plugin produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 sources produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 docs produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 pom produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 scala-tool produced in /home/skorponx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (13455ms resolve - 57ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 10651ms :: artifacts dl 186ms[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 compile produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 runtime produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 test produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 provided produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 optional produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 compile-internal produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 runtime-internal produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 test-internal produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 plugin produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 sources produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 docs produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 pom produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for instance-selection#instance-selection_2.11;1.0 scala-tool produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/instance-selection-instance-selection_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (10651ms resolve - 186ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

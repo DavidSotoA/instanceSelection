@@ -117,7 +117,7 @@ object Entropia extends InstanceSelection {
 
 class AggEntropyUnbalanced() extends UserDefinedAggregateFunction {
 
-   override def inputSchema: StructType = StructType(Array(StructField("item", IntegerType)))
+ override def inputSchema: StructType = StructType(Array(StructField("item", IntegerType)))
 
  override def bufferSchema: StructType = StructType(Array(
    StructField("fraude", LongType),
