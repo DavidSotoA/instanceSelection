@@ -7,31 +7,27 @@ import org.apache.spark.sql.functions.explode
 
 object LSH_IS_S {
 
-  def instanceSelection(instances: DataFrame, orsFunctions: Int, unbalanced: Boolean): DataFrame = {
-    val aggLSH = new Agg_LSH_Is_S()
-    var i = 1
-    var instancesSelected =
-      instances
-      .groupBy(Constants.SET_OUPUT_COL_LSH + "_" + i)
-      .agg(aggLSH(instances.col(Constants.LABEL), instances.col(Constants.INSTANCE_ID))
-      .as(Constants.PICK_INSTANCE))
-      .drop(Constants.SET_OUPUT_COL_LSH + "_" + i)
-    i = i + 1
-    while(i <= orsFunctions){
-      val instancesInFamily =
+  def instanceSelection(
+    instances: DataFrame,
+    orsFunctions: Int,
+    unbalanced: Boolean): DataFrame = {
+      val aggLSH = new Agg_LSH_Is_S()
+      var instancesSelected =
         instances
-        .groupBy(Constants.SET_OUPUT_COL_LSH + "_" + i)
+        .groupBy(Constants.SET_OUPUT_COL_LSH)
         .agg(aggLSH(instances.col(Constants.LABEL), instances.col(Constants.INSTANCE_ID))
         .as(Constants.PICK_INSTANCE))
-        .drop(Constants.SET_OUPUT_COL_LSH + "_" + i)
-        
-      instancesSelected = instancesSelected.union(instancesInFamily)
-      i = i + 1
-    }
+        .drop(Constants.SET_OUPUT_COL_LSH)
 
-    val explodeDF = instancesSelected.select(explode(instancesSelected(Constants.PICK_INSTANCE)).as(Constants.INSTANCE_ID)).distinct()
+      val explodeDF =
+        instancesSelected
+       .select(explode(instancesSelected(Constants.PICK_INSTANCE))
+       .as(Constants.INSTANCE_ID)).distinct()
 
-    instances.join(explodeDF, Constants.INSTANCE_ID)
+      instances
+      .join(explodeDF, Constants.INSTANCE_ID)
+      .dropDuplicates(Constants.INSTANCE_ID)
+      .drop(Constants.SET_OUPUT_COL_LSH)
   }
 }
 

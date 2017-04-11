@@ -99,7 +99,7 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
 
     val entropyDF = Entropia.instanceSelection2(instances, true, 2, sc)
     assert(1 == 1)
-  }*/
+  }
 
   test("Se seleccionan las instancias luego de aplicar la entropia a todas las familias,  mediate una union") {
     val instances = spark.createDataFrame(Seq(
@@ -143,6 +143,6 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     assert(entropy(3)(3).asInstanceOf[Int] == 0)
     assert(entropy(4)(3).asInstanceOf[Int] == 1)
     assert(entropy(5)(3).asInstanceOf[Int] == 0)
-  }
+  }*/
 
 }

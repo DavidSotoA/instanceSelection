@@ -3,6 +3,12 @@ package com.lsh
 object Constants {
   val APP_NAME = "LSH"
   val MASTER = "local"
+  val LSH_HYPERPLANES_METHOD = "hyperplanes"
+  val LSH_PROJECTION_METHOD = "projection"
+  val INSTANCE_SELECTION_ENTROPY_METHOD = "entropia"
+  val INSTANCE_SELECTION_DROP3_METHOD = "drop3"
+  val INSTANCE_SELECTION_LSH_IS_S_METHOD = "lsh_is_s"
+  val INSTANCE_SELECTION_LSH_IS_F_METHOD = "lsh_is_f"
   val SET_OUPUT_COL_ASSEMBLER = "features"
   val SET_OUPUT_COL_LSH = "signature"
   val SET_OUPUT_COL_SCALED = "scaled"
@@ -15,7 +21,7 @@ object Constants {
   val ENTROPY_OR_METHOD = "or_method"
   val SPARK_SESSION_MODE_LOCAL = "local"
   val SPARK_SESSION_MODE_CLUSTER = "cluster"
-  val cols = """idn,resp_code,label,fraude,nolabel,monto,valida_cifin,confiabilidad_documento
+  val COLS = """idn,resp_code,label,fraude,nolabel,monto,valida_cifin,confiabilidad_documento
                 ,first_tarjeta,first_email,first_doc,coc_act_max_tarjeta,coc_act_pro_tarjeta
                 ,coc_act_max_email,coc_act_pro_email,coc_act_max_doc,coc_act_pro_doc,COP,OTH
                 ,USD,EUR,fds,morn,tard,noch,madr,probabilidad_franjaindex_tarjetac

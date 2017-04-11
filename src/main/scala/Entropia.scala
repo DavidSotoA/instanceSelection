@@ -19,79 +19,37 @@ object Entropia extends InstanceSelection {
   def instanceSelection2(
     instances: DataFrame,
     unbalanced: Boolean,
-    orsFunctions: Int,
-    spark: SparkSession,
-    method: String): DataFrame = {
+    spark: SparkSession): DataFrame = {
       val aggEntropy = new AggEntropyUnbalanced()
-      val partiallypickInstance = pickInstance( _ : Double, _ : Int, unbalanced)
-      val transformUDF = udf(partiallypickInstance)
-      var selectInstances = instances
-      var pickStr = ""
       val sc = spark.sparkContext
-      for (i <- 1 to orsFunctions) {
-        val entropyForSignature = addEntropy(
-                                  instances,
-                                  (Constants.SET_OUPUT_COL_LSH + "_" + i,
-                                  Constants.LABEL,
-                                  Constants.SET_OUPUT_COL_ENTROPY + "_" + i),
-                                  aggEntropy)
+      val entropyForSignature = addEntropy(
+                                instances,
+                                (Constants.SET_OUPUT_COL_LSH,
+                                 Constants.LABEL,
+                                 Constants.SET_OUPUT_COL_ENTROPY),
+                                 aggEntropy)
 
-        sc.broadcast(entropyForSignature)
+      sc.broadcast(entropyForSignature)
 
-        selectInstances = selectInstances
-                          .join(entropyForSignature, Constants.SET_OUPUT_COL_LSH + "_" + i)
+      var selectInstances = instances.join(entropyForSignature, Constants.SET_OUPUT_COL_LSH)
+      selectInstances.filter(x =>
+                            pickInstance(x(4).asInstanceOf[Double], x(3).asInstanceOf[Int], true))
+                            .drop(Constants.SET_OUPUT_COL_LSH, Constants.SET_OUPUT_COL_ENTROPY)
 
-        selectInstances = selectInstances
-                         .withColumn((Constants.PICK_INSTANCE + "_" + i),
-                          transformUDF(selectInstances(Constants.SET_OUPUT_COL_ENTROPY + "_" + i),
-                                       selectInstances(Constants.LABEL)))
-                          .drop(Constants.SET_OUPUT_COL_ENTROPY + "_" + i,
-                                Constants.SET_OUPUT_COL_LSH + "_" + i)
-
-        pickStr = pickStr + Constants.PICK_INSTANCE + "_" + i
-        if(i < orsFunctions){
-          pickStr = pickStr + " ,"
-        }
-
-      }
-      val checkInstances = selectIntancesFromAllFamilies(selectInstances, method, spark, pickStr)
-      checkInstances.filter(x => x(3).asInstanceOf[Int] == 1).drop(Constants.PICK_INSTANCE)
-  }
-
-  def selectIntancesFromAllFamilies(
-    df: DataFrame,
-    method: String,
-    spark: SparkSession,
-    pickStr: String): DataFrame = {
-      df.registerTempTable("df")
-      val concatDF = spark.sql("select idn, features, label, concat("+ pickStr +") as "
-                              + Constants.PICK_CONCAT + " from df")
-
-      var transformUDF = udf(entropyByAnd(_ : String))
-      if(method ==  Constants.ENTROPY_OR_METHOD) {
-        transformUDF = udf(entropyByOr(_ : String))
-      }
-      concatDF.withColumn(Constants.PICK_INSTANCE, transformUDF(concatDF(Constants.PICK_CONCAT)))
-              .drop(Constants.PICK_CONCAT)
-  }
-
-  def entropyByAnd(values: String): Int = {
-    val valuesList = values.toList
-    if(valuesList.forall(_ == '1')) {
-      return 1
+      selectInstances.dropDuplicates(Constants.INSTANCE_ID)
     }
-    return 0
-  }
 
-  def entropyByOr(values: String): Int = {
-    val valuesList = values.toList
-    if (valuesList.exists(_ == '1')) {
-      return 1
+  def pickInstance(entropia: Double, label: Int, unbalanced: Boolean): Boolean = {
+    if (label == 1 && unbalanced) {
+      return true
     }
-    return 0
+    val rnd = scala.util.Random.nextFloat
+    if (rnd < entropia) {
+      return true
+    }
+    return false
   }
 
-  /* Este método es llamado para hallar la entropia dado un conjunto de cubetas*/
   def addEntropy(
     instances: DataFrame,
     columnNames: (String, String, String),
@@ -101,17 +59,6 @@ object Entropia extends InstanceSelection {
       .groupBy(colSignature)
       .agg(aggEntropy(instances.col(colLabel))
       .as(colOutput))
-  }
-
-  def pickInstance(entropia: Double, label: Int, unbalanced: Boolean): Int = {
-    if (label == 1 && unbalanced) {
-      return 1
-    }
-    val rnd = scala.util.Random.nextFloat
-    if (rnd < entropia) {
-      return 1
-    }
-    return 0
   }
 }
 

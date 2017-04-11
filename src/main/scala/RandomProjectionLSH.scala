@@ -49,11 +49,11 @@ case class RandomProjectionLSH(
       functionFamilies
     }
 
-    def hashFunction2(instance: Vector, familieFunctions: List[(Vector, Double)]): String = {
+    def hashFunction2(instance: Vector, familieId: String, familieFunctions: List[(Vector, Double)]): String = {
       val signature = familieFunctions.map {
         case (a, b) => ((Mathematics.dot(a, instance) + b) / sizeBucket).floor.toInt
       }
-      Mathematics.stringSignature(signature.toArray)
+      familieId + Mathematics.stringSignature(signature.toArray)
     }
 
     def hashFunction(instance: Vector, hashFunctions: Array[Vector]): String = {
@@ -61,16 +61,28 @@ case class RandomProjectionLSH(
     }
 
     def lsh(colForLsh: String): DataFrame = {
-      var i = 1
-      var signatureDF = dataset
-      for(familie <- functionFamilies) {
-        val partiallyHashFunction = hashFunction2( _ : Vector, familie)
-        val transformUDF = udf(partiallyHashFunction)
-        signatureDF = signatureDF.withColumn((Constants.SET_OUPUT_COL_LSH + "_" + i),
-                      transformUDF(signatureDF(colForLsh)))
-        i = i +1
+      var udfs = List[org.apache.spark.sql.expressions.UserDefinedFunction]()
+      var i = 0
+      while(i < functionFamilies.size) {
+        val j = i
+        val familie = functionFamilies(i)
+        val partiallyHashFunction = hashFunction2( _ : Vector, j.toString, familie)
+        udfs = udfs :+ udf(partiallyHashFunction)
+        i = i + 1
       }
-      signatureDF.toDF
+      var j = 0
+      var act_udf = udfs(j)
+      var signatureDF = dataset.withColumn((Constants.SET_OUPUT_COL_LSH),
+                    act_udf(dataset(colForLsh)))
+      j = j + 1
+      while(j < functionFamilies.size) {
+        act_udf = udfs(j)
+        val signatureFamilie = dataset.withColumn((Constants.SET_OUPUT_COL_LSH),
+                      act_udf(dataset(colForLsh)))
+        signatureDF = signatureDF.union(signatureFamilie)
+        j = j + 1
+      }
+      signatureDF
     }
 
     def keyDistance(x: Vector, y: Vector): Array[Array[Vector]] = {
