@@ -4,14 +4,24 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.sql._
 
-object Main {
+object Main extends LogHelper {
   def main(args: Array[String]): Unit = {
-    val spark = Utilities.initSparkSession(Constants.SPARK_SESSION_MODE_LOCAL)
+    val spark = Utilities.initSparkSession(Constants.SPARK_SESSION_MODE_CLUSTER)
     val sc = spark.sqlContext.sparkContext
 
-    val numHashTables = args(0).toInt
-    // se cargan y preparan los datos
-    val base = spark.read.load(args(1))
+    logger.info("..........Leyendo parametros...............")
+    val andFunctions = args(0).toInt
+    val orFunctions = args(1).toInt
+    val lshMethod = args(2)
+    val instanceSelectionMethod = args(3)
+    val base = spark.read.load(args(4))
+    val urlReports = args(5)
+    var sizeBucket = 0.0
+    if (args.size > 6) {
+      sizeBucket = args(6).toDouble
+    }
+
+    logger.info("..........Procesando datos...............")
     base.createOrReplaceTempView("test")
     val instances = spark.sql("SELECT " + Constants.COLS +
       " FROM test WHERE label!=0 and resp_code=1 or resp_code=2")
@@ -19,74 +29,68 @@ object Main {
     val ignore = Array("idn", "label", "resp_code", "fraude", "nolabel")
     val selectFeatures = for (i <- names if !(ignore contains i )) yield i
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
-    // se realiza el LSH
-    val normalizeDF = Mathematics.normalize(vectorizedDF, Constants.SET_OUPUT_COL_ASSEMBLER)
-    val randomHyperplanes = new RandomHyperplanes(normalizeDF, numHashTables, spark)
-    val instancesWithSignature = randomHyperplanes.lsh(Constants.SET_OUPUT_COL_SCALED)
 
-    instancesWithSignature.write.mode(SaveMode.Overwrite).format("parquet")
-      .save(args(2) + "/prueba")
+    val urlBase = "instanceSelection_" + lshMethod + "_con_" + instanceSelectionMethod + "_" + andFunctions + "_" + orFunctions + "_" + sizeBucket
+    val urlLsh = urlBase +  "/lsh_" + lshMethod
+    val urlInstanceSelection = urlBase + "/instanceSelection_" + instanceSelectionMethod
 
-    // val instancesKeys = LSH.getKeys(instancesWithSignature)
-    // se realiza el instance selection
-    val drop3 = new Drop3()
-    val instanceWithDrop3 = drop3.instanceSelection(instancesWithSignature, true, 2)
+    logger.info("..........Ejecutando LSH...............")
+    val instancesWithSignature = lsh(spark, sizeBucket, lshMethod, vectorizedDF, andFunctions, orFunctions)
+    val lshTime = Report.saveDFWithTime(instancesWithSignature, urlLsh, Constants.FORMAT_PARQUET)
+    val signatureDF = spark.read.load(urlLsh)
 
-    instanceWithDrop3.write.mode(SaveMode.Overwrite).format("parquet").save(args(2) + "/drop3")
+    logger.info("..........Ejecutando instance selection...............")
+    val instanceSelectionDF = instanceSelection(signatureDF, spark, instanceSelectionMethod, true)
+    val instanceSelectionTime = Report.saveDFWithTime(instanceSelectionDF, urlInstanceSelection, Constants.FORMAT_PARQUET)
+    val selectionDF = spark.read.load(urlInstanceSelection)
+
+    logger.info("..........Realizando reportes...............")
+    val (numeroDeCubetas, maxValue, minValue, avgValue) = Report.infoLSH(signatureDF)
+    val reduction = Report.infoInstanceSelection(vectorizedDF, selectionDF)
+    val lshInfo = (lshMethod, andFunctions, orFunctions, lshTime, numeroDeCubetas, maxValue, minValue, avgValue)
+    val instanceSelectionInfo = (instanceSelectionMethod, instanceSelectionTime, reduction)
+    Report.report(urlReports, urlBase, lshInfo, instanceSelectionInfo)
   }
-
-  /*
-  def processData(
-    instances: DataFrame,
-    requireNormalized: Boolean,
-    spark: SparkSession): DataFrame = {
-      instances.createOrReplaceTempView("test")
-      val instances = spark.sql("SELECT " + Constants.COLS +
-        " FROM test WHERE label != 0 and resp_code = 1 or resp_code = 2")
-      val names = instances.columns
-      val ignore = Array("idn", "label", "resp_code", "fraude", "nolabel")
-      val selectFeatures = for (i <- names if !(ignore contains i )) yield i
-      var processDF = Utilities.createVectorDataframe(selectFeatures, instances)
-      if(requireNormalized){
-        processDF = Mathematics.normalize(processDF, Constants.SET_OUPUT_COL_ASSEMBLER)
-      }
-      processDF
-  }*/
 
   def lsh(
     spark: SparkSession,
-    sizeBucket: Int,
+    sizeBucket: Double,
     method: String,
     instances: DataFrame,
     andFunctions: Int,
     orFunctions: Int): DataFrame = {
       method match {
         case Constants.LSH_HYPERPLANES_METHOD => {
-          val randomHyperplanes = new RandomHyperplanes(instances, andFunctions, spark)
-          return randomHyperplanes.lsh(Constants.SET_OUPUT_COL_SCALED)
+          val normalizeDF = Mathematics.normalize(instances, Constants.SET_OUPUT_COL_ASSEMBLER)
+          val randomHyperplanes = new RandomHyperplanes(normalizeDF, andFunctions, spark)
+          return randomHyperplanes.lsh(Constants.SET_OUPUT_COL_SCALED).drop(Constants.SET_OUPUT_COL_SCALED)
         }
         case Constants.LSH_PROJECTION_METHOD => {
-          val randomProjection = new RandomProjectionLSH(instances, andFunctions, orFunctions, sizeBucket, spark)
-          return randomProjection.lsh(Constants.SET_OUPUT_COL_ASSEMBLER)
+          val normalizeDF = Mathematics.normalize(instances, Constants.SET_OUPUT_COL_ASSEMBLER)
+          val randomProjection = new RandomProjectionLSH(normalizeDF, andFunctions, orFunctions, sizeBucket, spark)
+          return randomProjection.lsh(Constants.SET_OUPUT_COL_SCALED).drop(Constants.SET_OUPUT_COL_SCALED)
         }
+        case _ => throw new IllegalArgumentException("El método " + method + " no existe")
+      }
     }
-  }
 
   def instanceSelection(
     instances: DataFrame,
     spark: SparkSession,
     method: String,
-    orsFunctions: Int,
-    unbalanced: Boolean,
-    entropyMethod: String ): DataFrame = {
+    unbalanced: Boolean): DataFrame = {
       method match {
         case Constants.INSTANCE_SELECTION_LSH_IS_S_METHOD => {
-          return LSH_IS_S.instanceSelection(instances, orsFunctions, unbalanced)
+          return LSH_IS_S.instanceSelection(instances, unbalanced)
         }
         case Constants.INSTANCE_SELECTION_ENTROPY_METHOD => {
           return Entropia.instanceSelection2(instances, unbalanced, spark)
         }
+        case Constants.INSTANCE_SELECTION_LSH_IS_F_METHOD => {
+          return LSH_IS_F.instanceSelection(instances, unbalanced)
+        }
+        case _ => throw new IllegalArgumentException("El método " + method + " no existe")
       }
-  }
+    }
 
 }

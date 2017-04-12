@@ -1,8 +1,9 @@
 #Successful Tests
-#Tue Apr 11 02:08:32 COT 2017
-com.test.RandomProjectionLSHTest=1491870100648
+#Wed Apr 12 01:56:47 COT 2017
+com.test.ReportTest=1491955849567
+com.test.RandomProjectionLSHTest=1491980207671
 com.test.LSH_IS_S_Test=1491804930796
-com.test.EntropiaTest=1491540663308
+com.test.EntropiaTest=1491943865869
 com.test.Drop3Test=1491446856420
 com.test.LSH_IS_F_Test=1491894512493
-com.test.RandomHyperplanesTest=1491869637101
+com.test.RandomHyperplanesTest=1491979960399

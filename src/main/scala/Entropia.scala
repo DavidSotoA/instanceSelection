@@ -33,10 +33,9 @@ object Entropia extends InstanceSelection {
 
       var selectInstances = instances.join(entropyForSignature, Constants.SET_OUPUT_COL_LSH)
       selectInstances.filter(x =>
-                            pickInstance(x(4).asInstanceOf[Double], x(3).asInstanceOf[Int], true))
-                            .drop(Constants.SET_OUPUT_COL_LSH, Constants.SET_OUPUT_COL_ENTROPY)
-
-      selectInstances.dropDuplicates(Constants.INSTANCE_ID)
+                      pickInstance(x(4).asInstanceOf[Double], x(3).asInstanceOf[Int], true))
+                      .drop(Constants.SET_OUPUT_COL_LSH, Constants.SET_OUPUT_COL_ENTROPY)
+                      .dropDuplicates(Constants.INSTANCE_ID)
     }
 
   def pickInstance(entropia: Double, label: Int, unbalanced: Boolean): Boolean = {

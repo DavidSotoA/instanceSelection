@@ -120,3 +120,57 @@ assembly
 compile
 assembly
 test-only com.test.LSH_IS_F_Test
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+test-only com.EntropiaTest
+test-only com.test.EntropiaTest
+assembly
+compile
+assembly
+compile
+test-only com.test.ReportTest
+compile
+def report(
+    fileToWrite: String,
+    title: String,
+    mode: String,
+    info_LSH: (String, Int, Int, Double, Long, Long, Long, Double),
+    info_instance_selection: (String, Double, Double)) {
+      val (metodoLsh, ands, ors, timeLsh, numeroDeCubetas, maxValue, minValue, avgValue) = info_LSH
+      val (metodoInstanceSelection, timeInstanceSelection, reduction) = info_instance_selection
+      val strToWrite =
+       title +
+      "\n\nLSH" +
+      "\nmétodo: " + metodoLsh +
+      "\nnúmero de ands: " + ands
+      "\nnúmero de ors: " + ors
+      "\ntiempo de ejecución: " + timeLsh +
+      "\nnúmero de cubetas: " + numeroDeCubetas +
+      "\ncubeta con mas muestras: " + maxValue +
+      "\ncubeta con menos muestras: " + minValue +
+      "\npromedio de muestras por cubeta: " + avgValue +
+      "\n\nINSTANCE SELECTION" +
+      "\nmétodo: " + metodoInstanceSelection +
+      "\ntiempo de ejecución: " + timeInstanceSelection +
+      "\nreducción de datos: " + reduction
+      Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8))
+  compile
+compile
+assembly
+compile
+assembly
+COMPILE
+compile
+assembly
+compile
+assembly
+compile
+test-only com.test.RandomHyperplanesTest
+test-only com.test.RandomProjectionLSHTest
+assembly

@@ -1,12 +1,12 @@
 [0m[[0minfo[0m] [0mIncluding from cache: scala-datatable_2.11-0.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: scala-library-2.11.8.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: scala-reflect-2.11.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-library-2.11.8.jar[0m
 [0m[[0mdebug[0m] [0mCalculate mappings...[0m
 [0m[[0minfo[0m] [0mChecking every *.class/*.jar file's SHA-1.[0m
 [0m[[0minfo[0m] [0mMerging files...[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
-[0m[[0minfo[0m] [0mSHA-1: 8a9cba155e177ea211f7e0975387178c4a4e8f35[0m
+[0m[[0minfo[0m] [0mSHA-1: 8cf1cf6b621b081caa927e677accf180bff80903[0m
 [0m[[0minfo[0m] [0mPackaging /home/skorpionx/P2P-fraud-processor/target/scala-2.11/Instance selection-assembly-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	com/github/martincooper/datatable/BaseTable.class[0m
@@ -453,6 +453,8 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Main.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Mathematics$$anonfun$binaryToDec$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Mathematics$$anonfun$binaryToDec$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Mathematics$$anonfun$normalizeVector$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Mathematics$$anonfun$normalizeVector$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Mathematics$$anonfun$stringSignature$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Mathematics$$anonfun$stringSignature$1.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Mathematics$.class[0m
@@ -501,6 +503,10 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/RandomProjectionLSH$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/RandomProjectionLSH.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/RandomProjectionLSH.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Report$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Report$.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Report.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Report.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/RowTable$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/RowTable$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/RowTable.class[0m

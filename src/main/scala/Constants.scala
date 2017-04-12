@@ -1,7 +1,7 @@
 package com.lsh
 
 object Constants {
-  val APP_NAME = "LSH"
+  val APP_NAME = "Instance selection"
   val MASTER = "local"
   val LSH_HYPERPLANES_METHOD = "hyperplanes"
   val LSH_PROJECTION_METHOD = "projection"
@@ -9,6 +9,7 @@ object Constants {
   val INSTANCE_SELECTION_DROP3_METHOD = "drop3"
   val INSTANCE_SELECTION_LSH_IS_S_METHOD = "lsh_is_s"
   val INSTANCE_SELECTION_LSH_IS_F_METHOD = "lsh_is_f"
+  val FORMAT_PARQUET= "parquet"
   val SET_OUPUT_COL_ASSEMBLER = "features"
   val SET_OUPUT_COL_LSH = "signature"
   val SET_OUPUT_COL_SCALED = "scaled"
@@ -17,8 +18,6 @@ object Constants {
   val LABEL = "label"
   val PICK_INSTANCE = "pick_instance"
   val PICK_CONCAT = "pick_concat"
-  val ENTROPY_AND_METHOD = "and_method"
-  val ENTROPY_OR_METHOD = "or_method"
   val SPARK_SESSION_MODE_LOCAL = "local"
   val SPARK_SESSION_MODE_CLUSTER = "cluster"
   val COLS = """idn,resp_code,label,fraude,nolabel,monto,valida_cifin,confiabilidad_documento

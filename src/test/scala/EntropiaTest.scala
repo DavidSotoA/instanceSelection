@@ -47,10 +47,11 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     assert(entropyA(0).asInstanceOf[Double] == 0.9709505944546686)
     assert(entropyB(0).asInstanceOf[Double] == 0.7219280948873623)
   }
-/*
+
+
   test("Si solo hay muestras de la clase mayoritaria, la entropia sera el "
     + "porcentaje de 1 muestra") {
-    val aggEntropy = new AggEntropy()
+    val aggEntropy = new AggEntropyUnbalanced()
     val data = (1 to 1000).map{x: Int => Row("A", -1)}
 
     val schema = StructType(Array(
@@ -66,8 +67,24 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     val entropyA = entropyDF.select("entropy").where("key == 'A'").head
 
     assert(entropyA(0).asInstanceOf[Double] == 0.001)
-  }*/
+  }
 
+  test("El metodo de entropia selecciona las instancias"){
+    val instances = spark.createDataFrame(Seq(
+      (1, Vectors.dense(3.0, 0.5), -1 , "00"),
+      (2, Vectors.dense(4.0, 0.4), -1, "01"),
+      (3, Vectors.dense(-0.5, 3.0), 1, "00"),
+      (4, Vectors.dense(-0.4, 4.0), -1, "10"),
+      (5, Vectors.dense(-0.5, -3.0), 1, "10"),
+      (6, Vectors.dense(-0.4, -4.0), -1, "01"),
+      (7, Vectors.dense(-0.4, -4.0), -1, "01"),
+      (8, Vectors.dense(-0.4, -4.0), -1, "01"),
+      (9, Vectors.dense(-0.4, -4.0), -1, "01"),
+      (10, Vectors.dense(-0.4, -4.0), -1, "01"),
+      (11, Vectors.dense(-0.4, -4.0), 1, "01"))
+    ).toDF("idn", "features", "label", "signature")
+  }
+/*
   test("Se halla la entropia de las instancias en el dataframe cuando las clases son desbalanceadas"){
     val instances = spark.createDataFrame(Seq(
       (1, Vectors.dense(3.0, 0.5), -1 , "00", "00"),
@@ -86,7 +103,7 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     assert(entropy(1)(0).asInstanceOf[Double] == 1.0)
     assert(entropy(2)(0).asInstanceOf[Double] == 1.0)
   }
-/*
+
   test("Se encuentra la entropia para varias familias de funciones, con clases desbalanceadas"){
     val instances = spark.createDataFrame(Seq(
       (0, Vectors.dense(3.0, 0.5), -1 , "00", "00"),

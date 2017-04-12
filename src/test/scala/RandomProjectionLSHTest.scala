@@ -91,6 +91,12 @@ class RandomProjectionLSHTest extends FunSuite with BeforeAndAfterAll {
    assert(signature == "1127")
   }
 
+  test("se normalizan los datos") {
+    val x = Vectors.dense(1.5, 0.5 , 7.8, 6.7)
+    val xNormalized = Mathematics.normalizeVector(x)
+    assert(xNormalized == Vectors.dense(0.75, 0.25, 3.9, 3.35))
+  }
+
   test("El metodo lsh calcula las firmas correctas") {
     val selectFeatures = Array("c1", "c2")
     val instances = spark.createDataFrame(Seq(

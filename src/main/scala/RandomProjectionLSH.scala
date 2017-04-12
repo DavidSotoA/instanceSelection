@@ -10,7 +10,7 @@ case class RandomProjectionLSH(
     dataset_RH: Dataset[_],
     andsFunctions: Int,
     orsFunctions: Int,
-    sizeBucket: Int,
+    sizeBucket: Double,
     spark_RH: SparkSession) extends LSH {
 
     dataset = dataset_RH
@@ -20,7 +20,8 @@ case class RandomProjectionLSH(
     var functionFamilies = createFunctionsForFamilies(orsFunctions, andsFunctions )
 
     def createFunctions(inputDim: Int): Vector = {
-      Vectors.dense(Array.fill(inputDim)(Random.nextGaussian()))
+      Mathematics.normalizeVector(
+        Vectors.dense(Array.fill(inputDim)(Random.nextDouble())))
     }
 
     def createFunctionsForFamilies(

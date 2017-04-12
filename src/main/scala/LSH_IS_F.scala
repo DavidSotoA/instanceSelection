@@ -9,7 +9,6 @@ object LSH_IS_F {
 
   def instanceSelection(
     instances: DataFrame,
-    orsFunctions: Int,
     unbalanced: Boolean): DataFrame = {
       val aggLSH = new Agg_LSH_Is_F()
       var instancesSelected =

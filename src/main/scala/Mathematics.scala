@@ -37,6 +37,12 @@ object Mathematics{
     Math.sqrt(Vectors.sqdist(a, b))
   }
 
+  def normalizeVector(a : Vector): Vector ={
+    val norm = Vectors.norm(a, 2)
+    val values = a.toArray
+    Vectors.dense(values.map(_/norm))
+  }
+
   def normalize(df: DataFrame, inputCol: String): DataFrame = {
      val scaler = (new StandardScaler()
      .setInputCol(inputCol)

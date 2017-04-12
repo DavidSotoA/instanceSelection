@@ -66,7 +66,7 @@ class LSH_IS_S_Test extends FunSuite with BeforeAndAfterAll {
 
     val orsFunctions = 2
     val unbalanced = false
-    val instancesSelectedDF = LSH_IS_S.instanceSelection(instances, orsFunctions, unbalanced)
+    val instancesSelectedDF = LSH_IS_S.instanceSelection(instances, unbalanced)
     val instancesSelected =instancesSelectedDF.collect
 
     assert(instancesSelected(0)(0).asInstanceOf[Int] == 1)
