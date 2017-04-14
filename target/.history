@@ -174,3 +174,26 @@ compile
 test-only com.test.RandomHyperplanesTest
 test-only com.test.RandomProjectionLSHTest
 assembly
+compile
+test-only com.test.LSH_IS_S_Test
+assembly
+test-only com.test.LSH_IS_S_Test
+assembly
+test-only com.test.LSH_IS_S_Test
+compile
+assembly
+compile
+assembly
+test-only com.test.LSH_IS_S_Test
+compile
+test-only com.test.LSH_IS_F_Test
+compile
+assembly
+compile
+test-only com.test.LSH_IS_F_Test
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+assembly
+compile

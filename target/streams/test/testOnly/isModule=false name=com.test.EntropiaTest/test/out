@@ -1,3 +1,4 @@
 [0m[[0minfo[0m] [0m[32mEntropiaTest:[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se calcula la entropia para cada clave[0m[0m
-[0m[[0minfo[0m] [0m[32m- Si solo hay muestras de la clase mayoritaria, la entropia sera el porcentaje de 1 muestra[0m[0m
+[0m[[0minfo[0m] [0m[32m- Si solo hay muestras de una la clase, la entropia sera el porcentaje equivalente a 1 muestra[0m[0m
+[0m[[0minfo[0m] [0m[32m- El metodo de entropia selecciona las instancias[0m[0m

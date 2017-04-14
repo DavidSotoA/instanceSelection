@@ -49,6 +49,8 @@ object Report{
       "\n\nINSTANCE SELECTION" +
       "\nmétodo: " + metodoInstanceSelection +
       "\ntiempo de ejecución: " + timeInstanceSelection +
+      "\ncantidad de legales:" +
+      "\ncantidad de fraudes:" +
       "\nreducción de datos: " + reduction +
       "\n\nTIEMPO TOTAL: " + (timeLsh +timeInstanceSelection) + "\n\n"
       if (Files.exists(Paths.get(fileToWrite))){

@@ -10,7 +10,10 @@ object LSH_IS_S {
   def instanceSelection(
     instances: DataFrame,
     unbalanced: Boolean): DataFrame = {
-      val aggLSH = new Agg_LSH_Is_S()
+      var aggLSH: UserDefinedAggregateFunction = new Agg_LSH_Is_S_Balanced()
+      if (unbalanced) {
+        aggLSH = new Agg_LSH_Is_S_Unbalanced()
+      }
       var instancesSelected =
         instances
         .groupBy(Constants.SET_OUPUT_COL_LSH)
@@ -30,7 +33,52 @@ object LSH_IS_S {
   }
 }
 
-class Agg_LSH_Is_S() extends UserDefinedAggregateFunction {
+class Agg_LSH_Is_S_Unbalanced() extends UserDefinedAggregateFunction {
+
+  override def inputSchema: StructType = StructType(Array(
+   StructField("label", IntegerType),
+   StructField("id", IntegerType)
+  ))
+
+  override def bufferSchema: StructType =
+    StructType(Array(
+      StructField("pick_legal", IntegerType),
+      StructField("pick_fraude", ArrayType(IntegerType))
+    ))
+
+  override def dataType: DataType = ArrayType(IntegerType)
+
+  override def deterministic: Boolean = true
+
+  override def initialize(buffer: MutableAggregationBuffer): Unit = {
+   buffer(0) = -1
+   buffer(1) = Array[Int]()
+  }
+
+  override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {
+     if ((input.getInt(0) == -1)) {
+       buffer(0) = input.getInt(1)
+     }
+
+     if ((input.getInt(0) == 1)) {
+       buffer(1) = buffer(1).asInstanceOf[Seq[Int]] :+ input.getInt(1)
+     }
+  }
+
+  override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {
+    buffer1(1) = buffer1(1).asInstanceOf[Seq[Int]] ++ buffer2(1).asInstanceOf[Seq[Int]]
+    buffer1(0) = buffer1.getInt(0)
+    if(buffer1.getInt(0) == -1){
+      buffer1(0) = buffer2.getInt(0)
+    }
+  }
+
+  override def evaluate(buffer: Row): Any = {
+    (buffer(1).asInstanceOf[Seq[Int]] :+ buffer.getInt(0)).filter(_ != -1)
+  }
+}
+
+class Agg_LSH_Is_S_Balanced() extends UserDefinedAggregateFunction {
 
   override def inputSchema: StructType = StructType(Array(
    StructField("label", IntegerType),

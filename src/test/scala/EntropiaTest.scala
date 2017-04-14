@@ -49,10 +49,13 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
   }
 
 
-  test("Si solo hay muestras de la clase mayoritaria, la entropia sera el "
-    + "porcentaje de 1 muestra") {
+  test("Si solo hay muestras de una la clase, la entropia sera el "
+    + "porcentaje equivalente a 1 muestra") {
     val aggEntropy = new AggEntropyUnbalanced()
-    val data = (1 to 1000).map{x: Int => Row("A", -1)}
+    val data = (1 to 1000).map{x: Int => x match {
+    case t if (t >= 1 && t <= 300) => Row("A", 1)
+    case t if (t > 300) => Row("B", -1)
+    }}
 
     val schema = StructType(Array(
       StructField("key", StringType),
@@ -65,8 +68,10 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     val entropyDF = df.groupBy("key").agg(aggEntropy(df.col("label")).as("entropy"))
 
     val entropyA = entropyDF.select("entropy").where("key == 'A'").head
+    val entropyB = entropyDF.select("entropy").where("key == 'B'").head
 
-    assert(entropyA(0).asInstanceOf[Double] == 0.001)
+    assert(entropyA(0).asInstanceOf[Double] == 0.0033333333333333335)
+    assert(entropyB(0).asInstanceOf[Double] == 0.0014285714285714286)
   }
 
   test("El metodo de entropia selecciona las instancias"){

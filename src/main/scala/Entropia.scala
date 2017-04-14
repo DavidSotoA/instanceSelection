@@ -32,8 +32,7 @@ object Entropia extends InstanceSelection {
       sc.broadcast(entropyForSignature)
 
       var selectInstances = instances.join(entropyForSignature, Constants.SET_OUPUT_COL_LSH)
-      selectInstances.filter(x =>
-                      pickInstance(x(4).asInstanceOf[Double], x(3).asInstanceOf[Int], true))
+      selectInstances.filter(x =>pickInstance(x(4).asInstanceOf[Double], x(3).asInstanceOf[Int], unbalanced))
                       .drop(Constants.SET_OUPUT_COL_LSH, Constants.SET_OUPUT_COL_ENTROPY)
                       .dropDuplicates(Constants.INSTANCE_ID)
     }
@@ -97,7 +96,7 @@ class AggEntropyUnbalanced() extends UserDefinedAggregateFunction {
  }
 
  override def evaluate(buffer: Row): Any = {
-   if (buffer.getLong(1).toDouble == buffer.getLong(2)) {
+   if (buffer.getLong(1).toDouble == buffer.getLong(2) || buffer.getLong(0).toDouble == buffer.getLong(2)) {
      1.0/buffer.getLong(2)
    } else {
      val numOfInstances = Array(buffer.getLong(0).toDouble, buffer.getLong(1).toDouble)

@@ -6,7 +6,7 @@
 [0m[[0minfo[0m] [0mMerging files...[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
-[0m[[0minfo[0m] [0mSHA-1: 8cf1cf6b621b081caa927e677accf180bff80903[0m
+[0m[[0minfo[0m] [0mSHA-1: 2f02f2508e23a1950fe48896764f9784d848307b[0m
 [0m[[0minfo[0m] [0mPackaging /home/skorpionx/P2P-fraud-processor/target/scala-2.11/Instance selection-assembly-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	com/github/martincooper/datatable/BaseTable.class[0m
@@ -303,14 +303,22 @@
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/AggEntropyUnbalanced.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/AggKnn.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/AggKnn.class[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_F$$anonfun$evaluate$1.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_F$$anonfun$evaluate$1.class[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_F.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_F.class[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_S$$anonfun$evaluate$1.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_S$$anonfun$evaluate$1.class[0m
-[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_S.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_S.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_F_Balanced$$anonfun$evaluate$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_F_Balanced$$anonfun$evaluate$2.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_F_Balanced.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_F_Balanced.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_F_Unbalanced$$anonfun$evaluate$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_F_Unbalanced$$anonfun$evaluate$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_F_Unbalanced.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_F_Unbalanced.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_S_Balanced$$anonfun$evaluate$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_S_Balanced$$anonfun$evaluate$2.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_S_Balanced.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_S_Balanced.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_S_Unbalanced$$anonfun$evaluate$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_S_Unbalanced$$anonfun$evaluate$1.class[0m
+[0m[[0mdebug[0m] [0m	com/lsh/Agg_LSH_Is_S_Unbalanced.class[0m
+[0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Agg_LSH_Is_S_Unbalanced.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Constants$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorpionx/P2P-fraud-processor/target/streams/$global/assemblyOption/$global/streams/assembly/a7e4f7d079c182d392b494b89b15803cb2e310aa_dir/com/lsh/Constants$.class[0m
 [0m[[0mdebug[0m] [0m	com/lsh/Constants.class[0m
