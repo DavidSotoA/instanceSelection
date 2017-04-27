@@ -1,0 +1,204 @@
+compile
+sbt package
+package
+test-only com.test.Drop3Test
+test-only com.test.RandomHyperplanesTest
+compile
+test-only com.test.RandomHyperplanesTest
+compile
+test-only com.test.RandomProjectionLSHTest
+compile
+test-only com.test.RandomProjectionLSHTest
+console
+compile
+test-only com.test.Drop3Test
+compile
+console
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.RandomHyperplanesTest.scala
+test-only com.test.RandomProjectionLSHTest
+compile
+test-only com.test.RandomProjectionLSHTest
+compile
+test-only com.test.RandomProjectionLSHTest
+compile
+assembly
+test-only com.test.RandomProjectionLSHTest
+compile
+test-only com.test.RandomProjectionLSHTest
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+assembly
+compile
+assembly
+compile
+assembly
+compile
+test-only com.test.EntropiaTest
+compile
+console
+compile
+assembly
+val instances = spark.createDataFrame(Seq(
+      (0, Vectors.dense(3.0, 0.5), -1 , "00", "00"),
+      (1, Vectors.dense(4.0, 0.4), -1, "01", "01"),
+      (2, Vectors.dense(-0.5, 3.0), 1, "00", "10"),
+      (3, Vectors.dense(-0.4, 4.0), -1, "10", "00"),
+      (4, Vectors.dense(-0.5, -3.0), 1, "10", "01"),
+      (5, Vectors.dense(-0.4, -4.0), -1, "01", "10"))
+    ).toDF("idn", "features", "label", "signature_1", "signature_2")
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.ml.linalg.{Vector, Vectors}
+import org.apache.spark.sql._
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types._
+assembly
+test-only com.test.LSH_IS_S_Test.scala
+test-only com.test.LSH_IS_S_Test
+compile
+test-only com.test.LSH_IS_S_Test
+assembly
+test-only com.test.LSH_IS_S_Test
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+  val functionFamilies = Seq(List((Vectors.dense(0.1, 0.2), 1.0),
+                                     (Vectors.dense(0.3, 0.002), 2.0)),
+                               List((Vectors.dense(0.567, 0.89), 1.4),
+                                     (Vectors.dense(- 0.22, 0.98), 2.9)),
+                               List((Vectors.dense(0.6637, 0.289), 1.4),
+                                    (Vectors.dense(- 0.56, 0.198), 2.9))
+compile
+test-only com.test.RandomHyperplanesTest
+test-only com.test.RandomProjectionLSHTest
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+test-only com.test.LSH_IS_F_Test
+compile
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly
+test-only com.EntropiaTest
+test-only com.test.EntropiaTest
+assembly
+compile
+assembly
+compile
+test-only com.test.ReportTest
+compile
+def report(
+    fileToWrite: String,
+    title: String,
+    mode: String,
+    info_LSH: (String, Int, Int, Double, Long, Long, Long, Double),
+    info_instance_selection: (String, Double, Double)) {
+      val (metodoLsh, ands, ors, timeLsh, numeroDeCubetas, maxValue, minValue, avgValue) = info_LSH
+      val (metodoInstanceSelection, timeInstanceSelection, reduction) = info_instance_selection
+      val strToWrite =
+       title +
+      "\n\nLSH" +
+      "\nmétodo: " + metodoLsh +
+      "\nnúmero de ands: " + ands
+      "\nnúmero de ors: " + ors
+      "\ntiempo de ejecución: " + timeLsh +
+      "\nnúmero de cubetas: " + numeroDeCubetas +
+      "\ncubeta con mas muestras: " + maxValue +
+      "\ncubeta con menos muestras: " + minValue +
+      "\npromedio de muestras por cubeta: " + avgValue +
+      "\n\nINSTANCE SELECTION" +
+      "\nmétodo: " + metodoInstanceSelection +
+      "\ntiempo de ejecución: " + timeInstanceSelection +
+      "\nreducción de datos: " + reduction
+      Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8))
+  compile
+compile
+assembly
+compile
+assembly
+COMPILE
+compile
+assembly
+compile
+assembly
+compile
+test-only com.test.RandomHyperplanesTest
+test-only com.test.RandomProjectionLSHTest
+assembly
+compile
+test-only com.test.LSH_IS_S_Test
+assembly
+test-only com.test.LSH_IS_S_Test
+assembly
+test-only com.test.LSH_IS_S_Test
+compile
+assembly
+compile
+assembly
+test-only com.test.LSH_IS_S_Test
+compile
+test-only com.test.LSH_IS_F_Test
+compile
+assembly
+compile
+test-only com.test.LSH_IS_F_Test
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest
+assembly
+compile
+assembly
+compile
+assembly
+compile
+assembly

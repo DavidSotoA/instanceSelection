@@ -1,0 +1,8 @@
+[0m[[0mdebug[0m] [0mRunning TaskDef(com.test.EntropiaTest, org.scalatest.tools.Framework$$anon$1@46ff7398, false, [SuiteSelector])[0m
+java.lang.OutOfMemoryError: Metaspace
+[0m[[31merror[0m] [0mCould not run test com.test.LSH_IS_F_Test: java.lang.OutOfMemoryError: Metaspace[0m
+0m[[0minfo[0m] [0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 3, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	com.test.EntropiaTest[0m
