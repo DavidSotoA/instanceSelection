@@ -16,12 +16,16 @@ object Entropia extends InstanceSelection {
     throw new IllegalArgumentException ("unimplement method")
   }
 
+  // método encargado re realizar la selección de instancias
   def instanceSelection2(
     instances: DataFrame,
     unbalanced: Boolean,
     spark: SparkSession): DataFrame = {
+      // se crea la UDAF
       val aggEntropy = new AggEntropyUnbalanced()
       val sc = spark.sparkContext
+
+      // se agrega la entropia a cada instacia, esta es calculada en base a las intancias de la cubeta
       val entropyForSignature = addEntropy(
                                 instances,
                                 (Constants.SET_OUPUT_COL_LSH,
@@ -31,12 +35,16 @@ object Entropia extends InstanceSelection {
 
       sc.broadcast(entropyForSignature)
 
+      //se hace join de de las entropias con los datos originales
       var selectInstances = instances.join(entropyForSignature, Constants.SET_OUPUT_COL_LSH)
+
+      // se hace la seleccion de las instances basada en la entropia obtenida
       selectInstances.filter(x =>pickInstance(x(4).asInstanceOf[Double], x(3).asInstanceOf[Int], unbalanced))
                       .drop(Constants.SET_OUPUT_COL_LSH, Constants.SET_OUPUT_COL_ENTROPY)
                       .dropDuplicates(Constants.INSTANCE_ID)
     }
 
+  // metodo encargado de seleccionar las intancias en base a una entropia dada mediante la generacion de un numero aleatorio
   def pickInstance(entropia: Double, label: Int, unbalanced: Boolean): Boolean = {
     if (label == 1 && unbalanced) {
       return true
@@ -48,6 +56,7 @@ object Entropia extends InstanceSelection {
     return false
   }
 
+  // metodo encargado de calcular la entropia por cubeta mediante la UDAF y asignarla a cada muestra
   def addEntropy(
     instances: DataFrame,
     columnNames: (String, String, String),
@@ -60,6 +69,7 @@ object Entropia extends InstanceSelection {
   }
 }
 
+// UDAF encargada de encontrar la entropia
 class AggEntropyUnbalanced() extends UserDefinedAggregateFunction {
 
  override def inputSchema: StructType = StructType(Array(StructField("item", IntegerType)))

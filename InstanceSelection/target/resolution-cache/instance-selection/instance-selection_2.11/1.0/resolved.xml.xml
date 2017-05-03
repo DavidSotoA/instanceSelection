@@ -4,7 +4,7 @@
 		module="instance-selection_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20170425220254"
+		publication="20170503034402"
 	>
 		<description>
 		Instance selection
@@ -37,7 +37,6 @@
 		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.1.0" conf="provided->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-mllib_2.11" rev="2.1.0" conf="provided->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.1.0" conf="provided->default(compile)"/>
-		<dependency org="com.github.martincooper" name="scala-datatable_2.11" rev="0.7.0" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.0" conf="test->default(compile)"/>
 	</dependencies>
 </ivy-module>

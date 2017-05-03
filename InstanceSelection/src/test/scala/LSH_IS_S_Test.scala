@@ -101,13 +101,3 @@ class LSH_IS_S_Test extends FunSuite with BeforeAndAfterAll {
     assert(instancesSelected(5)(0).asInstanceOf[Int] == 7 )
   }
 }
-
-val instances = spark.createDataFrame(Seq(
-  (1, Vectors.dense(3.0, 0.5), -1),
-  (2, Vectors.dense(4.0, 0.4), -1),
-  (3, Vectors.dense(-0.5, 3.0), 1),
-  (4, Vectors.dense(-0.4, 4.0), -1),
-  (5, Vectors.dense(-0.5, -3.0), 1),
-  (6, Vectors.dense(-0.4, -4.0), -1),
-  (7, Vectors.dense(-0.4, -4.0), 1))
-).toDF("idn", "features", "label")

@@ -1,8 +1,5 @@
 package com.lsh
 
-import com.github.martincooper.datatable.{DataColumn, DataRow, DataTable, DataValue}
-import com.github.martincooper.datatable.DataSort.SortEnum.Descending
-
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.ml.linalg.SQLDataTypes.VectorType
 import org.apache.spark.sql._
@@ -10,7 +7,13 @@ import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAg
 import org.apache.spark.sql.functions.{explode, udf}
 import org.apache.spark.sql.types._
 
-case class Drop3() extends LogHelper {
+/** @author David Augusto Soto A. augusto.soto@udea.edu.co
+ *  @version 1.0
+ *
+ *  Esta clase realiza instance selection mediante el método de DROP3
+*/
+
+case class Drop3() {
 
   def instanceSelection(
     instances: DataFrame,
@@ -19,21 +22,19 @@ case class Drop3() extends LogHelper {
     distancesIntervale: Int): DataFrame = {
     // require((k_Neighbors%2 ==1) && (k_Neighbors > 0),
             // "El numero de vecinos debe ser impar y positivo")
+    require((k_Neighbors < distancesIntervale),
+            "El numero de vecinos debe ser menor o igual al intervalo de distancias")
+
     val aggKnn = new AggKnn()
 
-    logger.info("..........Iniciando UDAF...............")
     val instancesWithInfo = instances.groupBy("signature").agg(aggKnn(instances.col("features"),
                                       instances.col("idn"), instances.col("label")).as("info"))
-    logger.info("..........UDAF terminada...............")
 
-    val transformUDF = udf(drop3(_ : Seq[Row], unbalanced, k_Neighbors))
+    val transformUDF = udf(drop3(_ : Seq[Row], distancesIntervale, unbalanced, k_Neighbors))
 
-    logger.info("..........Iniciando DROP3...............")
     val remove = instancesWithInfo.withColumn("InstancesToEliminate",
     transformUDF(instancesWithInfo.col("info"))).drop("info", "signature")
-    logger.info("..........DROP3 terminado...............")
 
-    logger.info("..........Eliminando instancias...............")
     val explodeDF = remove.select(explode(remove("InstancesToEliminate")).as("idn"))
     instances.join(explodeDF, Seq("idn"), "leftanti")
   }
@@ -55,34 +56,30 @@ case class Drop3() extends LogHelper {
     }
   }
 
-  def drop3(instances: Seq[Row], unbalanced: Boolean, k_Neighbors: Int): Seq[Int] = {
+  def drop3(instances: Seq[Row], distancesIntervale: Int, unbalanced: Boolean, k_Neighbors: Int): Seq[Int] = {
     val label = instances.head.getInt(2)
     if (isOneClass(instances, label)) {
       return returnIfOneClass(instances, unbalanced, label)
     }
-    var table = completeTable(instances, k_Neighbors, createDataTable(instances))
+    var table = completeTable(instances, distancesIntervale,  k_Neighbors, createDataTable(instances))
     var instancesForRemove = Seq[Int]()
     var numOfInstances = table.size
     var i = 0
     while(i < numOfInstances) {
-      val instance = table(i)
-      val instanceRow = new RowTable(instance(0).asInstanceOf[(Int, Int)],
-                              instance(1).asInstanceOf[Seq[(Double, Int, Int)]],
-                              instance(2).asInstanceOf[Seq[(Double, Int, Int)]],
-                              instance(3).asInstanceOf[Double],
-                              instance(4).asInstanceOf[Seq[Int]])
-      val instanceId = instanceRow.id
-      val instanceAssociates = instanceRow.associates
+      val instance = table.getRow(i)
+
+      val instanceId = instance.id
+      val instanceAssociates = instance.associates
       var requireRemove = false
 
-      if ((instanceId._2 == -1 && unbalanced) || !unbalanced) {
+      if ((instanceId.label == -1 && unbalanced) || !unbalanced) {
         requireRemove = removeInstance(instanceId, instanceAssociates, table, instancesForRemove)
       }
       if (requireRemove) {
-        table = table.rows.remove(i).get
+        table.removeRow(i)
         numOfInstances = numOfInstances - 1
-        table = updateTableForRemove(instanceId._1, instanceAssociates, table, instancesForRemove)
-        instancesForRemove = instancesForRemove :+ instanceId._1
+        table = updateTableForRemove(instanceId.id, instanceAssociates, table, instancesForRemove)
+        instancesForRemove = instancesForRemove :+ instanceId.id
       } else {
         i = i + 1
       }
@@ -92,59 +89,133 @@ case class Drop3() extends LogHelper {
 
   def updateTableForRemove(instanceToRemove: Int,
     instanceAssociates: Seq[Int],
-    table: DataTable,
-    instanceRemove: Seq[Int]): DataTable = {
+    table: Table,
+    instanceRemove: Seq[Int]): Table = {
     var mytable = table
     for (associate <- instanceAssociates) {
       if (!instanceRemove.contains(associate)) {
-        val (index, rowOfAssociate) = getIndexAndRowById(associate, table)
+        val (index, rowOfAssociate) = table.getIndexAndRowById(associate)
         val neighborsOfAssociate = rowOfAssociate.neighbors
-        val distancesOfAssociate = rowOfAssociate.distances
+        val distancesOfAssociate = rowOfAssociate.distances.info
         val associatesOfAssociate = rowOfAssociate.associates
         var updateDistances = distancesOfAssociate
-        var newNeighbor = null.asInstanceOf[(Double, Int, Int)]
+        var newNeighbor = null.asInstanceOf[Info]
 
         if(!updateDistances.isEmpty) {
           newNeighbor = distancesOfAssociate.head
           updateDistances = distancesOfAssociate.drop(1)
-          while(instanceRemove.contains(newNeighbor._2) && !updateDistances.isEmpty)  {
+          //preguntar si se debe recalcular distancias y hacerlo en caso de que si
+          while(instanceRemove.contains(newNeighbor.id) && !updateDistances.isEmpty)  {
             newNeighbor = updateDistances.head
             updateDistances = updateDistances.drop(1)
+            //preguntar si se debe recalcular distancias y hacerlo en caso de que si
           }
         }
 
-        var updateNeighbors = neighborsOfAssociate.filter(x => x._2 != instanceToRemove)
+        var updateNeighbors = neighborsOfAssociate.filter(x => x.id != instanceToRemove)
         if(!updateDistances.isEmpty) {
          updateNeighbors = updateNeighbors :+ newNeighbor
         }
 
         val newAssociates = associatesOfAssociate.filter(x => x != instanceToRemove)
-        mytable = mytable.rows.replace(index, DataValue.apply(rowOfAssociate.id),
-                                    DataValue.apply(updateDistances),
-                                    DataValue.apply(updateNeighbors),
-                                    DataValue.apply(rowOfAssociate.enemy),
-                                    DataValue.apply(newAssociates)).get
+        val dist = Distances(false, 0, updateDistances) // arreglar esta mierd
+        val row = new RowTable(rowOfAssociate.id,
+          dist,
+          updateNeighbors,
+          rowOfAssociate.enemy,
+          newAssociates)
+
+        mytable.replaceRow(index, row)
+
         if(!updateDistances.isEmpty) {
-          mytable = updateAssociates(rowOfAssociate.id._1, newNeighbor._2, mytable)
+          mytable = updateAssociates(rowOfAssociate.id.id, newNeighbor.id, mytable)
         }
       }
     }
     mytable
   }
 
-  def removeInstance(instanceId: (Int, Int),
+  def recalculateDistances(
+    instanceToUpdate: Int,
+    delta: Int,
+    instances: Seq[Row],
+    table: Table): Table = {
+      var myTable = table
+      var myDelta = delta
+      var noMore = false
+      val (index, rowToUpdate) = myTable.getIndexAndRowById(instanceToUpdate)
+      val distanceIndex = rowToUpdate.distances.updateIndex
+      val totalInstance = instances.size
+      val availableInstance = totalInstance - distanceIndex
+
+      if (availableInstance < distanceIndex) {
+        myDelta = availableInstance
+        noMore = true
+      }
+
+      val instance = instances.filter(x =>
+        x(1).asInstanceOf[Int] == rowToUpdate.id.id)(0)(0).asInstanceOf[Vector]
+
+      val distances = calculateDistances(myDelta, distanceIndex, instance, instances)
+      val newDistanceIndex = distanceIndex + myDelta
+      val newDistance = Distances(noMore, newDistanceIndex, distances)
+      val newRow = RowTable(
+        rowToUpdate.id,
+        newDistance,
+        rowToUpdate.neighbors,
+        rowToUpdate.enemy,
+        rowToUpdate.associates)
+
+      myTable.replaceRow(index, newRow)
+      return myTable
+    }
+
+  /** método para calcular las distancias de una instancia contra todas las demas
+   *  @param delta: indica cuantas distancias se tomaran
+   *  @param distanceIndex: Indica cual fue la ultima distancia tomada
+   *  @param sample: Instancia a la cual se le calcularan las distancias
+   *  @param instances: Conjunto de instancias con las cuales se calculara la distancia
+   *  @return Lista con todas las distancias desde distanceIndex hasta distanceIndex + delta
+  */
+  def calculateDistances(
+    delta: Int,
+    distanceIndex: Int,
+    sample: Vector,
+    instances: Seq[Row]): Seq[Info] = {
+      val instanceSize = instances.size
+      var distances = Seq[Info]()
+
+      if(instanceSize < 0){
+        return distances
+      }
+
+      for(i <- 0 to (instanceSize-1)) {
+        val distance = Mathematics.distance(sample, instances(i)(0).asInstanceOf[Vector])
+        if(distance != 0) {
+          distances = distances :+ new Info(distance, instances(i)(1).asInstanceOf[Int],
+                                          instances(i)(2).asInstanceOf[Int])
+        }
+      }
+      if(!distances.isEmpty) {
+        distances = scala.util.Sorting.stableSort(distances, (i1: Info,
+                                              i2: Info) => i1.distance < i2.distance)
+      }
+    return distances.slice(distanceIndex, distanceIndex + delta)
+  }
+
+  def removeInstance(instanceId: Id,
     associates: Seq[Int],
-    table: DataTable,
+    table: Table,
     instanceRemove: Seq[Int]): Boolean = {
-    val knn_labels = knn(Seq(1, -1), _: Seq[(Double, Int, Int)])
+    val knn_labels = knn(Seq(1, -1), _: Seq[Info])
     var withInstanceId: Int = 0
     var withoutInstanceId: Int = 0
     for (associate <- associates) {
       if (!instanceRemove.contains(associate)) {
-        val (index, rowOfAssociate) = getIndexAndRowById(associate, table)
-        val labelOfAssociate = rowOfAssociate.id._2
+        val (index, rowOfAssociate) = table.getIndexAndRowById(associate)
+        val labelOfAssociate = rowOfAssociate.id.label
         val neighborsOfAssociate = rowOfAssociate.neighbors
-        val neighborsOfAssociateWithoutInstance = neighborsOfAssociate.filter(x => instanceId._1 != x._2)
+        val neighborsOfAssociateWithoutInstance = neighborsOfAssociate.filter(x => instanceId.id != x.id)
         val knnWithInstance = knn_labels(neighborsOfAssociate)
         val knnWithoutInstance = knn_labels(neighborsOfAssociateWithoutInstance)
         if (knnWithInstance == labelOfAssociate) {
@@ -161,12 +232,12 @@ case class Drop3() extends LogHelper {
     return false
   }
 
-  def knn(labels: Seq[Int], neighbors: Seq[(Double, Int, Int)]): Int = {
+  def knn(labels: Seq[Int], neighbors: Seq[Info]): Int = {
     var numOflabels = Seq.fill[Int](labels.size)(0)
     for(neighbor <- neighbors) {
       var i = 0
       for(label <- labels) {
-        if (label == neighbor._3) {
+        if (label == neighbor.label) {
           numOflabels = numOflabels.updated(i, numOflabels(i) + 1)
         }
         i = i + 1
@@ -178,182 +249,67 @@ case class Drop3() extends LogHelper {
     return labels.zip(numOflabels).maxBy(x => x._2)._1
   }
 
-  def createDataTable(instances: Seq[Row]): DataTable = {
-    val id_col = new DataColumn[(Int, Int)]("id_col", Array[(Int, Int)]())
-    val dist_col = new DataColumn[Seq[(Double, Int, Int)]]("Distancias",
-                                  Array[Seq[(Double, Int, Int)]]())
-    val neighbors_col = new DataColumn[Seq[(Double, Int, Int)]]("Vecinos",
-                                       Array[Seq[(Double, Int, Int)]]())
-    val enemy_col = new DataColumn[Double]("Enemigo", Array[Double]())
-    val associates_col = new DataColumn[Seq[Int]]("Asociados", Array[Seq[Int]]())
-    var table = DataTable("NewTable", Seq(id_col, dist_col, neighbors_col, enemy_col,
-                                          associates_col))
-
-    val dist_null = DataValue.apply(null.asInstanceOf[Seq[(Double, Int, Int)]])
-    val neighbors_null = dist_null
-    val enemy_null = DataValue.apply(null.asInstanceOf[Double])
-    val associates_null = DataValue.apply(Seq.empty[Int])
-
-    val instanceSize = instances.size
-    for(i <- 0 to (instanceSize-1)) {
-      val id_tuple = (instances(i)(1).asInstanceOf[Int], instances(i)(2).asInstanceOf[Int])
-      val value_id_tuple = DataValue.apply(id_tuple)
-      val value_null = DataValue.apply(null)
-      table = table.get.rows.add(value_id_tuple, dist_null, neighbors_null, enemy_null,
-                                 associates_null)
-    }
-    table.get
-  }
-
-  def completeTable(instances: Seq[Row], k_Neighbors: Int, table: DataTable): DataTable = {
-    var myTable = table
-    var currentInstance: (Vector, Int, Int) = null.asInstanceOf[(Vector, Int, Int)]
-    val instanceSize = instances.size
-    for(i <- 0 to (instanceSize-1)) {
-      currentInstance = (instances(i)(0).asInstanceOf[Vector],
-                         instances(i)(1).asInstanceOf[Int],
-                         instances(i)(2).asInstanceOf[Int])
-      val instancesId = (currentInstance._2, currentInstance._3)
-      val distancesOfCurrentInstance = calculateDistances(currentInstance._1, instances)
-      val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
-      val myEnemy = findMyNemesis(distancesOfCurrentInstance, currentInstance._3, false)
-
-      // Traer indice y row de la instancia
-      val (index, row) = getIndexAndRowById(instancesId._1, myTable)
-      myTable = myTable.rows.replace(index, DataValue.apply(instancesId),
-                                            DataValue.apply(
-                                              distancesOfCurrentInstance.drop(k_Neighbors + 1)),
-                                            DataValue.apply(myNeighbors),
-                                            DataValue.apply(myEnemy),
-                                            DataValue.apply(row.associates)).get
-      for(neighbor <- myNeighbors) {
-        myTable = updateAssociates(instancesId._1, neighbor._2, myTable)
-      }
-    }
-    myTable.quickSort("Enemigo", Descending).get.toDataTable
-  }
-
-  def updateAssociates(associate: Int, instanceForUpdate: Int, table: DataTable): DataTable = {
-    var myTable = table
-    val (index, row) = getIndexAndRowById(instanceForUpdate, myTable)
-    myTable.rows.replace(index, DataValue.apply(row.id),
-                                DataValue.apply(row.distances),
-                                DataValue.apply(row.neighbors),
-                                DataValue.apply(row.enemy),
-                                DataValue.apply(row.associates :+ associate)).get
-  }
-
-
-  def getIndexAndRowById(id: Int, table: DataTable): (Int, RowTable) = {
-   val index = table.indexWhere(x => x.values(0).asInstanceOf[(Int, Int)]._1 == id)
-   val row = table.filter(x => x.values(0).asInstanceOf[(Int, Int)]._1 == id).toDataTable(0)
-   val rowT = new RowTable(row(0).asInstanceOf[(Int, Int)],
-                           row(1).asInstanceOf[Seq[(Double, Int, Int)]],
-                           row(2).asInstanceOf[Seq[(Double, Int, Int)]],
-                           row(3).asInstanceOf[Double],
-                           row(4).asInstanceOf[Seq[Int]])
-   (index, rowT)
- }
-
-  def findNeighbors(instances: Seq[(Double, Int, Int)],
+  def findNeighbors(instances: Seq[Info],
                     k_Neighbors: Int,
-                    needOrder: Boolean): Seq[(Double, Int, Int)] = {
+                    needOrder: Boolean): Seq[Info] = {
     if (needOrder) {
-      val instancesInOrder = scala.util.Sorting.stableSort(instances, (i1: (Double, Int, Int),
-                                          i2: (Double, Int, Int)) => i1._1 < i2._1)
+      val instancesInOrder = scala.util.Sorting.stableSort(instances, (i1: Info,
+                                          i2: Info) => i1.distance < i2.distance)
       return instancesInOrder.take(k_Neighbors + 1)
     }
     return instances.take(k_Neighbors + 1)
   }
 
-  def findMyNemesis(instances: Seq[(Double, Int, Int)],
+  def findMyNemesis(instances: Seq[Info],
                     myLabel: Int,
                     needOrder: Boolean): Double = {
     val myEnemies = killFriends(instances, myLabel)
 
     if(needOrder) {
-      var enemiesInOrder = scala.util.Sorting.stableSort(myEnemies, (i1: (Double, Int, Int),
-                                          i2: (Double, Int, Int)) => i1._1 < i2._1)
-      return enemiesInOrder.head._1
+      var enemiesInOrder = scala.util.Sorting.stableSort(myEnemies, (i1: Info,
+                                          i2: Info) => i1.distance < i2.distance)
+      return enemiesInOrder.head.distance
     }
-    return myEnemies.head._1
+    return myEnemies.head.distance
   }
 
-  def killFriends(instances: Seq[(Double, Int, Int)], myLabel: Int): Seq[(Double, Int, Int)] = {
-    instances.filter(x => (x._3 != myLabel))
+  def killFriends(instances: Seq[Info], myLabel: Int): Seq[Info] = {
+    instances.filter(x => (x.label != myLabel))
   }
 
-  def calculateDistances(sample: Vector, instances: Seq[Row]): Seq[(Double, Int, Int)] = {
-    val instanceSize = instances.size
-    var distances = Array[(Double, Int, Int)]()
-    for(i <- 0 to (instanceSize-1)) {
-      val distance = Mathematics.distance(sample, instances(i)(0).asInstanceOf[Vector])
-      if(distance != 0) {
-        distances = distances :+ (distance, instances(i)(1).asInstanceOf[Int],
-                                  instances(i)(2).asInstanceOf[Int])
-      }
-    }
-    if(!distances.isEmpty) {
-      distances = scala.util.Sorting.stableSort(distances, (i1: (Double, Int, Int),
-                                            i2: (Double, Int, Int)) => i1._1 < i2._1)
-    }
-    distances
-  }
 
-  def calculateDistances2(
-    sample: Vector,
-    instances: Seq[Row],
-    distancesIntervale: Int,
-    initDistance : Int): Seq[(Double, Int, Int)] = {
-      val instanceSize = instances.size
-      var distances = Array[(Double, Int, Int)]()
-      for(i <- 0 until instanceSize) {
-        val distance = Mathematics.distance(sample, instances(i)(0).asInstanceOf[Vector])
-        if(distance != 0) {
-          distances = distances :+ (distance, instances(i)(1).asInstanceOf[Int],
-                                    instances(i)(2).asInstanceOf[Int])
-        }
-      }
-      if(!distances.isEmpty) {
-        distances = scala.util.Sorting.stableSort(distances, (i1: (Double, Int, Int),
-                                              i2: (Double, Int, Int)) => i1._1 < i2._1)
-      }
-      distances
-  }
-
-  def completeTable2(instances: Seq[Row], k_Neighbors: Int, table: Table): Table = {
+  def completeTable(instances: Seq[Row], distancesIntervale: Int, k_Neighbors: Int, table: Table): Table = {
     var myTable = table
     var currentInstance: (Vector, Int, Int) = null.asInstanceOf[(Vector, Int, Int)]
     val instanceSize = instances.size
     for(i <- 0 to (instanceSize-1)) {
-      println(i)
       currentInstance = (instances(i)(0).asInstanceOf[Vector],
                          instances(i)(1).asInstanceOf[Int],
                          instances(i)(2).asInstanceOf[Int])
-     val instancesId = (currentInstance._2, currentInstance._3)
-     val distancesOfCurrentInstance = calculateDistances(currentInstance._1, instances)
+     val instancesId = Id(currentInstance._2, currentInstance._3)
+     val distancesOfCurrentInstance = calculateDistances(distancesIntervale, distancesIntervale, currentInstance._1, instances)
      val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
      val myEnemy = findMyNemesis(distancesOfCurrentInstance, currentInstance._3, false)
 
-     val (index, row) = myTable.getIndexAndRowById(instancesId._1)
+     val (index, row) = myTable.getIndexAndRowById(instancesId.id)
      val newRow = RowTable(instancesId,
-                           distancesOfCurrentInstance.drop(k_Neighbors + 1),
+                           Distances(false, 0, distancesOfCurrentInstance.drop(k_Neighbors + 1)), // arreglar esta meird
                            myNeighbors,
                            myEnemy,
                            row.associates)
      myTable.replaceRow(index, newRow)
 
      for(neighbor <- myNeighbors) {
-       myTable = updateAssociates2(instancesId._1, neighbor._2, myTable)
+       myTable = updateAssociates(instancesId.id, neighbor.id, myTable)
      }
     }
     myTable.orderByEnemy
     myTable
   }
 
-  def createDataTable2(instances: Seq[Row]): Table = {
-    val dist_null = null.asInstanceOf[Seq[(Double, Int, Int)]]
-    val neighbors_null = dist_null
+  def createDataTable(instances: Seq[Row]): Table = {
+    val dist_null = null.asInstanceOf[Distances]
+    val neighbors_null =  null.asInstanceOf[Seq[Info]]
     val enemy_null = null.asInstanceOf[Double]
     val associates_null = Seq.empty[Int]
 
@@ -361,14 +317,14 @@ case class Drop3() extends LogHelper {
     val table = new Table()
     var row = null.asInstanceOf[RowTable]
     for(i <- 0 to (instanceSize-1)) {
-      val id_tuple = (instances(i)(1).asInstanceOf[Int], instances(i)(2).asInstanceOf[Int])
+      val id_tuple = Id(instances(i)(1).asInstanceOf[Int], instances(i)(2).asInstanceOf[Int])
       row = new RowTable(id_tuple, dist_null, neighbors_null, enemy_null, associates_null)
       table.addRow(row)
     }
     table
   }
 
-def updateAssociates2(associate: Int, instanceForUpdate: Int, table: Table): Table = {
+def updateAssociates(associate: Int, instanceForUpdate: Int, table: Table): Table = {
     var myTable = table
     val (index, row) = myTable.getIndexAndRowById(instanceForUpdate)
     val newRow = RowTable(row.id,

@@ -10,10 +10,13 @@ object LSH_IS_F {
   def instanceSelection(
     instances: DataFrame,
     unbalanced: Boolean): DataFrame = {
+      // se determina la UDAF a usar en base a si las clases son desbañanceadas o balanceadas
       var aggLSH: UserDefinedAggregateFunction = new Agg_LSH_Is_S_Balanced()
       if (unbalanced) {
         aggLSH = new Agg_LSH_Is_S_Unbalanced()
       }
+
+      // se eligen las instancias mediante una UDAF
       var instancesSelected =
         instances
         .groupBy(Constants.SET_OUPUT_COL_LSH)
@@ -21,11 +24,13 @@ object LSH_IS_F {
         .as(Constants.PICK_INSTANCE))
         .drop(Constants.SET_OUPUT_COL_LSH)
 
+      // se realiza un explode pues la UDAF devuelve una lista por cubeta
       val explodeDF =
         instancesSelected
        .select(explode(instancesSelected(Constants.PICK_INSTANCE))
        .as(Constants.INSTANCE_ID)).distinct()
 
+      // se realiza la seleccion de instancias realizando un join entre las muestras originales y las seleccionadas por la  UDAF
       instances
       .join(explodeDF, Constants.INSTANCE_ID)
       .dropDuplicates(Constants.INSTANCE_ID)
@@ -33,6 +38,7 @@ object LSH_IS_F {
   }
 }
 
+// UDAF encargada de seleccionar las intancias cuando las clases son desbalanceadas
 class Agg_LSH_Is_F_Unbalanced() extends UserDefinedAggregateFunction {
 
   override def inputSchema: StructType = StructType(Array(
@@ -86,6 +92,7 @@ class Agg_LSH_Is_F_Unbalanced() extends UserDefinedAggregateFunction {
   }
 }
 
+// UDAF encargada de seleccionar las intancias cuando las clases son balanceadas
 class Agg_LSH_Is_F_Balanced() extends UserDefinedAggregateFunction {
 
   override def inputSchema: StructType = StructType(Array(
