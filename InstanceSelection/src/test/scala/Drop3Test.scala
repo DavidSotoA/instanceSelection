@@ -88,8 +88,6 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(Vectors.dense(12, 3), 8, 1),
       Row(Vectors.dense(5, 4), 2, -1)
     ))
-
-
   }
 
   test("Se encuentran los k vecinos mas cercanos en base a las distancias calculadas") {
@@ -148,6 +146,24 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     assert(row == waitedRow)
   }
 
+  test("Se actualizan las distancias") {
+    val instances = Seq(Row(Vectors.dense(1.0), 3, 1),
+                        Row(Vectors.dense(5.0), 4, -1),
+                        Row(Vectors.dense(2.0), 5, -1),
+                        Row(Vectors.dense(3.0), 6, -1),
+                        Row(Vectors.dense(20.0), 7, 1),
+                        Row(Vectors.dense(14.0), 8, 1),
+                        Row(Vectors.dense(30.0), 9, -1),
+                        Row(Vectors.dense(7.0), 10, 1))
+    val drop3 = new Drop3()
+    val delta = 5
+    val table = drop3.completeTable(instances, delta, 2, drop3.createDataTable(instances))
+    drop3.recalculateDistances(9, delta, instances, table)
+
+    assert(table.getRow(0).distances.info == Seq(Info(28.0,5,-1), Info(29.0,3,1)))
+
+  }
+
   test("Se llena el datatable segun la lista dada") {
     val instances = Seq(Row(Vectors.dense(1.0), 3, 1),
                         Row(Vectors.dense(5.0), 4, -1),
@@ -158,53 +174,53 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, 1))
     val drop3 = new Drop3()
-    val table = drop3.completeTable(instances, 2, 2, drop3.createDataTable(instances))
+    val table = drop3.completeTable(instances, 5, 3, drop3.createDataTable(instances))
 
     val row1 = new RowTable(Id(7,1),
-                  Distances(false, 0, Seq(Info(17.0,6,-1), Info(18.0,5,-1), Info(19.0,3,1))),
+                  Distances(false, 5, Seq(Info(17.0,6,-1))),
                   Seq(Info(6.0,8,1), Info(10.0,9,-1), Info(13.0,10,1), Info(15.0,4,-1)),
                   10.0,
                   List(8, 9))
 
     val row0 = new RowTable(Id(9,-1),
-                   Distances(false, 0, Seq(Info(27.0,6,-1), Info(28.0,5,-1), Info(29.0,3,1))),
+                   Distances(false, 5, Seq(Info(27.0,6,-1))),
                    Seq(Info(10.0,7,1), Info(16.0,8,1), Info(23.0,10,1), Info(25.0,4,-1)),
                    10.0,
                    List(7))
 
     val row2 = new RowTable(Id(8,1),
-                   Distances(false, 0, Seq(Info(12.0,5,-1), Info(13.0,3,1), Info(16.0,9,-1))),
+                   Distances(false, 5, Seq(Info(12.0,5,-1))),
                    Seq(Info(6.0,7,1), Info(7.0,10,1), Info(9.0,4,-1), Info(11.0,6,-1)),
                    9.0,
                    List(7, 9))
 
     val row5 = new RowTable(Id(4,-1),
-                   Distances(false, 0, Seq(Info(9.0,8,1), Info(15.0,7,1), Info(25.0,9,-1))),
+                   Distances(false, 5, Seq(Info(9.0,8,1))),
                    Seq(Info(2.0,6,-1), Info(2.0,10,1), Info(3.0,5,-1), Info(4.0,3,1)),
                    2.0,
                    List(3, 5, 6, 7, 8, 9, 10))
 
     val row4 = new RowTable(Id(6,-1),
-                   Distances(false, 0, Seq(Info(11.0,8,1), Info(17.0,7,1), Info(27.0,9,-1))),
+                   Distances(false, 5, Seq(Info(11.0,8,1))),
                    Seq(Info(1.0,5,-1), Info(2.0,3,1), Info(2.0,4,-1), Info(4.0,10,1)),
                    2.0,
                    List(3, 4, 5, 8, 10))
 
     val row3 = new RowTable(Id(10,1),
-                   Distances(false, 0, Seq(Info(7.0,8,1), Info(13.0,7,1), Info(23.0,9,-1))),
+                   Distances(false, 5, Seq(Info(7.0,8,1))),
                    Seq(Info(2.0,4,-1), Info(4.0,6,-1), Info(5.0,5,-1), Info(6.0,3,1)),
                    2.0,
                    List(3, 4, 5, 6, 7, 8, 9))
 
     val row7 = new RowTable(Id(3,1),
-                   Distances(false, 0, Seq(Info(13.0,8,1), Info(19.0,7,1), Info(29.0,9,-1))),
+                   Distances(false, 5, Seq(Info(13.0,8,1))),
                    Seq(Info(1.0,5,-1), Info(2.0,6,-1), Info(4.0,4,-1), Info(6.0,10,1)),
                    1.0,
                    List(4, 5, 6, 10))
 
 
     val row6 = new RowTable(Id(5,-1),
-                   Distances(false, 0, Seq(Info(12.0,8,1), Info(18.0,7,1), Info(28.0,9,-1))),
+                   Distances(false, 5, Seq(Info(12.0,8,1))),
                    Seq(Info(1.0,3,1), Info(1.0,6,-1), Info(3.0,4,-1), Info(5.0,10,1)),
                    1.0,
                    List(3, 4, 6, 10))
@@ -252,53 +268,53 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, 1))
     val drop3 = new Drop3()
-    val table = drop3.completeTable(instances, 3, 2, drop3.createDataTable(instances))
-    val updateTable = drop3.updateTableForRemove(10, List(3, 4, 5, 6, 7, 8, 9), table, List())
-
-    val row1 = new RowTable(Id(7,1),
-                  Distances(false, 0, Seq(Info(18.0,5,-1), Info(19.0,3,1))),
-                  Seq(Info(6.0,8,1), Info(10.0,9,-1), Info(15.0,4,-1), Info(17.0,6,-1)),
-                  10.0,
-                  List(8, 9))
+    val table = drop3.completeTable(instances, 5, 3, drop3.createDataTable(instances))
+    val updateTable = drop3.updateTableForRemove(10, List(3, 4, 5, 6, 7, 8, 9), 5, instances, table, List())
 
     val row0 = new RowTable(Id(9,-1),
-                   Distances(false, 0, Seq(Info(28.0,5,-1), Info(29.0,3,1))),
+                   Distances(false,5,Seq()),
                    Seq(Info(10.0,7,1), Info(16.0,8,1), Info(25.0,4,-1), Info(27.0,6,-1)),
                    10.0,
                    List(7))
 
-    val row2 = new RowTable(Id(8,1),
-                   Distances(false, 0, Seq(Info(13.0,3,1), Info(16.0,9,-1))),
-                   Seq(Info(6.0,7,1), Info(9.0,4,-1), Info(11.0,6,-1), Info(12.0,5,-1)),
-                   9.0,
-                   List(7, 9, 3, 4, 5, 6))
+  val row1 = new RowTable(Id(7,1),
+                   Distances(false,5,Seq()),
+                   Seq(Info(6.0,8,1), Info(10.0,9,-1), Info(15.0,4,-1), Info(17.0,6,-1)),
+                   10.0,
+                   List(8, 9))
+
+  val row2 = new RowTable(Id(8,1),
+                  Distances(false,5,Seq()),
+                  Seq(Info(6.0,7,1), Info(9.0,4,-1), Info(11.0,6,-1), Info(12.0,5,-1)),
+                  9.0,
+                  List(7, 9, 3, 4, 5, 6))
 
     val row3 = new RowTable(Id(4,-1),
-                   Distances(false, 0, Seq(Info(15.0,7,1), Info(25.0,9,-1))),
+                   Distances(false,5,Seq()),
                    Seq(Info(2.0,6,-1), Info(3.0,5,-1), Info(4.0,3,1), Info(9.0,8,1)),
                    2.0,
                    List(3, 5, 6, 7, 8, 9))
 
     val row4 = new RowTable(Id(6,-1),
-                   Distances(false, 0, Seq(Info(17.0,7,1), Info(27.0,9,-1))),
+                   Distances(false,5,Seq()),
                    Seq(Info(1.0,5,-1), Info(2.0,3,1), Info(2.0,4,-1), Info(11.0,8,1)),
                    2.0,
                    List(3, 4, 5, 8, 7, 9))
 
     val row5 = new RowTable(Id(10,1),
-                   Distances(false, 0, Seq(Info(7.0,8,1), Info(13.0,7,1), Info(23.0,9,-1))),
+                   Distances(false, 5, Seq(Info(7.0,8,1))),
                    Seq(Info(2.0,4,-1), Info(4.0,6,-1), Info(5.0,5,-1), Info(6.0,3,1)),
                    2.0,
                    List(3, 4, 5, 6, 7, 8, 9))
 
     val row6 = new RowTable(Id(3,1),
-                   Distances(false, 0, Seq(Info(19.0,7,1), Info(29.0,9,-1))),
+                   Distances(false,5,Seq()),
                    Seq(Info(1.0,5,-1), Info(2.0,6,-1), Info(4.0,4,-1), Info(13.0,8,1)),
                    1.0,
                    List(4, 5, 6))
 
     val row7 = new RowTable(Id(5,-1),
-                   Distances(false, 0, Seq(Info(18.0,7,1), Info(28.0,9,-1))),
+                   Distances(false,5,Seq()),
                    Seq(Info(1.0,3,1), Info(1.0,6,-1), Info(3.0,4,-1), Info(12.0,8,1)),
                    1.0,
                    List(3, 4, 6, 8))
@@ -349,6 +365,18 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     assert(instanceToRemove == List(11, 12))
   }
 
+  test("asdiasdas") {
+    val instances = Seq(Row(Vectors.dense(1.0, 3.0), 1, 1),
+                        Row(Vectors.dense(5.0, -7.0), 2, 1),
+                        Row(Vectors.dense(-18.0, -12.0), 3, 1),
+                        Row(Vectors.dense(-6.0, 31.0), 4, -1),
+                        Row(Vectors.dense(-61.0, 5.0), 5, -1),
+                        Row(Vectors.dense(-54.0, 14.0), 6, -1))
+
+     val drop3 = new Drop3()
+     val instanceToRemove = drop3.drop3(instances, 100, true, 4)
+  }
+
   test("Se realiza el drop3 sobre un dataframe") {
     val instances = spark.createDataFrame(Seq(
               (0, Vectors.dense(1.0, 3.0), 1, 1),
@@ -366,7 +394,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(5,1,Vectors.dense(-61.0,5.0),-1))
 
     val drop3 = new Drop3()
-    val prueba = drop3.instanceSelection(instances, true, 3, 10)
+    val prueba = drop3.instanceSelection(instances, true, 3, 5)
     val pruebaCollect = prueba.collect
     assert(resp(0) == pruebaCollect(0))
     assert(resp(1) == pruebaCollect(1))
@@ -483,7 +511,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
                         Row(Vectors.dense(66.0), 7, 1))
     val drop3 = new Drop3()
-    val instanceToRemove = drop3.drop3(instances, 2, false, 4)
+    val instanceToRemove = drop3.drop3(instances, 5, false, 2)
     assert(instanceToRemove == List(7, 3))
   }
 }

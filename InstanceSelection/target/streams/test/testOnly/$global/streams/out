@@ -1,9 +1,8 @@
-[0m[[0mdebug[0m] [0mRunning TaskDef(com.test.Drop3Test, org.scalatest.tools.Framework$$anon$1@56eb154f, false, [SuiteSelector])[0m
-[0m[[0minfo[0m] [0m[36mRun completed in 4 seconds, 689 milliseconds.[0m[0m
-[0m[[0minfo[0m] [0m[36mTotal number of tests run: 23[0m[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(com.test.Drop3Test, org.scalatest.tools.Framework$$anon$1@18346fdc, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 8 seconds, 400 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 25[0m[0m
 [0m[[0minfo[0m] [0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0minfo[0m] [0m[36mTests: succeeded 16, failed 7, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0minfo[0m] [0m[31m*** 7 TESTS FAILED ***[0m[0m
-[0m[[31merror[0m] [0mFailed tests:[0m
-[0m[[31merror[0m] [0m	com.test.Drop3Test[0m
-[0m[[31merror[0m] [0m(test:[31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 25, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	com.test.Drop3Test[0m

@@ -22,7 +22,7 @@ case class Drop3() {
     distancesIntervale: Int): DataFrame = {
     // require((k_Neighbors%2 ==1) && (k_Neighbors > 0),
             // "El numero de vecinos debe ser impar y positivo")
-    require((k_Neighbors < distancesIntervale),
+    require((k_Neighbors + 1 < distancesIntervale),
             "El numero de vecinos debe ser menor o igual al intervalo de distancias")
 
     val aggKnn = new AggKnn()
@@ -61,10 +61,10 @@ case class Drop3() {
     if (isOneClass(instances, label)) {
       return returnIfOneClass(instances, unbalanced, label)
     }
-    var table = completeTable(instances, distancesIntervale,  k_Neighbors, createDataTable(instances))
-    var instancesForRemove = Seq[Int]()
-    var numOfInstances = table.size
-    var i = 0
+      var table = completeTable(instances, distancesIntervale,  k_Neighbors, createDataTable(instances))
+      var instancesForRemove = Seq[Int]()
+      var numOfInstances = table.size
+      var i = 0
     while(i < numOfInstances) {
       val instance = table.getRow(i)
 
@@ -78,7 +78,7 @@ case class Drop3() {
       if (requireRemove) {
         table.removeRow(i)
         numOfInstances = numOfInstances - 1
-        table = updateTableForRemove(instanceId.id, instanceAssociates, table, instancesForRemove)
+        table = updateTableForRemove(instanceId.id, instanceAssociates,distancesIntervale, instances,table, instancesForRemove)
         instancesForRemove = instancesForRemove :+ instanceId.id
       } else {
         i = i + 1
@@ -87,59 +87,88 @@ case class Drop3() {
     instancesForRemove
   }
 
-  def updateTableForRemove(instanceToRemove: Int,
+  def updateTableForRemove(
+    instanceToRemove: Int,
     instanceAssociates: Seq[Int],
+    delta: Int,
+    instances: Seq[Row],
     table: Table,
     instanceRemove: Seq[Int]): Table = {
-    var mytable = table
+    var myTable = table
     for (associate <- instanceAssociates) {
       if (!instanceRemove.contains(associate)) {
         val (index, rowOfAssociate) = table.getIndexAndRowById(associate)
         val neighborsOfAssociate = rowOfAssociate.neighbors
-        val distancesOfAssociate = rowOfAssociate.distances.info
+        var distances = rowOfAssociate.distances
+        var distancesOfAssociate = distances.info
+        var isEmptyDistances = distances.isUpdate
         val associatesOfAssociate = rowOfAssociate.associates
         var updateDistances = distancesOfAssociate
         var newNeighbor = null.asInstanceOf[Info]
 
-        if(!updateDistances.isEmpty) {
-          newNeighbor = distancesOfAssociate.head
-          updateDistances = distancesOfAssociate.drop(1)
+        if(!isEmptyDistances || !updateDistances.isEmpty) {
+
           //preguntar si se debe recalcular distancias y hacerlo en caso de que si
-          while(instanceRemove.contains(newNeighbor.id) && !updateDistances.isEmpty)  {
-            newNeighbor = updateDistances.head
-            updateDistances = updateDistances.drop(1)
-            //preguntar si se debe recalcular distancias y hacerlo en caso de que si
+          if (updateDistances.isEmpty) {
+            distances = recalculateDistances(associate, delta, instances, myTable)
+            updateDistances = distances.info
+            isEmptyDistances = distances.isUpdate
           }
+
+          if (!updateDistances.isEmpty) {
+            newNeighbor = distancesOfAssociate.head
+            updateDistances = distancesOfAssociate.drop(1)
+          }
+
+          while(instanceRemove.contains(newNeighbor.id) && (!isEmptyDistances || !updateDistances.isEmpty)) {
+            if (!updateDistances.isEmpty) {
+              newNeighbor = updateDistances.head
+              updateDistances = updateDistances.drop(1)
+            }
+            //preguntar si se debe recalcular distancias y hacerlo en caso de que si
+            if (updateDistances.isEmpty && !isEmptyDistances){
+              distances = recalculateDistances(associate, delta, instances, myTable)
+              updateDistances = distances.info
+              isEmptyDistances = distances.isUpdate
+            }
+          }
+
         }
 
         var updateNeighbors = neighborsOfAssociate.filter(x => x.id != instanceToRemove)
-        if(!updateDistances.isEmpty) {
-         updateNeighbors = updateNeighbors :+ newNeighbor
+
+        if(newNeighbor != null) {
+          if(!instanceRemove.contains(newNeighbor.id)) {
+            updateNeighbors = updateNeighbors :+ newNeighbor
+          }
         }
 
         val newAssociates = associatesOfAssociate.filter(x => x != instanceToRemove)
-        val dist = Distances(false, 0, updateDistances) // arreglar esta mierd
+        val dist = Distances(distances.isUpdate, distances.updateIndex, updateDistances)
         val row = new RowTable(rowOfAssociate.id,
           dist,
           updateNeighbors,
           rowOfAssociate.enemy,
           newAssociates)
 
-        mytable.replaceRow(index, row)
+        myTable.replaceRow(index, row)
 
-        if(!updateDistances.isEmpty) {
-          mytable = updateAssociates(rowOfAssociate.id.id, newNeighbor.id, mytable)
+        if(newNeighbor != null) {
+          if(!instanceRemove.contains(newNeighbor.id)) {
+            myTable = updateAssociates(rowOfAssociate.id.id, newNeighbor.id, myTable)
+          }
         }
+
       }
     }
-    mytable
+    myTable
   }
 
   def recalculateDistances(
     instanceToUpdate: Int,
     delta: Int,
     instances: Seq[Row],
-    table: Table): Table = {
+    table: Table): Distances = {
       var myTable = table
       var myDelta = delta
       var noMore = false
@@ -148,7 +177,7 @@ case class Drop3() {
       val totalInstance = instances.size
       val availableInstance = totalInstance - distanceIndex
 
-      if (availableInstance < distanceIndex) {
+      if (availableInstance <= delta) {
         myDelta = availableInstance
         noMore = true
       }
@@ -167,7 +196,7 @@ case class Drop3() {
         rowToUpdate.associates)
 
       myTable.replaceRow(index, newRow)
-      return myTable
+      return  newDistance
     }
 
   /** método para calcular las distancias de una instancia contra todas las demas
@@ -184,10 +213,6 @@ case class Drop3() {
     instances: Seq[Row]): Seq[Info] = {
       val instanceSize = instances.size
       var distances = Seq[Info]()
-
-      if(instanceSize < 0){
-        return distances
-      }
 
       for(i <- 0 to (instanceSize-1)) {
         val distance = Mathematics.distance(sample, instances(i)(0).asInstanceOf[Vector])
@@ -277,7 +302,6 @@ case class Drop3() {
     instances.filter(x => (x.label != myLabel))
   }
 
-
   def completeTable(instances: Seq[Row], distancesIntervale: Int, k_Neighbors: Int, table: Table): Table = {
     var myTable = table
     var currentInstance: (Vector, Int, Int) = null.asInstanceOf[(Vector, Int, Int)]
@@ -287,13 +311,18 @@ case class Drop3() {
                          instances(i)(1).asInstanceOf[Int],
                          instances(i)(2).asInstanceOf[Int])
      val instancesId = Id(currentInstance._2, currentInstance._3)
-     val distancesOfCurrentInstance = calculateDistances(distancesIntervale, distancesIntervale, currentInstance._1, instances)
+     val distancesOfCurrentInstance =
+       calculateDistances(distancesIntervale, 0, currentInstance._1, instances)
      val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
      val myEnemy = findMyNemesis(distancesOfCurrentInstance, currentInstance._3, false)
 
      val (index, row) = myTable.getIndexAndRowById(instancesId.id)
+     var isUpdateDistance = false
+     if (instances.size <= distancesIntervale) {
+       isUpdateDistance = true
+     }
      val newRow = RowTable(instancesId,
-                           Distances(false, 0, distancesOfCurrentInstance.drop(k_Neighbors + 1)), // arreglar esta meird
+                           Distances(isUpdateDistance, distancesIntervale, distancesOfCurrentInstance.drop(k_Neighbors + 1)),
                            myNeighbors,
                            myEnemy,
                            row.associates)

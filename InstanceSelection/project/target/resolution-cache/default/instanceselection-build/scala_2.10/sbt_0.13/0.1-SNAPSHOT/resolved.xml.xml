@@ -4,7 +4,7 @@
 		module="instanceselection-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20170425220159"
+		publication="20170503084549"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

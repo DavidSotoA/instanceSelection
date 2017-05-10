@@ -7,150 +7,15 @@
 [0m[[0minfo[0m] [0m[32m- Se encuentra al enemigo mas cercano[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se crea el datatable inicial[0m[0m
 [0m[[0minfo[0m] [0m[32m- Dado un datatable y un id, se obtiene el indice y el row correpondiente a dicho id[0m[0m
-[0m[[0minfo[0m] [0m[31m- Se llena el datatable segun la lista dada *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  RowTable(Id(9,-1),Distances(false,0,WrappedArray()),WrappedArray(Info(23.0,10,1), Info(25.0,4,-1)),23.0,List()) did not equal RowTable(Id(9,-1),Distances(false,0,List(Info(27.0,6,-1), Info(28.0,5,-1), Info(29.0,3,1))),List(Info(10.0,7,1), Info(16.0,8,1), Info(23.0,10,1), Info(25.0,4,-1)),10.0,List(7)) (Drop3Test.scala:213)[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se actualizan las distancias[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se llena el datatable segun la lista dada[0m[0m
 [0m[[0minfo[0m] [0m[32m- El metodo knn retorna la etiqueta que tiene la mayoria de los vecinos[0m[0m
-[0m[[0minfo[0m] [0m[31m- Se determina si remover una instancia en base a la clasificacion de los asociados de una instancia con p y sin p *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  java.util.NoSuchElementException: next on empty iterator[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:39)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:37)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqLike$Elements.next(IndexedSeqLike.scala:63)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IterableLike$class.head(IterableLike.scala:107)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.scala$collection$IndexedSeqOptimized$$super$head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqOptimized$class.head(IndexedSeqOptimized.scala:126)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3.findMyNemesis(Drop3.scala:273)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3$$anonfun$completeTable$1.apply$mcVI$sp(Drop3.scala:292)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m- Se actualiza el datatable al remover una instancia *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  java.util.NoSuchElementException: next on empty iterator[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:39)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:37)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqLike$Elements.next(IndexedSeqLike.scala:63)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IterableLike$class.head(IterableLike.scala:107)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.scala$collection$IndexedSeqOptimized$$super$head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqOptimized$class.head(IndexedSeqOptimized.scala:126)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3.findMyNemesis(Drop3.scala:273)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3$$anonfun$completeTable$1.apply$mcVI$sp(Drop3.scala:292)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m- Se realiza el metodo de DROP3 con clases balanceadas *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  java.util.NoSuchElementException: next on empty iterator[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:39)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:37)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqLike$Elements.next(IndexedSeqLike.scala:63)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IterableLike$class.head(IterableLike.scala:107)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.scala$collection$IndexedSeqOptimized$$super$head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqOptimized$class.head(IndexedSeqOptimized.scala:126)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3.findMyNemesis(Drop3.scala:273)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3$$anonfun$completeTable$1.apply$mcVI$sp(Drop3.scala:292)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m- Se realiza el metodo de DROP3 con clases desbalanceadas *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  java.util.NoSuchElementException: next on empty iterator[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:39)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:37)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqLike$Elements.next(IndexedSeqLike.scala:63)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IterableLike$class.head(IterableLike.scala:107)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.scala$collection$IndexedSeqOptimized$$super$head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqOptimized$class.head(IndexedSeqOptimized.scala:126)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3.findMyNemesis(Drop3.scala:273)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3$$anonfun$completeTable$1.apply$mcVI$sp(Drop3.scala:292)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m- Se realiza el drop3 sobre un dataframe *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  org.apache.spark.SparkException: Exception thrown in awaitResult:[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.util.ThreadUtils$.awaitResultInForkJoinSafely(ThreadUtils.scala:215)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.exchange.BroadcastExchangeExec.doExecuteBroadcast(BroadcastExchangeExec.scala:131)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.InputAdapter.doExecuteBroadcast(WholeStageCodegenExec.scala:231)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeBroadcast$1.apply(SparkPlan.scala:124)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeBroadcast$1.apply(SparkPlan.scala:124)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:135)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:132)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.SparkPlan.executeBroadcast(SparkPlan.scala:123)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.joins.BroadcastHashJoinExec.prepareBroadcast(BroadcastHashJoinExec.scala:98)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m  Cause: org.apache.spark.SparkException: Job aborted due to stage failure: Task 191 in stage 1.0 failed 1 times, most recent failure: Lost task 191.0 in stage 1.0 (TID 200, localhost, executor driver): org.apache.spark.SparkException: Failed to execute user defined function($anonfun$3: (array<struct<features:vector,idn:int,label:int>>) => array<int>)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.sql.execution.aggregate.AggregationIterator$$anonfun$generateResultProjection$1.apply(AggregationIterator.scala:232)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.sql.execution.aggregate.AggregationIterator$$anonfun$generateResultProjection$1.apply(AggregationIterator.scala:221)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.sql.execution.aggregate.SortBasedAggregationIterator.next(SortBasedAggregationIterator.scala:159)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.sql.execution.aggregate.SortBasedAggregationIterator.next(SortBasedAggregationIterator.scala:29)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$JoinIterator.hasNext(Iterator.scala:211)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$2.apply(SparkPlan.scala:231)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$2.apply(SparkPlan.scala:225)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.rdd.RDD$$anonfun$mapPartitionsInternal$1$$anonfun$apply$25.apply(RDD.scala:826)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.rdd.RDD$$anonfun$mapPartitionsInternal$1$$anonfun$apply$25.apply(RDD.scala:826)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.scheduler.Task.run(Task.scala:99)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at java.lang.Thread.run(Thread.java:745)[0m[0m
-[0m[[0minfo[0m] [0m[31mCaused by: java.util.NoSuchElementException: next on empty iterator[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$2.next(Iterator.scala:39)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.Iterator$$anon$2.next(Iterator.scala:37)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.IndexedSeqLike$Elements.next(IndexedSeqLike.scala:63)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.IterableLike$class.head(IterableLike.scala:107)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.mutable.WrappedArray.scala$collection$IndexedSeqOptimized$$super$head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.IndexedSeqOptimized$class.head(IndexedSeqOptimized.scala:126)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.mutable.WrappedArray.head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at com.lsh.Drop3.findMyNemesis(Drop3.scala:273)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at com.lsh.Drop3$$anonfun$completeTable$1.apply$mcVI$sp(Drop3.scala:292)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at com.lsh.Drop3.completeTable(Drop3.scala:285)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at com.lsh.Drop3.drop3(Drop3.scala:64)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at com.lsh.Drop3$$anonfun$3.apply(Drop3.scala:33)[0m[0m
-[0m[[0minfo[0m] [0m[31m	at com.lsh.Drop3$$anonfun$3.apply(Drop3.scala:33)[0m[0m
-[0m[[0minfo[0m] [0m[31m	... 22 more[0m[0m
-[0m[[0minfo[0m] [0m[31m[0m[0m
-[0m[[0minfo[0m] [0m[31mDriver stacktrace:[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1435)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1423)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1422)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1422)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:802)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.Option.foreach(Option.scala:257)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:802)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m  Cause: org.apache.spark.SparkException: Failed to execute user defined function($anonfun$3: (array<struct<features:vector,idn:int,label:int>>) => array<int>)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.aggregate.AggregationIterator$$anonfun$generateResultProjection$1.apply(AggregationIterator.scala:232)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.aggregate.AggregationIterator$$anonfun$generateResultProjection$1.apply(AggregationIterator.scala:221)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.aggregate.SortBasedAggregationIterator.next(SortBasedAggregationIterator.scala:159)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.aggregate.SortBasedAggregationIterator.next(SortBasedAggregationIterator.scala:29)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$JoinIterator.hasNext(Iterator.scala:211)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at org.apache.spark.sql.execution.SparkPlan$$anonfun$2.apply(SparkPlan.scala:231)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
-[0m[[0minfo[0m] [0m[31m  Cause: java.util.NoSuchElementException: next on empty iterator[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:39)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:37)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqLike$Elements.next(IndexedSeqLike.scala:63)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IterableLike$class.head(IterableLike.scala:107)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.scala$collection$IndexedSeqOptimized$$super$head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqOptimized$class.head(IndexedSeqOptimized.scala:126)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3.findMyNemesis(Drop3.scala:273)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3$$anonfun$completeTable$1.apply$mcVI$sp(Drop3.scala:292)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se determina si remover una instancia en base a la clasificacion de los asociados de una instancia con p y sin p[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se actualiza el datatable al remover una instancia[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se realiza el metodo de DROP3 con clases balanceadas[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se realiza el metodo de DROP3 con clases desbalanceadas[0m[0m
+[0m[[0minfo[0m] [0m[32m- asdiasdas[0m[0m
+[0m[[0minfo[0m] [0m[32m- Se realiza el drop3 sobre un dataframe[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se determina que las muestras dadas son todas de una misma clase[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se determina que las muestras dadas son de diferentes clases[0m[0m
 [0m[[0minfo[0m] [0m[32m- Si las muestras son desbalanceadas y todas las muestras son de la clase mayoritaria se indica que se deben de eliminar todas las instancias menos una[0m[0m
@@ -158,16 +23,4 @@
 [0m[[0minfo[0m] [0m[32m- Si las muestras son balanceadas y todas las muestras son de la clase mayoriatria se indica que se deben de eliminar todas las instancias menos una[0m[0m
 [0m[[0minfo[0m] [0m[32m- Si las muestras son balanceadas y todas las muestras son de la clase minoritaria se indica que se deben de eliminar todas las instancias menos una[0m[0m
 [0m[[0minfo[0m] [0m[32m- Solo hay solo una instancia, no se elimina ninguna muestra[0m[0m
-[0m[[0minfo[0m] [0m[31m- Solo dos instancias *** FAILED ***[0m[0m
-[0m[[0minfo[0m] [0m[31m  java.util.NoSuchElementException: next on empty iterator[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:39)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.Iterator$$anon$2.next(Iterator.scala:37)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqLike$Elements.next(IndexedSeqLike.scala:63)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IterableLike$class.head(IterableLike.scala:107)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.scala$collection$IndexedSeqOptimized$$super$head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.IndexedSeqOptimized$class.head(IndexedSeqOptimized.scala:126)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.mutable.WrappedArray.head(WrappedArray.scala:35)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3.findMyNemesis(Drop3.scala:273)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at com.lsh.Drop3$$anonfun$completeTable$1.apply$mcVI$sp(Drop3.scala:292)[0m[0m
-[0m[[0minfo[0m] [0m[31m  at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)[0m[0m
-[0m[[0minfo[0m] [0m[31m  ...[0m[0m
+[0m[[0minfo[0m] [0m[32m- Solo dos instancias[0m[0m

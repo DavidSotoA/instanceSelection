@@ -2,15 +2,6 @@ package com.lsh
 
 import scala.collection.mutable.Stack
 
-/*
-case class RowTable(id: (Int, Int),
-                    distances: (Boolean, Int, Seq[(Double, Int, Int)]),
-                    neighbors: Seq[(Double, Int, Int)],
-                    enemy: Double,
-                    associates: Seq[Int])
-*/
-
-
 case class Id(id:Int, label: Int)
 case class Info(distance: Double, id: Int, label: Int)
 case class Distances(isUpdate: Boolean, updateIndex: Int, info: Seq[Info])
@@ -22,7 +13,7 @@ case class RowTable(id: Id,
                     associates: Seq[Int])
 
 class Table(){
-  var table = Stack[RowTable]()
+  var table = Seq[RowTable]()
 
   def addRow(row: RowTable) {
     table = table :+ row
@@ -40,7 +31,7 @@ class Table(){
     table(i)
   }
 
-  def getTable(): Stack[RowTable] = {
+  def getTable(): Seq[RowTable] = {
     table
   }
 
