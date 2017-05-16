@@ -14,7 +14,6 @@
 [0m[[0minfo[0m] [0m[32m- Se actualiza el datatable al remover una instancia[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza el metodo de DROP3 con clases balanceadas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza el metodo de DROP3 con clases desbalanceadas[0m[0m
-[0m[[0minfo[0m] [0m[32m- asdiasdas[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se realiza el drop3 sobre un dataframe[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se determina que las muestras dadas son todas de una misma clase[0m[0m
 [0m[[0minfo[0m] [0m[32m- Se determina que las muestras dadas son de diferentes clases[0m[0m

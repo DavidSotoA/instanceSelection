@@ -13,7 +13,7 @@ import org.apache.spark.sql.types._
  *  Esta clase realiza instance selection mediante el método de DROP3
 */
 
-case class Drop3() {
+object Drop3 {
 
   def instanceSelection(
     instances: DataFrame,
@@ -364,7 +364,6 @@ def updateAssociates(associate: Int, instanceForUpdate: Int, table: Table): Tabl
     myTable.replaceRow(index, newRow)
     myTable
   }
-
 }
 
 class AggKnn() extends UserDefinedAggregateFunction {

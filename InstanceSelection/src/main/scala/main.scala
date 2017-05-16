@@ -78,7 +78,9 @@ object Main extends LogHelper {
     instances: DataFrame,
     spark: SparkSession,
     method: String,
-    unbalanced: Boolean): DataFrame = {
+    unbalanced: Boolean,
+    neighbors: Int = 0,
+    distancesIntervale: Int = 0): DataFrame = {
       method match {
         case Constants.INSTANCE_SELECTION_LSH_IS_S_METHOD => {
           return LSH_IS_S.instanceSelection(instances, unbalanced)
@@ -89,12 +91,10 @@ object Main extends LogHelper {
         case Constants.INSTANCE_SELECTION_LSH_IS_F_METHOD => {
           return LSH_IS_F.instanceSelection(instances, unbalanced)
         }
+        case Constants.INSTANCE_SELECTION_DROP3_METHOD => {
+          return Drop3.instanceSelection(instances, unbalanced, neighbors, distancesIntervale)
+        }
         case _ => throw new IllegalArgumentException("El método " + method + " no existe")
       }
     }
-
 }
-
- //Main.main2(Array("5","5","euclidean","lsh_is_s_serial","/user/augustosoto/test", "asda", "0.5" ))
- //serial_time = 0.9054728095833333
- //paralell_ time = 0.6538910134666667 

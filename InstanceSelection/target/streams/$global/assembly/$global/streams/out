@@ -4,7 +4,7 @@
 [0m[[0minfo[0m] [0mMerging files...[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
-[0m[[0minfo[0m] [0mSHA-1: d586d6dfe029c2278a1710ec41643f79085da95d[0m
+[0m[[0minfo[0m] [0mSHA-1: d1de834ea15e431682fbc5dcec82e49f6e69d487[0m
 [0m[[0minfo[0m] [0mPackaging /home/skorponx/P2P-fraud-processor/InstanceSelection/target/scala-2.11/Instance selection-assembly-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	com/lsh/AggEntropyUnbalanced.class[0m

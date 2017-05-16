@@ -61,8 +61,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(Vectors.dense(1, 2), 5, -1)
     ))
     val instance = Vectors.dense(1, 1)
-    val drop3 = new Drop3()
-    val distances = drop3.calculateDistances(100, 0, instance, instances(0).asInstanceOf[Seq[Row]])
+    val distances = Drop3.calculateDistances(100, 0, instance, instances(0).asInstanceOf[Seq[Row]])
     assert(distances(0) == Info(1.0, 5, -1))
     assert(distances(1) == Info(10.63014581273465, 3, 1))
   }
@@ -75,8 +74,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(Vectors.dense(5, 4), 2, -1)
     ))
     val instance = Vectors.dense(1, 1)
-    val drop3 = new Drop3()
-    val distances = drop3.calculateDistances(100, 0, instance, instances(0).asInstanceOf[Seq[Row]])
+    val distances = Drop3.calculateDistances(100, 0, instance, instances(0).asInstanceOf[Seq[Row]])
     assert(distances(0) == Info(1.0, 5, -1))
     assert(distances(1) == Info(5.0,2,-1))
   }
@@ -95,8 +93,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                          Info(2.0, 3, 1), Info(20.0, 3, 1),
                          Info(456.0, 3, 1), Info(100.0, 3, 1))
     val instance = Vectors.dense(1, 1)
-    val drop3 = new Drop3()
-    val neighbors = drop3.findNeighbors(instances, 3, true)
+    val neighbors = Drop3.findNeighbors(instances, 3, true)
     assert(neighbors(0) == Info(1.0, 3, 1))
     assert(neighbors(1) == Info(2.0, 3, 1))
     assert(neighbors(2) == Info(5.0, 3, 1))
@@ -106,8 +103,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     val instances = Seq( Info(1.0, 3, 1), Info(5.0, 3, -1),
                          Info(2.0, 3, -1), Info(20.0, 3, 1),
                          Info(456.0, 3, 1), Info(100.0, 3, 1))
-    val drop3 = new Drop3()
-    val enemies = drop3.killFriends(instances, 1)
+    val enemies = Drop3.killFriends(instances, 1)
     assert(enemies.size == 2)
   }
 
@@ -115,16 +111,14 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
     val instances = Seq( Info(1.0, 3, 1), Info(5.0, 3, -1),
                          Info(2.0, 3, -1), Info(20.0, 3, 1),
                          Info(456.0, 3, 1), Info(100.0, 3, 1))
-    val drop3 = new Drop3()
-    val nemesis = drop3.findMyNemesis(instances, 1, true)
+    val nemesis = Drop3.findMyNemesis(instances, 1, true)
     assert(nemesis == 2.0)
   }
 
   test("Se crea el datatable inicial") {
     val instances = Seq(Row(1.0, 3, 1), Row(5.0, 4, -1),
                         Row(2.0, 5, -1), Row(20.0, 6, 1))
-    val drop3 = new Drop3()
-    val table = drop3.createDataTable(instances)
+    val table = Drop3.createDataTable(instances)
     assert(table.size == 4)
     assert(table.getRow(0).id == Id(3, 1))
     assert(table.getRow(1).id == Id(4, -1))
@@ -137,8 +131,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(5.0), 4, -1),
                         Row(Vectors.dense(2.0), 5, -1),
                         Row(Vectors.dense(20.0), 6, 1))
-    val drop3 = new Drop3()
-    val table = drop3.createDataTable(instances)
+    val table = Drop3.createDataTable(instances)
     val (indice, row) = table.getIndexAndRowById(5)
     val waitedRow = new RowTable(Id(5, -1), null, null, 0.0, List())
     assert(indice == 2)
@@ -155,10 +148,9 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, 1),
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, 1))
-    val drop3 = new Drop3()
     val delta = 5
-    val table = drop3.completeTable(instances, delta, 2, drop3.createDataTable(instances))
-    drop3.recalculateDistances(9, delta, instances, table)
+    val table = Drop3.completeTable(instances, delta, 2, Drop3.createDataTable(instances))
+    Drop3.recalculateDistances(9, delta, instances, table)
 
     assert(table.getRow(0).distances.info == Seq(Info(28.0,5,-1), Info(29.0,3,1)))
 
@@ -173,8 +165,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, 1),
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, 1))
-    val drop3 = new Drop3()
-    val table = drop3.completeTable(instances, 5, 3, drop3.createDataTable(instances))
+    val table = Drop3.completeTable(instances, 5, 3, Drop3.createDataTable(instances))
 
     val row1 = new RowTable(Id(7,1),
                   Distances(false, 5, Seq(Info(17.0,6,-1))),
@@ -239,8 +230,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
   test("El metodo knn retorna la etiqueta que tiene la mayoria de los vecinos") {
     val labels = Seq(-1, 1)
     val neighbors = Seq(Info(2.2, 4, 1), Info(2.2, 4, 1), Info(2.2, 4, -1))
-    val drop3 = new Drop3()
-    val label = drop3.knn(labels, neighbors)
+    val label = Drop3.knn(labels, neighbors)
     assert(label == 1)
   }
 
@@ -251,9 +241,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                           Row(Vectors.dense(2.0), 5, -1),
                           Row(Vectors.dense(3.0), 6, -1),
                           Row(Vectors.dense(20.0), 7, 1))
-      val drop3 = new Drop3()
-      val table = drop3.completeTable(instances,100, 3, drop3.createDataTable(instances))
-      val remove = drop3.removeInstance(Id(3, 1), List(4, 5, 6, 7), table, List())
+      val table = Drop3.completeTable(instances,100, 3, Drop3.createDataTable(instances))
+      val remove = Drop3.removeInstance(Id(3, 1), List(4, 5, 6, 7), table, List())
 
       assert(remove == true)
   }
@@ -267,9 +256,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, 1),
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, 1))
-    val drop3 = new Drop3()
-    val table = drop3.completeTable(instances, 5, 3, drop3.createDataTable(instances))
-    val updateTable = drop3.updateTableForRemove(10, List(3, 4, 5, 6, 7, 8, 9), 5, instances, table, List())
+    val table = Drop3.completeTable(instances, 5, 3, Drop3.createDataTable(instances))
+    val updateTable = Drop3.updateTableForRemove(10, List(3, 4, 5, 6, 7, 8, 9), 5, instances, table, List())
 
     val row0 = new RowTable(Id(9,-1),
                    Distances(false,5,Seq()),
@@ -343,8 +331,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(22.1), 11, -1),
                         Row(Vectors.dense(18.1), 12, -1))
 
-    val drop3 = new Drop3()
-    val instanceToRemove = drop3.drop3(instances, 100, false, 3)
+    val instanceToRemove = Drop3.drop3(instances, 100, false, 3)
     assert(instanceToRemove == List(11, 12, 6, 7, 3, 4, 5))
   }
 
@@ -360,21 +347,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(22.1), 11, -1),
                         Row(Vectors.dense(18.1), 12, -1))
 
-    val drop3 = new Drop3()
-    val instanceToRemove = drop3.drop3(instances, 100, true, 4)
+    val instanceToRemove = Drop3.drop3(instances, 100, true, 4)
     assert(instanceToRemove == List(11, 12))
-  }
-
-  test("asdiasdas") {
-    val instances = Seq(Row(Vectors.dense(1.0, 3.0), 1, 1),
-                        Row(Vectors.dense(5.0, -7.0), 2, 1),
-                        Row(Vectors.dense(-18.0, -12.0), 3, 1),
-                        Row(Vectors.dense(-6.0, 31.0), 4, -1),
-                        Row(Vectors.dense(-61.0, 5.0), 5, -1),
-                        Row(Vectors.dense(-54.0, 14.0), 6, -1))
-
-     val drop3 = new Drop3()
-     val instanceToRemove = drop3.drop3(instances, 100, true, 4)
   }
 
   test("Se realiza el drop3 sobre un dataframe") {
@@ -393,8 +367,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(3,0,Vectors.dense(-18.0,-12.0),1),
       Row(5,1,Vectors.dense(-61.0,5.0),-1))
 
-    val drop3 = new Drop3()
-    val prueba = drop3.instanceSelection(instances, true, 3, 5)
+    val prueba = Drop3.instanceSelection(instances, true, 3, 5)
     val pruebaCollect = prueba.collect
     assert(resp(0) == pruebaCollect(0))
     assert(resp(1) == pruebaCollect(1))
@@ -411,9 +384,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, -1),
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, -1))
-    val drop3 = new Drop3()
     val label = instances.head.getInt(2)
-    val oneClasss = drop3.isOneClass(instances, label)
+    val oneClasss = Drop3.isOneClass(instances, label)
     assert(oneClasss == true)
   }
 
@@ -426,9 +398,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, -1),
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, 1))
-    val drop3 = new Drop3()
     val label = instances.head.getInt(2)
-    val oneClasss = drop3.isOneClass(instances, label)
+    val oneClasss = Drop3.isOneClass(instances, label)
     assert(oneClasss == false)
   }
 
@@ -442,10 +413,9 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, -1),
                         Row(Vectors.dense(30.0), 9, -1),
                         Row(Vectors.dense(7.0), 10, -1))
-    val drop3 = new Drop3()
     val label = instances.head.getInt(2)
     val unbalanced = true
-    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
     assert(selectInstances.size == 7)
   }
 
@@ -459,10 +429,9 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, 1),
                         Row(Vectors.dense(30.0), 9, 1),
                         Row(Vectors.dense(7.0), 10, 1))
-    val drop3 = new Drop3()
     val label = instances.head.getInt(2)
     val unbalanced = true
-    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
     assert(selectInstances.size == 0)
   }
 
@@ -476,10 +445,9 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, 1),
                         Row(Vectors.dense(30.0), 9, 1),
                         Row(Vectors.dense(7.0), 10, 1))
-    val drop3 = new Drop3()
     val label = instances.head.getInt(2)
     val unbalanced = false
-    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
     assert(selectInstances.size == 7)
   }
 
@@ -493,25 +461,22 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(14.0), 8, 1),
                         Row(Vectors.dense(30.0), 9, 1),
                         Row(Vectors.dense(7.0), 10, 1))
-    val drop3 = new Drop3()
     val label = instances.head.getInt(2)
     val unbalanced = false
-    val selectInstances = drop3.returnIfOneClass(instances, unbalanced, label)
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
     assert(selectInstances.size == 7)
   }
 
   test("Solo hay solo una instancia, no se elimina ninguna muestra") {
     val instances = Seq(Row(Vectors.dense(1.0), 3, -1))
-    val drop3 = new Drop3()
-    val instanceToRemove = drop3.drop3(instances, 100, false, 4)
+    val instanceToRemove = Drop3.drop3(instances, 100, false, 4)
     assert(instanceToRemove == List())
   }
 
   test("Solo dos instancias") {
     val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
                         Row(Vectors.dense(66.0), 7, 1))
-    val drop3 = new Drop3()
-    val instanceToRemove = drop3.drop3(instances, 5, false, 2)
+    val instanceToRemove = Drop3.drop3(instances, 5, false, 2)
     assert(instanceToRemove == List(7, 3))
   }
 }

@@ -271,3 +271,5 @@ compile
 test-only com.test.Drop3Test
 compile
 test-only com.test.Drop3Test
+compile
+assembly
