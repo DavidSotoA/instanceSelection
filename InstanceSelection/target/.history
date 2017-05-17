@@ -273,3 +273,10 @@ compile
 test-only com.test.Drop3Test
 compile
 assembly
+test-only com.test.Drop3Test
+assembly
+compile
+test-only com.test.Drop3Test
+assembly
+test-only com.test.Drop3Test
+assembly

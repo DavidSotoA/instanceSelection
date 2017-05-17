@@ -116,8 +116,8 @@ object Drop3 {
           }
 
           if (!updateDistances.isEmpty) {
-            newNeighbor = distancesOfAssociate.head
-            updateDistances = distancesOfAssociate.drop(1)
+            newNeighbor = updateDistances.head
+            updateDistances = updateDistances.drop(1)
           }
 
           while(instanceRemove.contains(newNeighbor.id) && (!isEmptyDistances || !updateDistances.isEmpty)) {
@@ -228,6 +228,27 @@ object Drop3 {
     return distances.slice(distanceIndex, distanceIndex + delta)
   }
 
+  def calculateAllDistances(
+    instances: Seq[Row],
+    sample: Vector): Seq[Info] = {
+      val instanceSize = instances.size
+      var distances = Seq[Info]()
+
+      for(i <- 0 to (instanceSize-1)) {
+        val distance = Mathematics.distance(sample, instances(i)(0).asInstanceOf[Vector])
+        if(distance != 0) {
+          distances = distances :+ new Info(distance, instances(i)(1).asInstanceOf[Int],
+                                          instances(i)(2).asInstanceOf[Int])
+        }
+      }
+
+      if(!distances.isEmpty) {
+        distances = scala.util.Sorting.stableSort(distances, (i1: Info,
+                                              i2: Info) => i1.distance < i2.distance)
+      }
+    return distances
+  }
+
   def removeInstance(instanceId: Id,
     associates: Seq[Int],
     table: Table,
@@ -311,10 +332,10 @@ object Drop3 {
                          instances(i)(1).asInstanceOf[Int],
                          instances(i)(2).asInstanceOf[Int])
      val instancesId = Id(currentInstance._2, currentInstance._3)
-     val distancesOfCurrentInstance =
-       calculateDistances(distancesIntervale, 0, currentInstance._1, instances)
-     val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
+     var distancesOfCurrentInstance = calculateAllDistances(instances, currentInstance._1)
      val myEnemy = findMyNemesis(distancesOfCurrentInstance, currentInstance._3, false)
+     distancesOfCurrentInstance = distancesOfCurrentInstance.slice(0, distancesIntervale)
+     val myNeighbors = findNeighbors(distancesOfCurrentInstance, k_Neighbors, false)
 
      val (index, row) = myTable.getIndexAndRowById(instancesId.id)
      var isUpdateDistance = false
