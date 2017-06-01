@@ -1,5 +1,9 @@
-package com.lsh
+package main
 
+import instanceSelection.InstanceSelection
+import reports.Report
+import lsh.Lsh
+import utilities.{Constants, Utilities, LogHelper}
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.sql._
@@ -35,12 +39,12 @@ object Main extends LogHelper {
     val urlInstanceSelection = urlBase + "/instanceSelection_" + instanceSelectionMethod
 
     logger.info("..........Ejecutando LSH...............")
-    val instancesWithSignature = lsh(spark, sizeBucket, lshMethod, vectorizedDF, andFunctions, orFunctions)
+    val instancesWithSignature = Lsh.lsh(lshMethod, vectorizedDF, spark, sizeBucket, andFunctions, orFunctions)
     val lshTime = Report.saveDFWithTime(instancesWithSignature, urlLsh, Constants.FORMAT_PARQUET)
     val signatureDF = spark.read.load(urlLsh)
 
     logger.info("..........Ejecutando instance selection...............")
-    val instanceSelectionDF = instanceSelection(signatureDF, spark, instanceSelectionMethod, true)
+    val instanceSelectionDF = InstanceSelection.instanceSelection(instanceSelectionMethod, signatureDF, spark, true)
     val instanceSelectionTime = Report.saveDFWithTime(instanceSelectionDF, urlInstanceSelection, Constants.FORMAT_PARQUET)
     val selectionDF = spark.read.load(urlInstanceSelection)
 
@@ -51,50 +55,4 @@ object Main extends LogHelper {
     val instanceSelectionInfo = (instanceSelectionMethod, instanceSelectionTime, reduction)
     Report.report(urlReports, lshInfo, instanceSelectionInfo)
   }
-
-  def lsh(
-    spark: SparkSession,
-    sizeBucket: Double,
-    method: String,
-    instances: DataFrame,
-    andFunctions: Int,
-    orFunctions: Int): DataFrame = {
-      method match {
-        case Constants.LSH_HYPERPLANES_METHOD => {
-          val normalizeDF = Mathematics.normalize(instances, Constants.SET_OUPUT_COL_ASSEMBLER)
-          val randomHyperplanes = new RandomHyperplanes(normalizeDF, andFunctions, spark)
-          return randomHyperplanes.lsh(Constants.SET_OUPUT_COL_SCALED).drop(Constants.SET_OUPUT_COL_SCALED)
-        }
-        case Constants.LSH_PROJECTION_METHOD => {
-          val normalizeDF = Mathematics.normalize(instances, Constants.SET_OUPUT_COL_ASSEMBLER)
-          val randomProjection = new RandomProjectionLSH(normalizeDF, andFunctions, orFunctions, sizeBucket, spark)
-          return randomProjection.lsh(Constants.SET_OUPUT_COL_SCALED).drop(Constants.SET_OUPUT_COL_SCALED)
-        }
-        case _ => throw new IllegalArgumentException("El método " + method + " no existe")
-      }
-    }
-
-  def instanceSelection(
-    instances: DataFrame,
-    spark: SparkSession,
-    method: String,
-    unbalanced: Boolean,
-    neighbors: Int = 0,
-    distancesIntervale: Int = 0): DataFrame = {
-      method match {
-        case Constants.INSTANCE_SELECTION_LSH_IS_S_METHOD => {
-          return LSH_IS_S.instanceSelection(instances, unbalanced)
-        }
-        case Constants.INSTANCE_SELECTION_ENTROPY_METHOD => {
-          return Entropia.instanceSelection2(instances, unbalanced, spark)
-        }
-        case Constants.INSTANCE_SELECTION_LSH_IS_F_METHOD => {
-          return LSH_IS_F.instanceSelection(instances, unbalanced)
-        }
-        case Constants.INSTANCE_SELECTION_DROP3_METHOD => {
-          return Drop3.instanceSelection(instances, unbalanced, neighbors, distancesIntervale)
-        }
-        case _ => throw new IllegalArgumentException("El método " + method + " no existe")
-      }
-    }
 }

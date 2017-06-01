@@ -280,3 +280,13 @@ test-only com.test.Drop3Test
 assembly
 test-only com.test.Drop3Test
 assembly
+compile
+test-only com.test.RandomHyperplanesTest
+compile
+test-only com.test.RandomHyperplanesTest
+compile
+package
+compile
+package
+compile
+package

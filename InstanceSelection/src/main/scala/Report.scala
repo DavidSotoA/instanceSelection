@@ -1,5 +1,6 @@
-package com.lsh
+package reports
 
+import utilities.Constants
 import org.apache.spark.sql.{DataFrame, SaveMode}
 import java.nio.file.{Paths, Files, StandardOpenOption}
 import java.nio.charset.StandardCharsets
@@ -14,7 +15,7 @@ object Report{
   }
 
   def infoLSH(instances: DataFrame): (Long, Long, Long, Double) = {
-    val groupBySiganture = instances.groupBy(Constants.SET_OUPUT_COL_LSH).count
+    val groupBySiganture = instances.groupBy(Constants.COL_SIGNATURE).count
     val numeroDeCubetas = groupBySiganture.count
     val maxValue = groupBySiganture.groupBy().max("count").collect()(0)(0).asInstanceOf[Long]
     val minValue = groupBySiganture.groupBy().min("count").collect()(0)(0).asInstanceOf[Long]
@@ -34,7 +35,7 @@ object Report{
     info_instance_selection: (String, Double, Double)) {
       val (metodoLsh, ands, ors, timeLsh, numeroDeCubetas, maxValue, minValue, avgValue) = info_LSH
       val (metodoInstanceSelection, timeInstanceSelection, reduction) = info_instance_selection
-      var strToWrite = 
+      var strToWrite =
       metodoLsh + "," +
       metodoInstanceSelection + "," +
       ands + "," +
@@ -52,7 +53,7 @@ object Report{
         strToWrite = "\n" + strToWrite
         Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND)
       } else {
-        strToWrite = 
+        strToWrite =
          "lsh_method,Is_method,ands,ors,bucket,max_bucket,min_bucket,avg_bucket,redution,time_lsh,time_is,time_total\n" + strToWrite
         Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8))
       }

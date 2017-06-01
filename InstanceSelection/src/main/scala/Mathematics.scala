@@ -1,5 +1,6 @@
-package com.lsh
+package mathematics
 
+import utilities.Constants
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.ml.feature.{StandardScaler, StandardScalerModel}
 import org.apache.spark.sql.DataFrame
@@ -46,7 +47,7 @@ object Mathematics{
   def normalize(df: DataFrame, inputCol: String): DataFrame = {
      val scaler = (new StandardScaler()
      .setInputCol(inputCol)
-     .setOutputCol(Constants.SET_OUPUT_COL_SCALED)
+     .setOutputCol(Constants.COL_SCALED)
      .setWithStd(true)
      .setWithMean(true))
      // Compute summary statistics by fitting the StandardScaler.
