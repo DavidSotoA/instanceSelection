@@ -39,7 +39,6 @@ object Lsh{
     val bucketsForDivide = rouletteDf.collect.map(x => (x(0).asInstanceOf[String], x(1).asInstanceOf[Double])).toSeq
 
     val spinRouletteWithList = spinRoulette(_ : String, bucketsForDivide)
-    val spinRouletteWithListUdf = udf(spinRouletteWithList)
     df.map(x =>(x(0).asInstanceOf[Int],
                 x(1).asInstanceOf[Vector],
                 x(2).asInstanceOf[Int],
@@ -54,18 +53,7 @@ object Lsh{
     }
     var (_, rouletteChunk) = list.find(_._1 == signature).get
     var rnd = scala.util.Random.nextFloat
-    var newValueInSignature = 0
-    var exit = false
-    var increment = 2
-    do{
-        if(rnd <= rouletteChunk){
-          exit = true
-        }else {
-          rouletteChunk = rouletteChunk * increment
-          newValueInSignature = newValueInSignature + 1
-          increment = increment + 1
-        }
-    }while(!exit)
+    val newValueInSignature = Math.ceil(rnd/rouletteChunk).toInt
     return signature + newValueInSignature.toString
   }
 

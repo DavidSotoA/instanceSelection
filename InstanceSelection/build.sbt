@@ -9,4 +9,5 @@ test in assembly := {}
 libraryDependencies += "org.apache.spark" %% "spark-core" % "2.1.0"  % "provided"
 libraryDependencies += "org.apache.spark" %% "spark-mllib" % "2.1.0" % "provided"
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.1.0" % "provided"
+libraryDependencies += "com.github.scopt" % "scopt_2.11" % "3.5.0"
 libraryDependencies += "org.scalatest" % "scalatest_2.11" % "3.0.0" % Test

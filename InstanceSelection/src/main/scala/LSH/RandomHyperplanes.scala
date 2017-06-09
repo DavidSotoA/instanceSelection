@@ -30,7 +30,7 @@ case class RandomHyperplanes(
     val inputDim = dataset.select(Constants.COL_FEATURES).head.get(0)
       .asInstanceOf[Vector].size
     Array.fill(numHashTables) {
-      Vectors.dense(Array.fill(inputDim)(Random.nextGaussian()))
+      Vectors.dense(Array.fill(inputDim)(Random.nextDouble()))
     }
   }
 
