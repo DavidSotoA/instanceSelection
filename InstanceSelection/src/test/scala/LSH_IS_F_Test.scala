@@ -58,6 +58,8 @@ class LSH_IS_F_Test extends FunSuite with BeforeAndAfterAll {
       (5, Vectors.dense(-0.5, -3.0), 1, "10"),
       (8, Vectors.dense(-0.5, -3.0), 1, "10"),
       (10, Vectors.dense(-0.5, -3.0), -1, "10"),
+      (40, Vectors.dense(-0.5, -3.0), 5, "10"),
+      (50, Vectors.dense(-0.5, -3.0), 5, "10"),
       (6, Vectors.dense(-0.4, -4.0), -1, "01"),
       (11, Vectors.dense(-0.4, -4.0), -1, "01"),
       (12, Vectors.dense(-0.4, -4.0), -1, "01"),
@@ -67,9 +69,7 @@ class LSH_IS_F_Test extends FunSuite with BeforeAndAfterAll {
       (16, Vectors.dense(-0.4, -4.0), 1, "01"),
       (17, Vectors.dense(-0.4, -4.0), 1, "11"),
       (18, Vectors.dense(-0.4, -4.0), 1, "11"),
-      (19, Vectors.dense(-0.4, -4.0), 1, "11"),
-      (20, Vectors.dense(-0.4, -4.0), -1, "21"),
-      (121, Vectors.dense(-0.4, -4.0), -1, "21")
+      (19, Vectors.dense(-0.4, -4.0), 1, "11")
     )).toDF("idn", "features", "label", "signature")
 
     val aggIsF = new Agg_LSH_Is_F_Balanced()
@@ -79,14 +79,17 @@ class LSH_IS_F_Test extends FunSuite with BeforeAndAfterAll {
                 .as("select_instances"))
     val isF =  isFDf.select("select_instances").collect
     assert(isF(0)(0).asInstanceOf[Seq[Int]].size == 1)
-    assert((isF(0)(0).asInstanceOf[Seq[Int]](0) == 6) || (isF(0)(0).asInstanceOf[Seq[Int]](0) == 2))
+    assert((isF(0)(0).asInstanceOf[Seq[Int]](0) == 19))
 
     assert(isF(1)(0).asInstanceOf[Seq[Int]].size == 1)
-    assert((isF(1)(0).asInstanceOf[Seq[Int]](0) == 9) || (isF(1)(0).asInstanceOf[Seq[Int]](0) == 1))
+    assert((isF(1)(0).asInstanceOf[Seq[Int]](0) == 15))
 
+    assert(isF(2)(0).asInstanceOf[Seq[Int]].size == 1)
+    assert((isF(2)(0).asInstanceOf[Seq[Int]](0) == 9))
 
-    assert(isF(2)(0).asInstanceOf[Seq[Int]].size == 2)
-    assert((isF(2)(0).asInstanceOf[Seq[Int]](0) == 10) || (isF(2)(0).asInstanceOf[Seq[Int]](0) == 4))
-    assert((isF(2)(0).asInstanceOf[Seq[Int]](1) == 5) || (isF(2)(0).asInstanceOf[Seq[Int]](1) == 8))
+    assert(isF(3)(0).asInstanceOf[Seq[Int]].size == 3)
+    assert((isF(3)(0).asInstanceOf[Seq[Int]](0) == 10))
+    assert((isF(3)(0).asInstanceOf[Seq[Int]](1) == 8))
+    assert((isF(3)(0).asInstanceOf[Seq[Int]](2) == 50))
   }
 }
