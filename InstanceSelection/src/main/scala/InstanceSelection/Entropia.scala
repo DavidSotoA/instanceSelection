@@ -3,6 +3,7 @@ package instanceSelection
 import scala.util.Random
 
 import utilities.Constants
+import params.IsParams
 import org.apache.spark.SparkContext
 import org.apache.spark.mllib.tree.impurity.Entropy
 import org.apache.spark.sql._
@@ -13,39 +14,30 @@ import org.apache.spark.sql.types._
 object Entropia extends InstanceSelection {
   var totalInstances: Long = _
 
-  override def instanceSelection(instances: DataFrame, unbalanced: Boolean): DataFrame = {
-    throw new IllegalArgumentException ("unimplement method")
+  override def instanceSelection(params: IsParams): DataFrame = {
+    val (instances, unbalanced, minorityClass, spark, _, _ , _) = params.unpackParams()
+    val aggEntropy = new AggEntropyUnbalanced()
+    val sc = spark.sparkContext
+
+    // se agrega la entropia a cada instacia, esta es calculada en base a las intancias de la cubeta
+    val entropyForSignature = addEntropy(
+                              instances,
+                              (Constants.COL_SIGNATURE,
+                               Constants.COL_LABEL,
+                               Constants.COL_ENTROPY),
+                               aggEntropy)
+
+    sc.broadcast(entropyForSignature)
+
+    //se hace join de de las entropias con los datos originales
+    var selectInstances = instances.join(entropyForSignature, Constants.COL_SIGNATURE)
+
+    // se hace la seleccion de las instances basada en la entropia obtenida
+    selectInstances.filter(x => pickInstance(x(4).asInstanceOf[Double],
+                                x(3).asInstanceOf[Int], unbalanced, minorityClass))
+                    .drop(Constants.COL_SIGNATURE, Constants.COL_ENTROPY)
+                    .dropDuplicates(Constants.COL_ID)
   }
-
-  // método encargado re realizar la selección de instancias
-  def instanceSelection2(
-    instances: DataFrame,
-    unbalanced: Boolean,
-    minorityClass: Int = 0,
-    spark: SparkSession): DataFrame = {
-      // se crea la UDAF
-      val aggEntropy = new AggEntropyUnbalanced()
-      val sc = spark.sparkContext
-
-      // se agrega la entropia a cada instacia, esta es calculada en base a las intancias de la cubeta
-      val entropyForSignature = addEntropy(
-                                instances,
-                                (Constants.COL_SIGNATURE,
-                                 Constants.COL_LABEL,
-                                 Constants.COL_ENTROPY),
-                                 aggEntropy)
-
-      sc.broadcast(entropyForSignature)
-
-      //se hace join de de las entropias con los datos originales
-      var selectInstances = instances.join(entropyForSignature, Constants.COL_SIGNATURE)
-
-      // se hace la seleccion de las instances basada en la entropia obtenida
-      selectInstances.filter(x => pickInstance(x(4).asInstanceOf[Double],
-                                  x(3).asInstanceOf[Int], unbalanced, minorityClass))
-                      .drop(Constants.COL_SIGNATURE, Constants.COL_ENTROPY)
-                      .dropDuplicates(Constants.COL_ID)
-    }
 
   // metodo encargado de seleccionar las intancias en base a una entropia dada mediante la generacion de un numero aleatorio
   def pickInstance(entropia: Double, COL_LABEL: Int, unbalanced: Boolean, minorityClass: Int): Boolean = {

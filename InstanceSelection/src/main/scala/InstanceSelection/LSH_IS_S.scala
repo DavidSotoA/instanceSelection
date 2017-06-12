@@ -1,16 +1,16 @@
 package instanceSelection
 
 import utilities.Constants
+import params.IsParams
 import org.apache.spark.sql.{DataFrame, Row}
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction}
 import org.apache.spark.sql.functions.explode
 
-object LSH_IS_S {
+object LSH_IS_S extends InstanceSelection {
 
-  def instanceSelection(
-    instances: DataFrame,
-    unbalanced: Boolean): DataFrame = {
+  override def instanceSelection(params: IsParams): DataFrame = {
+      val (instances, unbalanced, minorityClass, _, _, _ , _) = params.unpackParams()
       var aggLSH: UserDefinedAggregateFunction = new Agg_LSH_Is_S_Balanced()
       if (unbalanced) {
         aggLSH = new Agg_LSH_Is_S_Unbalanced()
