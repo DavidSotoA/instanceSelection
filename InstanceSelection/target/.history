@@ -300,3 +300,18 @@ compile
 package
 assembly
 compile
+package
+compile
+pacakage
+package
+cd .
+assembly
+comopile
+compile
+assembly
+compile
+assembly
+compile
+test-only com.test.EntropiaTest
+compile
+test-only com.test.EntropiaTest

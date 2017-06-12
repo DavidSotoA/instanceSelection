@@ -1,9 +1,7 @@
 package com.test
 
-import com.lsh.Report
-import com.lsh.Utilities
-import com.lsh.Constants
-
+import reports.Report
+import utilities.{Utilities, Constants}
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}

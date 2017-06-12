@@ -1,10 +1,8 @@
 package com.test
 
-import com.lsh.Constants
-import com.lsh.LSH
-import com.lsh.Mathematics
-import com.lsh.RandomProjectionLSH
-import com.lsh.Utilities
+import utilities.{Constants, Utilities}
+import lsh.{LSH, RandomProjectionLSH}
+import mathematics.Mathematics
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -120,7 +118,7 @@ class RandomProjectionLSHTest extends FunSuite with BeforeAndAfterAll {
                                     (Vectors.dense(- 0.56, 0.198), 2.9))
                                    )
     rp.setFamilies(familieFunctions)
-    val lsh = rp.lsh(Constants.SET_OUPUT_COL_ASSEMBLER)
+    val lsh = rp.lsh(Constants.COL_FEATURES)
     val x = lsh.collect
     // familie 1
     assert(x(0)(3).asInstanceOf[String] == "000")

@@ -1,14 +1,9 @@
 package com.test
 
-import com.lsh.AggKnn
-import com.lsh.Constants
-import com.lsh.Drop3
-import com.lsh.Mathematics
-import com.lsh.RowTable
-import com.lsh.Id
-import com.lsh.Info
-import com.lsh.Distances
-import com.lsh.Utilities
+import instanceSelection.{AggKnn, Drop3}
+import utilities.{Constants, Utilities}
+import mathematics.Mathematics
+import structures.{Id, Info, Distances, RowTable}
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.ml.linalg.{Vector, Vectors}
@@ -367,7 +362,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(3,0,Vectors.dense(-18.0,-12.0),1),
       Row(5,1,Vectors.dense(-61.0,5.0),-1))
 
-    val prueba = Drop3.instanceSelection(instances, true, 3, 5)
+    val prueba = Drop3.instanceSelection(df = instances, unbalanced = true, k_Neighbors = 3,  distancesIntervale = 5, spark = spark)
     val pruebaCollect = prueba.collect
     assert(resp(0) == pruebaCollect(0))
     assert(resp(1) == pruebaCollect(1))

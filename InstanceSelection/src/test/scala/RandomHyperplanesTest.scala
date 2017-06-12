@@ -1,10 +1,8 @@
 package com.test
 
-import com.lsh.Constants
-import com.lsh.LSH
-import com.lsh.Mathematics
-import com.lsh.RandomHyperplanes
-import com.lsh.Utilities
+import utilities.{Constants, Utilities}
+import lsh.{Lsh, RandomHyperplanes}
+import mathematics.Mathematics
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -84,14 +82,14 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
   }
 
   test("El metodo lsh retorna un dataframe con la estructura correcta") {
-      val instancesWithSignature = randomHyperplanes.lsh(Constants.SET_OUPUT_COL_ASSEMBLER)
+      val instancesWithSignature = randomHyperplanes.lsh(Constants.COL_FEATURES)
       val columnNames = instancesWithSignature.schema.fieldNames
       assert(instancesWithSignature.count() == 5)
       assert(columnNames.length == 4)
       assert(columnNames(0) == "idn")
-      assert(columnNames(1) == Constants.SET_OUPUT_COL_ASSEMBLER)
+      assert(columnNames(1) == Constants.COL_FEATURES)
       assert(columnNames(2) == "label")
-      assert(columnNames(3) == Constants.SET_OUPUT_COL_LSH)
+      assert(columnNames(3) == Constants.COL_SIGNATURE)
     }
 
   test("El metodo lsh calcula las firmas correctas") {
@@ -113,10 +111,10 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
     val hyp = new RandomHyperplanes(vectorizedDF, 4, spark)
     hyp.setHyperplanes(hyperplanes)
-    val instancesWithSignature = hyp.lsh(Constants.SET_OUPUT_COL_ASSEMBLER)
-    val keysDF = LSH.getKeys(instancesWithSignature)
+    val instancesWithSignature = hyp.lsh(Constants.COL_FEATURES)
+    val keysDF = Lsh.getKeys(instancesWithSignature)
     val size = keysDF.count
-    val keys = keysDF.select(Constants.SET_OUPUT_COL_LSH).take(3)
+    val keys = keysDF.select(Constants.COL_SIGNATURE).take(3)
     assert(size == 3)
     assert(keys(0)(0).asInstanceOf[String] == "0111")
     assert(keys(1)(0).asInstanceOf[String] == "1110")
@@ -135,11 +133,11 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
 
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
     val columnNames = vectorizedDF.schema.fieldNames
-    val dimFeatures = vectorizedDF.select(Constants.SET_OUPUT_COL_ASSEMBLER)
+    val dimFeatures = vectorizedDF.select(Constants.COL_FEATURES)
       .head.get(0).asInstanceOf[Vector].size
     assert(columnNames.length == 3)
     assert(columnNames(0) == "idn")
-    assert(columnNames(1) == Constants.SET_OUPUT_COL_ASSEMBLER)
+    assert(columnNames(1) == Constants.COL_FEATURES)
     assert(columnNames(2) == "label")
     assert(dimFeatures == selectFeatures.length)
   }
@@ -154,7 +152,7 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
       (4, Vectors.dense(5464, 4, 578, 7852), -1, "111111111111111"))
     ).toDF("idn", "features", "label", "signature")
 
-    val bucketDF = LSH.findBucket(instances, key)
+    val bucketDF = Lsh.findBucket(instances, key)
     assert(bucketDF.count == 3)
     val bucket = bucketDF.take(3)
     assert(bucket(0)(0).asInstanceOf[Int] == 0)
@@ -173,8 +171,8 @@ class RandomHyperplanesTest extends FunSuite with BeforeAndAfterAll {
       (5, -0.4, -4.0, 0))
     ).toDF("idn", "c1", "c2", "label")
     val vectorizedDF = Utilities.createVectorDataframe(selectFeatures, instances)
-    val normalizeDF = Mathematics.normalize(vectorizedDF, Constants.SET_OUPUT_COL_ASSEMBLER)
-    val valuesNormalize = normalizeDF.select(Constants.SET_OUPUT_COL_SCALED)
+    val normalizeDF = Mathematics.normalize(vectorizedDF, Constants.COL_FEATURES)
+    val valuesNormalize = normalizeDF.select(Constants.COL_SCALED)
     val valuesNormalizeList = valuesNormalize.collect
     assert(valuesNormalizeList(0)(0).asInstanceOf[Vector] == Vectors.dense(1.033280022572002,0.11037659867723067))
     assert(valuesNormalizeList(1)(0).asInstanceOf[Vector] == Vectors.dense(1.5176300331526282,0.07884042762659332))

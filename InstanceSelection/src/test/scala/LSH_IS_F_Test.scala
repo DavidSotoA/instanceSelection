@@ -1,12 +1,8 @@
 package com.test
 
-import com.lsh.AggEntropyUnbalanced
-import com.lsh.Constants
-import com.lsh.Entropia
-import com.lsh.Utilities
-import com.lsh.Agg_LSH_Is_F_Balanced
-import com.lsh.Agg_LSH_Is_F_Unbalanced
-import com.lsh.LSH_IS_F
+import instanceSelection.{AggEntropyUnbalanced, LSH_IS_F, Agg_LSH_Is_F_Unbalanced, Agg_LSH_Is_F_Balanced}
+import utilities.{Constants, Utilities}
+//import com.lsh.EntropiaLSH_IS_F
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}

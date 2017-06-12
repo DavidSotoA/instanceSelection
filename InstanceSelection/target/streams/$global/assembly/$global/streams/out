@@ -5,7 +5,7 @@
 [0m[[0minfo[0m] [0mMerging files...[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
-[0m[[0minfo[0m] [0mSHA-1: 70cec81f6c023c9c2d7327910244cf90a4ce3c5b[0m
+[0m[[0minfo[0m] [0mSHA-1: 3042c64ad5678899d9d3c3fc4ed1bdc3964e4ce6[0m
 [0m[[0minfo[0m] [0mPackaging /home/skorponx/P2P-fraud-processor/InstanceSelection/target/scala-2.11/Instance selection-assembly-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	instanceSelection/AggEntropyUnbalanced.class[0m
@@ -206,14 +206,8 @@
 [0m[[0mdebug[0m] [0m	  /home/skorponx/P2P-fraud-processor/InstanceSelection/target/streams/$global/assemblyOption/$global/streams/assembly/5601aa402ce77112d9f4a8a8436a78c4fb3c94b9_dir/main/Main$$anon$1$$anonfun$9.class[0m
 [0m[[0mdebug[0m] [0m	main/Main$$anon$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorponx/P2P-fraud-processor/InstanceSelection/target/streams/$global/assemblyOption/$global/streams/assembly/5601aa402ce77112d9f4a8a8436a78c4fb3c94b9_dir/main/Main$$anon$1.class[0m
-[0m[[0mdebug[0m] [0m	main/Main$$anonfun$10.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorponx/P2P-fraud-processor/InstanceSelection/target/streams/$global/assemblyOption/$global/streams/assembly/5601aa402ce77112d9f4a8a8436a78c4fb3c94b9_dir/main/Main$$anonfun$10.class[0m
-[0m[[0mdebug[0m] [0m	main/Main$$anonfun$11.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorponx/P2P-fraud-processor/InstanceSelection/target/streams/$global/assemblyOption/$global/streams/assembly/5601aa402ce77112d9f4a8a8436a78c4fb3c94b9_dir/main/Main$$anonfun$11.class[0m
 [0m[[0mdebug[0m] [0m	main/Main$.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorponx/P2P-fraud-processor/InstanceSelection/target/streams/$global/assemblyOption/$global/streams/assembly/5601aa402ce77112d9f4a8a8436a78c4fb3c94b9_dir/main/Main$.class[0m
-[0m[[0mdebug[0m] [0m	main/Main$delayedInit$body.class[0m
-[0m[[0mdebug[0m] [0m	  /home/skorponx/P2P-fraud-processor/InstanceSelection/target/streams/$global/assemblyOption/$global/streams/assembly/5601aa402ce77112d9f4a8a8436a78c4fb3c94b9_dir/main/Main$delayedInit$body.class[0m
 [0m[[0mdebug[0m] [0m	main/Main.class[0m
 [0m[[0mdebug[0m] [0m	  /home/skorponx/P2P-fraud-processor/InstanceSelection/target/streams/$global/assemblyOption/$global/streams/assembly/5601aa402ce77112d9f4a8a8436a78c4fb3c94b9_dir/main/Main.class[0m
 [0m[[0mdebug[0m] [0m	mathematics/Mathematics$$anonfun$binaryToDec$1.class[0m

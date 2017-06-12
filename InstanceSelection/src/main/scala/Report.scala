@@ -47,7 +47,7 @@ object Report{
       reduction + "," +
       timeLsh + "," +
       timeInstanceSelection + "," +
-      (timeLsh +timeInstanceSelection)
+      (timeLsh + timeInstanceSelection)
 
       if (Files.exists(Paths.get(fileToWrite))){
         strToWrite = "\n" + strToWrite

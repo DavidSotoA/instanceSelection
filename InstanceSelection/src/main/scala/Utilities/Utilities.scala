@@ -34,8 +34,8 @@ object Utilities {
 
   def createVectorDataframe(selectFeatures: Array[String], df: DataFrame): DataFrame = {
     val assembler = new VectorAssembler()
-      .setInputCols(selectFeatures)
-      .setOutputCol(Constants.COL_FEATURES)
+    .setInputCols(selectFeatures)
+    .setOutputCol(Constants.COL_FEATURES)
 
     val vectorDF = assembler.transform(df)
     vectorDF.select(Constants.COL_ID, Constants.COL_FEATURES, Constants.COL_LABEL)

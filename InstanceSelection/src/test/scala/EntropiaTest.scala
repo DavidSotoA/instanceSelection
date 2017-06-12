@@ -1,9 +1,8 @@
 package com.test
 
-import com.lsh.AggEntropyUnbalanced
-import com.lsh.Constants
-import com.lsh.Entropia
-import com.lsh.Utilities
+import instanceSelection.AggEntropyUnbalanced
+import utilities.{Constants, Utilities}
+import instanceSelection.Entropia
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -24,11 +23,14 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
 
   test("Se calcula la entropia para cada clave") {
     val aggEntropy = new AggEntropyUnbalanced()
-    val data = (1 to 1000).map{x: Int => x match {
-    case t if (t >= 1 && t <= 300) => Row("A", 1)
+    val data = (1 to 1500).map{x: Int => x match {
+    case t if (t >= 1 && t <= 300) => Row("A", 3)
     case t if (t > 300 && t <= 500) => Row("A", -1)
-    case t if (t > 500 && t <= 600) => Row("B", 1)
-    case t if (t > 600) => Row("B", -1)
+    case t if (t > 500 && t <= 600) => Row("A", 2)
+
+    case t if (t > 600 && t <= 1000) => Row("B", 3)
+    case t if (t > 1000 && t <= 1200) => Row("B", -1)
+    case t if (t > 1200 ) => Row("B", 2)
     }}
 
     val schema = StructType(Array(
@@ -44,8 +46,8 @@ class EntropiaTest extends FunSuite with BeforeAndAfterAll {
     val entropyA = entropyDF.select("entropy").where("key == 'A'").head
     val entropyB = entropyDF.select("entropy").where("key == 'B'").head
 
-    assert(entropyA(0).asInstanceOf[Double] == 0.9709505944546686)
-    assert(entropyB(0).asInstanceOf[Double] == 0.7219280948873623)
+    assert(entropyA(0).asInstanceOf[Double] == 1.4591479170272448)
+    assert(entropyB(0).asInstanceOf[Double] == 1.5304930567574826)
   }
 
 
