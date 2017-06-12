@@ -1,8 +1,8 @@
 #Successful Tests
-#Mon Jun 12 04:17:05 COT 2017
-com.test.ReportTest=1491955849567
+#Mon Jun 12 04:53:01 COT 2017
 com.test.RandomProjectionLSHTest=1491980207671
-com.test.LSH_IS_S_Test=1492125642770
+com.test.ReportTest=1491955849567
+com.test.LSH_IS_S_Test=1497261181744
 com.test.EntropiaTest=1497238322991
 com.test.Drop3Test=1497259025254
 com.test.LSH_IS_F_Test=1492133571906

@@ -329,3 +329,8 @@ compile
 test-only com.test.Drop3Test
 compile
 test-only com.test.Drop3Test
+test-only com.test.LSH_IS_S_Test
+compile
+test-only com.test.LSH_IS_S_Test
+compile
+test-only com.test.LSH_IS_S_Test

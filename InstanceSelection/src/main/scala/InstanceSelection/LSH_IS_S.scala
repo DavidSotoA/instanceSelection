@@ -88,8 +88,7 @@ class Agg_LSH_Is_S_Balanced() extends UserDefinedAggregateFunction {
 
   override def bufferSchema: StructType =
     StructType(Array(
-      StructField("pick_legal", IntegerType),
-      StructField("pick_fraude", IntegerType)
+      StructField("labels", MapType(IntegerType, IntegerType))
     ))
 
   override def dataType: DataType = ArrayType(IntegerType)
@@ -97,32 +96,18 @@ class Agg_LSH_Is_S_Balanced() extends UserDefinedAggregateFunction {
   override def deterministic: Boolean = true
 
   override def initialize(buffer: MutableAggregationBuffer): Unit = {
-   buffer(0) = -1
-   buffer(1) = -1
+   buffer(0) = Map[Int, Int]()
   }
 
   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {
-     if ((input.getInt(0) == -1)) {
-       buffer(0) = input.getInt(1)
-     }
-
-     if ((input.getInt(0) == 1)) {
-       buffer(1) = input.getInt(1)
-     }
+    buffer(0) = buffer(0).asInstanceOf[Map[Int, Int]] + (input.getInt(0) -> input.getInt(1))
   }
 
   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {
-    buffer1(0) = buffer1.getInt(0)
-    buffer1(1) = buffer1.getInt(1)
-    if(buffer1.getInt(0) == -1){
-      buffer1(0) = buffer2.getInt(0)
-    }
-    if(buffer1.getInt(1) == -1){
-      buffer1(1) = buffer2.getInt(1)
-    }
+    buffer1(0) = buffer1(0).asInstanceOf[Map[Int, Int]] ++ buffer2(0).asInstanceOf[Map[Int, Int]]
   }
 
   override def evaluate(buffer: Row): Any = {
-   Array(buffer(0), buffer(1)).filter(_ != -1)
+    buffer(0).asInstanceOf[Map[Int, Int]].map{case (a,b) => b}.toArray
   }
 }
