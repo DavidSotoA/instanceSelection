@@ -33,13 +33,16 @@ object Lsh{
 
     val countBucketDf = df.groupBy(Constants.COL_SIGNATURE).count
     val bigBuckets = countBucketDf.select("*").where(s"count >  $maxBucketSize")
+    if (bigBuckets.rdd.isEmpty) {
+      return df
+    }
     val roulette = (maxBucketSize: Int, bucketSize: Int ) => 1.toDouble/math.ceil(bucketSize.toDouble/maxBucketSize)
     val rouletteUdf = udf(roulette(maxBucketSize, _ : Int))
     val rouletteDf = bigBuckets.withColumn(Constants.COL_ROULETTE, rouletteUdf(bigBuckets("count"))).drop("count")
     val bucketsForDivide = rouletteDf.collect.map(x => (x(0).asInstanceOf[String], x(1).asInstanceOf[Double])).toSeq
 
     val spinRouletteWithList = spinRoulette(_ : String, bucketsForDivide)
-    df.map(x =>(x(0).asInstanceOf[Int],
+    return df.map(x =>(x(0).asInstanceOf[Int],
                 x(1).asInstanceOf[Vector],
                 x(2).asInstanceOf[Int],
                 spinRouletteWithList(x(3).asInstanceOf[String]))).toDF(Constants.COL_ID, Constants.COL_FEATURES,

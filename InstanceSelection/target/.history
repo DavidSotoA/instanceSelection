@@ -315,3 +315,17 @@ compile
 test-only com.test.EntropiaTest
 compile
 test-only com.test.EntropiaTest
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test
+compile
+test-only com.test.Drop3Test

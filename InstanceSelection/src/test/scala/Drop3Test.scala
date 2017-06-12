@@ -223,9 +223,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
   }
 
   test("El metodo knn retorna la etiqueta que tiene la mayoria de los vecinos") {
-    val labels = Seq(-1, 1)
     val neighbors = Seq(Info(2.2, 4, 1), Info(2.2, 4, 1), Info(2.2, 4, -1))
-    val label = Drop3.knn(labels, neighbors)
+    val label = Drop3.knn(neighbors)
     assert(label == 1)
   }
 
@@ -326,8 +325,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(22.1), 11, -1),
                         Row(Vectors.dense(18.1), 12, -1))
 
-    val instanceToRemove = Drop3.drop3(instances, 100, false, 3)
-    assert(instanceToRemove == List(11, 12, 6, 7, 3, 4, 5))
+    val instanceToRemove = Drop3.drop3(instances, 100, false, 1, 3)
+    assert(instanceToRemove == List(11, 12, 6, 7, 3, 4))
   }
 
   test("Se realiza el metodo de DROP3 con clases desbalanceadas") {
@@ -342,7 +341,7 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(22.1), 11, -1),
                         Row(Vectors.dense(18.1), 12, -1))
 
-    val instanceToRemove = Drop3.drop3(instances, 100, true, 4)
+    val instanceToRemove = Drop3.drop3(instances, 100, true, 1, 4)
     assert(instanceToRemove == List(11, 12))
   }
 
@@ -360,9 +359,11 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(1,0,Vectors.dense(1.0,3.0),1),
       Row(2,0,Vectors.dense(5.0,-7.0),1),
       Row(3,0,Vectors.dense(-18.0,-12.0),1),
-      Row(5,1,Vectors.dense(-61.0,5.0),-1))
+      Row(4,0,Vectors.dense(-6.0, 31.0),-1))
 
-    val prueba = Drop3.instanceSelection(df = instances, unbalanced = true, k_Neighbors = 3,  distancesIntervale = 5, spark = spark)
+    val prueba = Drop3.instanceSelection(df = instances,
+      unbalanced = true, minorityClass = 1, k_Neighbors = 3,
+      distancesIntervale = 5, spark = spark)
     val pruebaCollect = prueba.collect
     assert(resp(0) == pruebaCollect(0))
     assert(resp(1) == pruebaCollect(1))
@@ -410,7 +411,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(7.0), 10, -1))
     val label = instances.head.getInt(2)
     val unbalanced = true
-    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
+    val minorityClass = 1
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label, minorityClass)
     assert(selectInstances.size == 7)
   }
 
@@ -426,7 +428,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(7.0), 10, 1))
     val label = instances.head.getInt(2)
     val unbalanced = true
-    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
+    val minorityClass = 1
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label, minorityClass)
     assert(selectInstances.size == 0)
   }
 
@@ -442,7 +445,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(7.0), 10, 1))
     val label = instances.head.getInt(2)
     val unbalanced = false
-    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
+    val minorityClass = 1
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label, minorityClass)
     assert(selectInstances.size == 7)
   }
 
@@ -458,20 +462,21 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
                         Row(Vectors.dense(7.0), 10, 1))
     val label = instances.head.getInt(2)
     val unbalanced = false
-    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label)
+    val minorityClass = 1
+    val selectInstances = Drop3.returnIfOneClass(instances, unbalanced, label, minorityClass)
     assert(selectInstances.size == 7)
   }
 
   test("Solo hay solo una instancia, no se elimina ninguna muestra") {
     val instances = Seq(Row(Vectors.dense(1.0), 3, -1))
-    val instanceToRemove = Drop3.drop3(instances, 100, false, 4)
+    val instanceToRemove = Drop3.drop3(instances, 100, false, 1, 4)
     assert(instanceToRemove == List())
   }
 
   test("Solo dos instancias") {
     val instances = Seq(Row(Vectors.dense(1.0), 3, -1),
                         Row(Vectors.dense(66.0), 7, 1))
-    val instanceToRemove = Drop3.drop3(instances, 5, false, 2)
+    val instanceToRemove = Drop3.drop3(instances, 5, false, 1, 2)
     assert(instanceToRemove == List(7, 3))
   }
 }

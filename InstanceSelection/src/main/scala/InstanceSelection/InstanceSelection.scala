@@ -39,7 +39,7 @@ object InstanceSelection {
           return LSH_IS_F.instanceSelection(instances, unbalanced)
         }
         case Constants.INSTANCE_SELECTION_DROP3_METHOD => {
-          return Drop3.instanceSelection(instances, unbalanced, neighbors, subBuckets, distancesIntervale, spark)
+          return Drop3.instanceSelection(instances, unbalanced, minority, neighbors, subBuckets, distancesIntervale, spark)
         }
         case _ => throw new IllegalArgumentException("El método " + method + " no existe")
       }

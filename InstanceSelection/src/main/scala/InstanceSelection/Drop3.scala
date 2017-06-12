@@ -22,6 +22,7 @@ object Drop3 {
   def instanceSelection(
     df: DataFrame,
     unbalanced: Boolean,
+    minorityClass: Int,
     k_Neighbors: Int,
     maxBucketSize: Int = 1000,
     distancesIntervale: Int,
@@ -37,7 +38,7 @@ object Drop3 {
     val instancesWithInfo = instances.groupBy(Constants.COL_SIGNATURE).agg(aggKnn(instances.col(Constants.COL_FEATURES),
                                       instances.col(Constants.COL_ID), instances.col(Constants.COL_LABEL)).as("info"))
 
-    val transformUDF = udf(drop3(_ : Seq[Row], distancesIntervale, unbalanced, k_Neighbors))
+    val transformUDF = udf(drop3(_ : Seq[Row], distancesIntervale, unbalanced, minorityClass, k_Neighbors))
 
     val remove = instancesWithInfo.withColumn("InstancesToEliminate",
     transformUDF(instancesWithInfo.col("info"))).drop("info", "signature")
@@ -55,42 +56,47 @@ object Drop3 {
     !instances.exists(x => x.getInt(2) != label)
   }
 
-  def returnIfOneClass(instances: Seq[Row], unbalanced: Boolean, label: Int): Seq[Int] = {
-    if(!unbalanced || (unbalanced && label == -1)){
+  def returnIfOneClass(instances: Seq[Row], unbalanced: Boolean, label: Int, minorityClass: Int): Seq[Int] = {
+    if(!unbalanced || (unbalanced && label != minorityClass)){
       return instances.drop(1).map(_.getInt(1))
     }else {
       return List(): Seq[Int]
     }
   }
 
-  def drop3(instances: Seq[Row], distancesIntervale: Int, unbalanced: Boolean, k_Neighbors: Int): Seq[Int] = {
-    val label = instances.head.getInt(2)
-    if (isOneClass(instances, label)) {
-      return returnIfOneClass(instances, unbalanced, label)
-    }
-      var table = completeTable(instances, distancesIntervale,  k_Neighbors, createDataTable(instances))
-      var instancesForRemove = Seq[Int]()
-      var numOfInstances = table.size
-      var i = 0
-    while(i < numOfInstances) {
-      val instance = table.getRow(i)
-
-      val instanceId = instance.id
-      val instanceAssociates = instance.associates
-      var requireRemove = false
-
-      if ((instanceId.label == -1 && unbalanced) || !unbalanced) {
-        requireRemove = removeInstance(instanceId, instanceAssociates, table, instancesForRemove)
+  def drop3(
+    instances: Seq[Row],
+    distancesIntervale: Int,
+    unbalanced: Boolean,
+    minorityClass: Int,
+    k_Neighbors: Int): Seq[Int] = {
+      val label = instances.head.getInt(2)
+      if (isOneClass(instances, label)) {
+        return returnIfOneClass(instances, unbalanced, label, minorityClass)
       }
-      if (requireRemove) {
-        table.removeRow(i)
-        numOfInstances = numOfInstances - 1
-        table = updateTableForRemove(instanceId.id, instanceAssociates,distancesIntervale, instances,table, instancesForRemove)
-        instancesForRemove = instancesForRemove :+ instanceId.id
-      } else {
-        i = i + 1
+        var table = completeTable(instances, distancesIntervale,  k_Neighbors, createDataTable(instances))
+        var instancesForRemove = Seq[Int]()
+        var numOfInstances = table.size
+        var i = 0
+      while(i < numOfInstances) {
+        val instance = table.getRow(i)
+
+        val instanceId = instance.id
+        val instanceAssociates = instance.associates
+        var requireRemove = false
+
+        if ((instanceId.label != minorityClass && unbalanced) || !unbalanced) {
+          requireRemove = removeInstance(instanceId, instanceAssociates, table, instancesForRemove)
+        }
+        if (requireRemove) {
+          table.removeRow(i)
+          numOfInstances = numOfInstances - 1
+          table = updateTableForRemove(instanceId.id, instanceAssociates,distancesIntervale, instances,table, instancesForRemove)
+          instancesForRemove = instancesForRemove :+ instanceId.id
+        } else {
+          i = i + 1
+        }
       }
-    }
     instancesForRemove
   }
 
@@ -260,7 +266,6 @@ object Drop3 {
     associates: Seq[Int],
     table: Table,
     instanceRemove: Seq[Int]): Boolean = {
-    val knn_labels = knn(Seq(1, -1), _: Seq[Info])
     var withInstanceId: Int = 0
     var withoutInstanceId: Int = 0
     for (associate <- associates) {
@@ -269,8 +274,8 @@ object Drop3 {
         val labelOfAssociate = rowOfAssociate.id.label
         val neighborsOfAssociate = rowOfAssociate.neighbors
         val neighborsOfAssociateWithoutInstance = neighborsOfAssociate.filter(x => instanceId.id != x.id)
-        val knnWithInstance = knn_labels(neighborsOfAssociate)
-        val knnWithoutInstance = knn_labels(neighborsOfAssociateWithoutInstance)
+        val knnWithInstance = knn(neighborsOfAssociate)
+        val knnWithoutInstance = knn(neighborsOfAssociateWithoutInstance)
         if (knnWithInstance == labelOfAssociate) {
           withInstanceId = withInstanceId + 1
         }
@@ -285,21 +290,24 @@ object Drop3 {
     return false
   }
 
-  def knn(labels: Seq[Int], neighbors: Seq[Info]): Int = {
-    var numOflabels = Seq.fill[Int](labels.size)(0)
+  def knn(neighbors: Seq[Info]): Int = {
+    var labels = Map[Int, Int]()
     for(neighbor <- neighbors) {
       var i = 0
-      for(label <- labels) {
-        if (label == neighbor.label) {
-          numOflabels = numOflabels.updated(i, numOflabels(i) + 1)
-        }
-        i = i + 1
+      var newVal = 1
+      val existLabel = labels.keys.exists(_ == neighbor.label)
+      if (existLabel) {
+        newVal = labels(neighbor.label) + 1
       }
+      labels = labels + (neighbor.label -> newVal)
     }
+
+    val numOflabels = labels.map{case (a,b) => b.toDouble}.toSeq
     if(!numOflabels.exists(x => x != numOflabels(0))) {
         return 0
     }
-    return labels.zip(numOflabels).maxBy(x => x._2)._1
+
+    return labels.maxBy(_._2)._1
   }
 
   def findNeighbors(instances: Seq[Info],
