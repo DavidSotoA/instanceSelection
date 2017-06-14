@@ -3,6 +3,7 @@ package com.test
 import instanceSelection.{AggKnn, Drop3}
 import utilities.{Constants, Utilities}
 import mathematics.Mathematics
+import params.IsParams
 import structures.{Id, Info, Distances, RowTable}
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
@@ -361,9 +362,8 @@ class Drop3Test extends FunSuite with BeforeAndAfterAll {
       Row(3,0,Vectors.dense(-18.0,-12.0),1),
       Row(4,0,Vectors.dense(-6.0, 31.0),-1))
 
-    val prueba = Drop3.instanceSelection(df = instances,
-      unbalanced = true, minorityClass = 1, k_Neighbors = 3,
-      distancesIntervale = 5, spark = spark)
+    val params = new IsParams(instances, true, 1, spark, 3, 10, 5)
+    val prueba = Drop3.instanceSelection(params)
     val pruebaCollect = prueba.collect
     assert(resp(0) == pruebaCollect(0))
     assert(resp(1) == pruebaCollect(1))

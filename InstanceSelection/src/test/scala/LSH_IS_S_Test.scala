@@ -2,7 +2,7 @@ package com.test
 
 import instanceSelection.{LSH_IS_S, AggEntropyUnbalanced, Agg_LSH_Is_S_Unbalanced, Agg_LSH_Is_S_Balanced}
 import utilities.{Constants, Utilities}
-//import com.lsh.Entropia
+import params.IsParams
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -88,7 +88,8 @@ class LSH_IS_S_Test extends FunSuite with BeforeAndAfterAll {
 
     val orsFunctions = 2
     val unbalanced = false
-    val instancesSelectedDF = LSH_IS_S.instanceSelection(instances, unbalanced)
+    val params = new IsParams(instances, unbalanced, 0, spark, 0, 0, 0)
+    val instancesSelectedDF = LSH_IS_S.instanceSelection(params)
     val instancesSelected =instancesSelectedDF.collect
 
     assert(instancesSelected(0)(0).asInstanceOf[Int] == 1 )

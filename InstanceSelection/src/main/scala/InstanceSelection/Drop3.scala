@@ -2,6 +2,7 @@ package instanceSelection
 
 import structures._
 import lsh.Lsh
+import params.IsParams
 import mathematics.Mathematics
 import utilities.Constants
 import org.apache.spark.ml.linalg.{Vector, Vectors}
@@ -17,20 +18,13 @@ import org.apache.spark.sql.types._
  *  Esta clase realiza instance selection mediante el método de DROP3
 */
 
-object Drop3 {
+object Drop3 extends InstanceSelection {
 
-  def instanceSelection(
-    df: DataFrame,
-    unbalanced: Boolean,
-    minorityClass: Int,
-    k_Neighbors: Int,
-    maxBucketSize: Int = 1000,
-    distancesIntervale: Int,
-    spark: SparkSession): DataFrame = {
-    // require((k_Neighbors%2 ==1) && (k_Neighbors > 0),
-            // "El numero de vecinos debe ser impar y positivo")
+  override def instanceSelection(params: IsParams): DataFrame = {
+    val (df, unbalanced, minorityClass, spark, k_Neighbors, maxBucketSize, distancesIntervale) = params.unpackParams()
+
     require((k_Neighbors + 1 < distancesIntervale),
-            "El numero de vecinos debe ser menor o igual al intervalo de distancias")
+            "El número de vecinos debe ser menor o igual al intervalo de distancias")
     val instances = Lsh.subBuckets(maxBucketSize, df, spark.sparkContext)
 
     val aggKnn = new AggKnn()

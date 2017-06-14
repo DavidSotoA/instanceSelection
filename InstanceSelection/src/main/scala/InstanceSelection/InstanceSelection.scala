@@ -1,10 +1,11 @@
 package instanceSelection
 
 import utilities.Constants
-import org.apache.spark.sql._
+import params.IsParams
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 trait InstanceSelection {
-  def instanceSelection(instances: DataFrame, unbalanced: Boolean): DataFrame
+  def instanceSelection(params: IsParams): DataFrame
 }
 
 object InstanceSelection {
@@ -28,18 +29,19 @@ object InstanceSelection {
       if (unbalanced) {
         minority = minorityClass(instances)
       }
+      val params = new IsParams(instances, unbalanced, minority, spark, neighbors, subBuckets, distancesIntervale)
       method match {
         case Constants.INSTANCE_SELECTION_LSH_IS_S_METHOD => {
-          return LSH_IS_S.instanceSelection(instances, unbalanced)
+          return LSH_IS_S.instanceSelection(params)
         }
         case Constants.INSTANCE_SELECTION_ENTROPY_METHOD => {
-          return Entropia.instanceSelection2(instances, unbalanced, minority, spark)
+          return Entropia.instanceSelection(params)
         }
         case Constants.INSTANCE_SELECTION_LSH_IS_F_METHOD => {
-          return LSH_IS_F.instanceSelection(instances, unbalanced)
+          return LSH_IS_F.instanceSelection(params)
         }
         case Constants.INSTANCE_SELECTION_DROP3_METHOD => {
-          return Drop3.instanceSelection(instances, unbalanced, minority, neighbors, subBuckets, distancesIntervale, spark)
+          return Drop3.instanceSelection(params)
         }
         case _ => throw new IllegalArgumentException("El método " + method + " no existe")
       }
