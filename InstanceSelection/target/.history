@@ -338,3 +338,4 @@ compile
 test-only com.test.LSH_IS_F_Test
 test-only com.test.LSH_IS_S_Test
 test-only com.test.LSH_IS_F_Test
+compile

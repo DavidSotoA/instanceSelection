@@ -83,7 +83,7 @@ object Main extends LogHelper {
         val (numeroDeCubetas, maxValue, minValue, avgValue) = Report.infoLSH(signatureDF)
         val reduction = Report.infoInstanceSelection(vectorizedDF, selectionDF)
         val lshInfo = (lshMethod, andFunctions, orFunctions, lshTime, numeroDeCubetas, maxValue, minValue, avgValue)
-        val instanceSelectionInfo = (instanceSelectionMethod, instanceSelectionTime, reduction)
+        val instanceSelectionInfo = (instanceSelectionMethod, instanceSelectionTime, reduction, unbalanced)
         Report.report(urlReports, lshInfo, instanceSelectionInfo)
       }
       case None => println("Please use --help argument for usage")

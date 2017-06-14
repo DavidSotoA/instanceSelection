@@ -32,12 +32,13 @@ object Report{
   def report(
     fileToWrite: String,
     info_LSH: (String, Int, Int, Double, Long, Long, Long, Double),
-    info_instance_selection: (String, Double, Double)) {
+    info_instance_selection: (String, Double, Double, Boolean)) {
       val (metodoLsh, ands, ors, timeLsh, numeroDeCubetas, maxValue, minValue, avgValue) = info_LSH
-      val (metodoInstanceSelection, timeInstanceSelection, reduction) = info_instance_selection
+      val (metodoInstanceSelection, timeInstanceSelection, reduction, unbalanced) = info_instance_selection
       var strToWrite =
       metodoLsh + "," +
       metodoInstanceSelection + "," +
+      unbalanced + "," +
       ands + "," +
       ors + "," +
       numeroDeCubetas + "," +
@@ -54,7 +55,7 @@ object Report{
         Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND)
       } else {
         strToWrite =
-         "lsh_method,Is_method,ands,ors,bucket,max_bucket,min_bucket,avg_bucket,redution,time_lsh,time_is,time_total\n" + strToWrite
+         "lsh_method,Is_method,unbalanced,ands,ors,bucket,max_bucket,min_bucket,avg_bucket,redution,time_lsh,time_is,time_total\n" + strToWrite
         Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8))
       }
     }

@@ -93,7 +93,6 @@ class Agg_LSH_Is_F_Unbalanced() extends UserDefinedAggregateFunction {
   }
 }
 
-
 class Agg_LSH_Is_F_Balanced() extends UserDefinedAggregateFunction {
 
   override def inputSchema: StructType = StructType(Array(
