@@ -339,6 +339,8 @@ test-only com.test.LSH_IS_F_Test
 test-only com.test.LSH_IS_S_Test
 test-only com.test.LSH_IS_F_Test
 compile
+<<<<<<< HEAD
+=======
 test-only com.test.EntropiaTest
 compile
 test-only com.test.EntropiaTest
@@ -349,5 +351,9 @@ compile
 test-only com.test.LSH_IS_S_Test
 compile
 test-only com.test.LSH_IS_F_Test
+<<<<<<< HEAD
 compile
 assembly
+=======
+>>>>>>> 22e86df4ef1c90c89d190dbe24cf78293ef06673
+>>>>>>> 2e93bdeb021183e04c4fd7d828728fb1c94df20a
