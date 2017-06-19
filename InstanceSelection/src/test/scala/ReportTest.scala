@@ -37,6 +37,5 @@ class ReportTest extends FunSuite with BeforeAndAfterAll {
    assert(maxValue == 7)
    assert(minValue == 2)
    assert(avgValue == 3.6666666666666665)
-
   }
 }

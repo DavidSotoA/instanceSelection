@@ -4,7 +4,7 @@
 		module="p2p-fraud-processor_2.10"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20170425201922"
+		publication="20170616090001"
 	>
 		<description>
 		p2p-fraud-processor

@@ -54,7 +54,7 @@ object Report{
         Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND)
       } else {
         strToWrite =
-         "lsh_method,Is_method,ands,ors,bucket,max_bucket,min_bucket,avg_bucket,redution,time_lsh,time_is,time_total\n" + strToWrite
+         "lsh_method,Is_method,ands,ors,bucket,max_bucket,min_bucket,avg_bucket,reduction,time_lsh,time_is,time_total\n" + strToWrite
         Files.write(Paths.get(fileToWrite), strToWrite.getBytes(StandardCharsets.UTF_8))
       }
     }

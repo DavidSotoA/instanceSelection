@@ -271,7 +271,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.6!scala-reflect.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 430ms :: artifacts dl 20ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 416ms :: artifacts dl 8ms[0m
 [0m[[0mdebug[0m] [0m	report for default#p2p-fraud-processor_2.10;0.1-SNAPSHOT compile produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/default-p2p-fraud-processor_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#p2p-fraud-processor_2.10;0.1-SNAPSHOT runtime produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/default-p2p-fraud-processor_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#p2p-fraud-processor_2.10;0.1-SNAPSHOT test produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/default-p2p-fraud-processor_2.10-test.xml[0m
@@ -285,5 +285,5 @@
 [0m[[0mdebug[0m] [0m	report for default#p2p-fraud-processor_2.10;0.1-SNAPSHOT docs produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/default-p2p-fraud-processor_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#p2p-fraud-processor_2.10;0.1-SNAPSHOT pom produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/default-p2p-fraud-processor_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#p2p-fraud-processor_2.10;0.1-SNAPSHOT scala-tool produced in /home/skorpionx/P2P-fraud-processor/target/resolution-cache/reports/default-p2p-fraud-processor_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (430ms resolve - 20ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (416ms resolve - 8ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

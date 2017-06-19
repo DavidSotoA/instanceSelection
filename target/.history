@@ -1,3 +1,5 @@
 compile
 test-only com.test.Drop3Test 
 test-only com.test.EntropiaTest
+compile
+assembly
