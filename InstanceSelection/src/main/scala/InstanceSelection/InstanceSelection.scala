@@ -17,6 +17,18 @@ object InstanceSelection {
     numOflabels(0).asInstanceOf[Int]
   }
 
+  /** método para realizar instance selection sobre un conjunto de instancias
+   *  @param method: indica el método de instance selection a utilizar, sus poibles valores son:
+   *  "entropia", "drop3", "lsh_is_s", "lsh_is_f"
+   *  @param instances: conjunto de instancias a las que se les aplicara el instance selection
+   *  @param spark: se autoexplica
+   *  @param unbalanced: toma los valores de verdadero o false para indicar si el conjunto de instancias
+   * es desbalanceado o no respectivamente
+   *  @param neighbors: indica el numero de vecinos que se usara en el drop3
+   *  @param subBuckets: indica el número maximo de muestras por cubeta en el drop3 (1000 por defecto)
+   *  @param distancesIntervale: esto hay que quitarlo(poner 100)
+   *  @return retorna el dataframe ingresado en el parametro instances luego de aplicarle instance selection
+  */
   def instanceSelection(
     method: String,
     instances: DataFrame,

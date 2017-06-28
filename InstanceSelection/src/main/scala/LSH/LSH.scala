@@ -60,6 +60,16 @@ object Lsh{
     return signature + newValueInSignature.toString
   }
 
+  /** método para realizar LSH sobre un conjunto de instancias
+   *  @param method: indica el método de LSH a utilizar, sus poibles valores son:
+   *  "hyperplanes", "projection"
+   *  @param instances: conjunto de instancias a las que se les aplicara el instance selection
+   *  @param spark: se autoexplica
+   *  @param sizeBucket: tamaño de w para el metodo de LSH projection
+   *  @param andFunctions: numero de ands
+   *  @param orFunctions: numero de ors
+   *  @return retorna un dataframe con una columna llamada "signature" la cual indica la cubeta de cada instancia
+  */
   def lsh(
     method: String,
     instances: DataFrame,

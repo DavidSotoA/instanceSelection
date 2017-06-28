@@ -1,4 +1,3 @@
-
 library("ggplot2")
 library("gridExtra")
 
@@ -13,9 +12,9 @@ graficar <- function(pathInput, pathOuput, colNames) {
 }
 
 gplotYaxis <- function(colNames, yAxis) {
+  labs <- labs(color = "Distribution", linetype = "LSH method", x = "ands")
   distribLabels <- scale_color_manual(labels = c("Balanced", "Unbalanced"), values = c("firebrick2", "cyan4"))
   lshLabels <- scale_linetype_manual(labels = c("Euclidean", "Hyperplanes"), values = c("solid", "dashed"))
-  labs <- labs(color = "Distribution", linetype = "LSH method", x = "ands")
   pointSize <- 1.5
 
   ggplot(data = data, aes_string(x = colNames[["ands"]], y = yAxis, linetype = colNames[["lsh_method"]], colour = colNames[["unbal"]])) +
